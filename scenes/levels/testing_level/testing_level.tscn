@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://dep4tjmrss6rq"]
+
+[ext_resource type="PackedScene" uid="uid://ktj4purq3iho" path="res://entities/player/player.tscn" id="1_s1cun"]
+[ext_resource type="PackedScene" uid="uid://b5bsvgrl4pftp" path="res://entities/objects/basic_object/basic_object.tscn" id="2_iape3"]
+
+[node name="TestingLevel" type="Node2D" unique_id=1551172852]
+
+[node name="Player" parent="." unique_id=579082540 instance=ExtResource("1_s1cun")]
+position = Vector2(903, 544)
+
+[node name="BasicObject" parent="." unique_id=797163147 instance=ExtResource("2_iape3")]
+position = Vector2(502, 303)
+
+[node name="BasicObject2" parent="." unique_id=927686881 instance=ExtResource("2_iape3")]
+position = Vector2(641, 302)

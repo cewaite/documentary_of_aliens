@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://b5bsvgrl4pftp"]
+
+[ext_resource type="Script" uid="uid://d3d0uck1k3pq" path="res://entities/objects/basic_object/basic_object.gd" id="1_k44te"]
+[ext_resource type="Texture2D" uid="uid://bqw50cbevh5nw" path="res://icon.svg" id="1_ypqft"]
+[ext_resource type="PackedScene" uid="uid://bi8y5oq6oj76k" path="res://prefabs/components/interactable_component/interactable_component.tscn" id="2_ywchl"]
+[ext_resource type="Script" uid="uid://c2ke84sn1khtd" path="res://prefabs/components/interactable_component/interactable_component.gd" id="3_m8pip"]
+[ext_resource type="Script" uid="uid://bk61eruksbbok" path="res://prefabs/components/speak_component.gd" id="5_d25rh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ywchl"]
+size = Vector2(128, 128)
+
+[node name="BasicObject" type="RigidBody2D" unique_id=797163147]
+collision_layer = 136
+collision_mask = 143
+script = ExtResource("1_k44te")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=394582409]
+texture = ExtResource("1_ypqft")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1928945668]
+shape = SubResource("RectangleShape2D_ywchl")
+
+[node name="InteractableComponent" parent="." unique_id=436105360 node_paths=PackedStringArray("parent", "interact_icon") instance=ExtResource("2_ywchl")]
+collision_layer = 16
+collision_mask = 32
+script = ExtResource("3_m8pip")
+parent = NodePath("..")
+interact_icon = NodePath("../InteractIcon")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="InteractableComponent" unique_id=1677209017]
+shape = SubResource("RectangleShape2D_ywchl")
+
+[node name="InteractIcon" type="Sprite2D" parent="." unique_id=1995453811]
+visible = false
+position = Vector2(0, -80)
+scale = Vector2(0.75, 0.140625)
+texture = ExtResource("1_ypqft")
+
+[node name="SpeakComponent" type="Node" parent="." unique_id=290604259]
+script = ExtResource("5_d25rh")
+dialogue = Array[String](["I am a basic object", "Nothing special about me!", "Nothing special at all....", "[wave amp=50 freq=2]Nothing special at all....[/wave]"])

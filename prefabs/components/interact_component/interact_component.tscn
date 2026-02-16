@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://7worbs38kmn6"]
+
+[ext_resource type="Script" uid="uid://b81ijvesetdsh" path="res://prefabs/components/interact_component/interact_component.gd" id="1_4odu0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_50fht"]
+radius = 15.0
+
+[node name="InteractComponent" type="Area2D" unique_id=1785371228]
+collision_layer = 32
+collision_mask = 16
+script = ExtResource("1_4odu0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=358208997]
+position = Vector2(0, -41.16)
+shape = SubResource("CircleShape2D_50fht")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]
