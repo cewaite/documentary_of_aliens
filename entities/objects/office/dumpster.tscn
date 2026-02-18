@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://b1sobl5s34u8t"]
+
+[ext_resource type="Texture2D" uid="uid://chtgd6rp58f0u" path="res://assets/levels/office/OfficeLevel-Dumpster.png" id="1_ub5g8"]
+
+[node name="Dumpster" type="StaticBody2D" unique_id=460021615]
+y_sort_enabled = true
+collision_layer = 136
+collision_mask = 142
+
+[node name="OfficeLevelDumpster" type="Sprite2D" parent="." unique_id=317883928]
+y_sort_enabled = true
+position = Vector2(24, 0)
+texture = ExtResource("1_ub5g8")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1589896337]
+polygon = PackedVector2Array(-56, -112, 40, -112, 48, 72, 48, 160, -56, 152)

@@ -15,3 +15,10 @@ func connect_hud_to_player(player):
 		#var player_interact_comp = player.get_meta("PlayerInteractComponent")
 		#if not player_interact_comp.hovering.is_connected(player_hud._on_player_interact_hovering):
 			#player_interact_comp.hovering.connect(player_hud._on_player_interact_hovering)
+
+func load_photo_descriptions(photo_areas: Array[PhotoArea]):
+	for photo_area in photo_areas:
+		player_hud.add_photo_description(photo_area.description)
+
+func cross_off_photo(photo: PhotoArea):
+	player_hud.strikethrough_photo_description(photo.description)

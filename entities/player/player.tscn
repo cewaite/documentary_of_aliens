@@ -26,9 +26,10 @@
 [ext_resource type="Texture2D" uid="uid://cc8njfca4kqub" path="res://temp_assets/player/NE/player_NE_0.png" id="24_7otdo"]
 [ext_resource type="Texture2D" uid="uid://fb7lhnp8wvnt" path="res://temp_assets/player/NE/player_NE_2.png" id="25_c112w"]
 [ext_resource type="PackedScene" uid="uid://7worbs38kmn6" path="res://prefabs/components/interact_component/interact_component.tscn" id="26_qpopc"]
+[ext_resource type="PackedScene" uid="uid://b1kmwkqwwcf7s" path="res://prefabs/components/camera_area_component/camera_area_component.tscn" id="27_qpopc"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_abrql"]
-size = Vector2(37, 50)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qpopc"]
+radius = 8.001531
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_u37te"]
 animations = [{
@@ -209,20 +210,43 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Player" type="CharacterBody2D" unique_id=579082540 node_paths=PackedStringArray("interactComp")]
+[node name="Player" type="CharacterBody2D" unique_id=579082540 node_paths=PackedStringArray("interactComp", "cameraAreaComp")]
+y_sort_enabled = true
+scale = Vector2(1.5, 1.5)
 collision_layer = 2
 collision_mask = 140
 script = ExtResource("1_abrql")
 interactComp = NodePath("InteractComponent")
+cameraAreaComp = NodePath("CameraAreaComponent")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1714603882]
-position = Vector2(-1.5, -1)
-shape = SubResource("RectangleShape2D_abrql")
+position = Vector2(-1.5, -8)
+rotation = 1.5676576
+scale = Vector2(0.99999994, 0.99999994)
+shape = SubResource("CapsuleShape2D_qpopc")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1361205503]
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_u37te")
 animation = &"idle6"
+offset = Vector2(0, -8)
 
 [node name="InteractComponent" parent="." unique_id=1785371228 node_paths=PackedStringArray("parent") instance=ExtResource("26_qpopc")]
+position = Vector2(0, -25.66)
+parent = NodePath("..")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1492002413]
+position = Vector2(0, -8)
+zoom = Vector2(1.5, 1.5)
+process_callback = 0
+limit_left = 0
+limit_top = 0
+limit_right = 2160
+limit_bottom = 1616
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
+rotation_smoothing_speed = 10.0
+
+[node name="CameraAreaComponent" parent="." unique_id=976467438 node_paths=PackedStringArray("parent") instance=ExtResource("27_qpopc")]
+position = Vector2(0, -25.62)
 parent = NodePath("..")

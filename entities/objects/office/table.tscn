@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://cswyidxewgaaj"]
+
+[ext_resource type="Texture2D" uid="uid://cas4ulkpfv7vo" path="res://assets/levels/office/OfficeLevel-Table.png" id="1_2kteh"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2kteh"]
+radius = 54.999947
+height = 176.00562
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2kteh"]
+radius = 26.0
+
+[node name="Table" type="StaticBody2D" unique_id=2137552688]
+collision_layer = 136
+collision_mask = 142
+
+[node name="OfficeLevelTable" type="Sprite2D" parent="." unique_id=1303510165]
+position = Vector2(5, -49)
+texture = ExtResource("1_2kteh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=884365451]
+position = Vector2(-0.50000006, -30.500004)
+rotation = 1.5693493
+shape = SubResource("CapsuleShape2D_2kteh")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=2131498368]
+position = Vector2(121, -65)
+shape = SubResource("CircleShape2D_2kteh")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="." unique_id=745935121]
+position = Vector2(118, 32)
+shape = SubResource("CircleShape2D_2kteh")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="." unique_id=2065411685]
+position = Vector2(-113, 34)
+shape = SubResource("CircleShape2D_2kteh")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="." unique_id=144719017]
+position = Vector2(-107, -63)
+shape = SubResource("CircleShape2D_2kteh")

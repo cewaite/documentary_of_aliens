@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://i61lwdcnudom"]
+
+[ext_resource type="Texture2D" uid="uid://dmbmj56w2vv76" path="res://assets/levels/office/OfficeLevel-Desk.png" id="1_uw34e"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4y1ln"]
+radius = 23.946358
+height = 79.82118
+
+[node name="OfficeLevelDesk" type="StaticBody2D" unique_id=1478153396]
+collision_layer = 136
+collision_mask = 142
+
+[node name="OfficeLevelDesk" type="Sprite2D" parent="." unique_id=457707993]
+y_sort_enabled = true
+texture = ExtResource("1_uw34e")
+offset = Vector2(0, -65)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1502900844]
+position = Vector2(0, -62.125)
+polygon = PackedVector2Array(-112, 96, -80, 96, -80, 40, -48, 40, -48, 88, -24, 88, -24, -72, -112, -64)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1779573225]
+position = Vector2(64, 7.999996)
+rotation = 1.5039226
+shape = SubResource("CapsuleShape2D_4y1ln")

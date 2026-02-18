@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://bajr7b11kd2yt"]
+
+[ext_resource type="Script" uid="uid://bgvlnjk1caxaj" path="res://scenes/ui/ui_manager/ui_manager.gd" id="1_1fsrh"]
+[ext_resource type="PackedScene" uid="uid://3ij4rg2474ir" path="res://scenes/ui/dialogue_ui/dialogue_ui.tscn" id="2_s4feh"]
+[ext_resource type="PackedScene" uid="uid://wwqhmf2tgxbb" path="res://scenes/ui/player_hud/player_hud.tscn" id="3_rpsbb"]
+
+[node name="UIManager" type="CanvasLayer" unique_id=859618267 node_paths=PackedStringArray("player_hud", "dialogue_ui")]
+script = ExtResource("1_1fsrh")
+player_hud = NodePath("PlayerHUD")
+dialogue_ui = NodePath("DialogueUI")
+
+[node name="DialogueUI" parent="." unique_id=1494224575 instance=ExtResource("2_s4feh")]
+
+[node name="PlayerHUD" parent="." unique_id=1985193230 instance=ExtResource("3_rpsbb")]

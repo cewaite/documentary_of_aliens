@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://w6gi646m7kgj"]
+
+[ext_resource type="Script" uid="uid://b2fbcl8mnrakx" path="res://entities/objects/door/door.gd" id="1_bulvb"]
+[ext_resource type="PackedScene" uid="uid://bi8y5oq6oj76k" path="res://prefabs/components/interactable_component/interactable_component.tscn" id="3_icyyl"]
+
+[node name="Door" type="StaticBody2D" unique_id=612308812 node_paths=PackedStringArray("sprite")]
+z_index = -1
+collision_layer = 136
+collision_mask = 6
+script = ExtResource("1_bulvb")
+sprite = NodePath("Sprite2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=90848083]
+
+[node name="InteractableComponent" parent="." unique_id=436105360 instance=ExtResource("3_icyyl")]
+
+[node name="PlayerPassThroughDetector" type="Area2D" parent="." unique_id=1310179489]
+collision_layer = 128
+collision_mask = 2
+
+[connection signal="body_exited" from="PlayerPassThroughDetector" to="." method="_on_player_pass_through_detector_body_exited"]

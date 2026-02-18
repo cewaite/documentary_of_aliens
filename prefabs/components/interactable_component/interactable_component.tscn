@@ -1,3 +1,17 @@
 [gd_scene format=3 uid="uid://bi8y5oq6oj76k"]
 
-[node name="InteractableComponent" type="Area2D" unique_id=436105360]
+[ext_resource type="Script" uid="uid://c2ke84sn1khtd" path="res://prefabs/components/interactable_component/interactable_component.gd" id="1_vr8ge"]
+[ext_resource type="Texture2D" uid="uid://cl0c7vhig8jyt" path="res://assets/Interact_icon.png" id="2_tp6pd"]
+
+[node name="InteractableComponent" type="Area2D" unique_id=436105360 node_paths=PackedStringArray("interact_icon")]
+z_index = 99
+collision_layer = 16
+collision_mask = 32
+script = ExtResource("1_vr8ge")
+interact_icon = NodePath("InteractIcon")
+
+[node name="InteractIcon" type="Sprite2D" parent="." unique_id=1434794891]
+visible = false
+z_index = 99
+scale = Vector2(0.095824875, 0.09281529)
+texture = ExtResource("2_tp6pd")

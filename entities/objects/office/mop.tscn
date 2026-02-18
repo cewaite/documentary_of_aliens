@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://rlrsvla77ran"]
+
+[ext_resource type="Texture2D" uid="uid://bllyg6nfi8egs" path="res://assets/levels/office/OfficeLevel-Mop.png" id="1_6wc0r"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6wc0r"]
+size = Vector2(67, 16)
+
+[node name="Mop" type="StaticBody2D" unique_id=685412871]
+collision_layer = 136
+collision_mask = 142
+
+[node name="OfficeLevelMop" type="Sprite2D" parent="." unique_id=945496433]
+position = Vector2(4, -24)
+texture = ExtResource("1_6wc0r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1879584109]
+position = Vector2(-1.5, 27)
+shape = SubResource("RectangleShape2D_6wc0r")

@@ -1,0 +1,312 @@
+[gd_scene format=3 uid="uid://bcj24nv0puhm8"]
+
+[ext_resource type="Script" uid="uid://lfv8lw56vlk1" path="res://scenes/levels/the_office/the_office.gd" id="1_nm22k"]
+[ext_resource type="Texture2D" uid="uid://qvw50dlsv5vm" path="res://assets/levels/office/OfficeLevel-Rug.png" id="2_4y1ln"]
+[ext_resource type="Texture2D" uid="uid://fht6igwd812c" path="res://assets/levels/office/OfficeLevel-Floor.png" id="2_h5h30"]
+[ext_resource type="Texture2D" uid="uid://b5mmlnd4m0t00" path="res://assets/levels/office/OfficeLevel-Walls-revised.png" id="3_m68pb"]
+[ext_resource type="PackedScene" uid="uid://w6gi646m7kgj" path="res://entities/objects/door/door.tscn" id="3_qlr4m"]
+[ext_resource type="PackedScene" uid="uid://ktj4purq3iho" path="res://entities/player/player.tscn" id="4_m68pb"]
+[ext_resource type="Texture2D" uid="uid://bwp55vfh3vbrv" path="res://assets/levels/office/OfficeLevel-AlleyDoor.png" id="5_0basa"]
+[ext_resource type="Script" uid="uid://ngupu61oqfqk" path="res://entities/objects/door/office_front_door.gd" id="5_x8gdg"]
+[ext_resource type="Texture2D" uid="uid://bamkurb0tycga" path="res://assets/levels/office/OfficeLevel-CafeteriaDoor.png" id="6_ap1nk"]
+[ext_resource type="Texture2D" uid="uid://bn3i3rv4gd1vn" path="res://assets/levels/office/OfficeLevel-FrontDoor.png" id="7_758yn"]
+[ext_resource type="Script" uid="uid://bk61eruksbbok" path="res://prefabs/components/speak_component.gd" id="7_sc46r"]
+[ext_resource type="Texture2D" uid="uid://bt75isbiuggf6" path="res://assets/levels/office/OfficeLevel-JanitorDoor.png" id="8_k85mt"]
+[ext_resource type="Texture2D" uid="uid://6mgx0igd3nw0" path="res://assets/levels/office/OfficeLevel-MeetingRoomDoor.png" id="9_b7olv"]
+[ext_resource type="Texture2D" uid="uid://bt03jm7s4wx1u" path="res://assets/levels/office/OfficeLevel-OfficeDoor.png" id="10_nix5l"]
+[ext_resource type="Texture2D" uid="uid://c4dt1ojydfloc" path="res://assets/levels/office/OfficeLevel-ToCubiclesDoor.png" id="11_4y1ln"]
+[ext_resource type="PackedScene" uid="uid://cxhbu0kiu7h5a" path="res://entities/objects/office/counter.tscn" id="13_4y1ln"]
+[ext_resource type="PackedScene" uid="uid://wvistnchmfj8" path="res://entities/objects/office/cubicle.tscn" id="13_758yn"]
+[ext_resource type="PackedScene" uid="uid://i61lwdcnudom" path="res://entities/objects/office/office_level_desk.tscn" id="14_a6ue2"]
+[ext_resource type="PackedScene" uid="uid://5x01wfa0b7br" path="res://entities/objects/office/office_chair.tscn" id="14_k85mt"]
+[ext_resource type="PackedScene" uid="uid://b1sobl5s34u8t" path="res://entities/objects/office/dumpster.tscn" id="17_a6ue2"]
+[ext_resource type="PackedScene" uid="uid://t6ucpok3auh2" path="res://entities/objects/office/wood_table.tscn" id="19_jdpki"]
+[ext_resource type="PackedScene" uid="uid://rlrsvla77ran" path="res://entities/objects/office/mop.tscn" id="20_3sxs4"]
+[ext_resource type="PackedScene" uid="uid://bsi3rk3ta42nl" path="res://entities/objects/office/shelf.tscn" id="21_75cnu"]
+[ext_resource type="PackedScene" uid="uid://cswyidxewgaaj" path="res://entities/objects/office/table.tscn" id="22_lbel2"]
+[ext_resource type="PackedScene" uid="uid://cdm3chjjayvqg" path="res://entities/objects/office/water_cooler.tscn" id="23_a2a8v"]
+[ext_resource type="PackedScene" uid="uid://bty3h70hvdq1e" path="res://prefabs/photo_area/photo_area.tscn" id="26_ef7n6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ef7n6"]
+size = Vector2(289, 366)
+
+[node name="TheOffice" type="Node2D" unique_id=1679858242 node_paths=PackedStringArray("photo_areas")]
+y_sort_enabled = true
+script = ExtResource("1_nm22k")
+photo_areas = [NodePath("PhotoAreas/MeetingRoomPhotoArea")]
+
+[node name="OfficeLevelFloor" type="Sprite2D" parent="." unique_id=2035051649]
+z_index = -2
+position = Vector2(1080, 808)
+texture = ExtResource("2_h5h30")
+
+[node name="OfficeLevelRug" type="Sprite2D" parent="." unique_id=1232071624]
+z_index = -1
+position = Vector2(1648, 192)
+texture = ExtResource("2_4y1ln")
+
+[node name="Doors" type="Node2D" parent="." unique_id=199749693]
+position = Vector2(1080, 808)
+
+[node name="FrontDoor" parent="Doors" unique_id=612308812 node_paths=PackedStringArray("speak_comp", "collider") instance=ExtResource("3_qlr4m")]
+script = ExtResource("5_x8gdg")
+speak_comp = NodePath("SpeakComponent")
+collider = NodePath("CollisionPolygon2D")
+locked = true
+
+[node name="Sprite2D" parent="Doors/FrontDoor" index="0" unique_id=90848083]
+texture = ExtResource("7_758yn")
+
+[node name="InteractableComponent" parent="Doors/FrontDoor" index="1" unique_id=436105360 node_paths=PackedStringArray("parent")]
+parent = NodePath("..")
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Doors/FrontDoor/InteractableComponent" index="0" unique_id=852908503]
+polygon = PackedVector2Array(144, 408, 304, 408, 296, 488, 144, 488)
+
+[node name="InteractIcon" parent="Doors/FrontDoor/InteractableComponent" index="1" unique_id=1434794891]
+position = Vector2(224, 383.99997)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Doors/FrontDoor/PlayerPassThroughDetector" parent_id_path=PackedInt32Array(612308812, 1310179489) index="0" unique_id=1781638065]
+polygon = PackedVector2Array(144, 408, 304, 408, 296, 488, 144, 488)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Doors/FrontDoor" unique_id=1250348537]
+polygon = PackedVector2Array(144, 408, 304, 408, 296, 488, 144, 488)
+
+[node name="SpeakComponent" type="Node" parent="Doors/FrontDoor" unique_id=1459521358]
+script = ExtResource("7_sc46r")
+dialogue = Array[String](["This door is locked. I'll probably need a key to get in. or someone really nice and dumb. "])
+
+[node name="AlleyDoor" parent="Doors" unique_id=1635621157 node_paths=PackedStringArray("collider") instance=ExtResource("3_qlr4m")]
+collider = NodePath("CollisionPolygon2D")
+
+[node name="Sprite2D" parent="Doors/AlleyDoor" index="0" unique_id=90848083]
+texture = ExtResource("5_0basa")
+
+[node name="InteractableComponent" parent="Doors/AlleyDoor" index="1" unique_id=436105360 node_paths=PackedStringArray("parent")]
+parent = NodePath("..")
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Doors/AlleyDoor/InteractableComponent" index="0" unique_id=174123342]
+polygon = PackedVector2Array(-1040, -568, -904, -568, -904, -480, -1040, -480)
+
+[node name="InteractIcon" parent="Doors/AlleyDoor/InteractableComponent" index="1" unique_id=1434794891]
+position = Vector2(-976, -592)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Doors/AlleyDoor/PlayerPassThroughDetector" parent_id_path=PackedInt32Array(1635621157, 1310179489) index="0" unique_id=1564303351]
+polygon = PackedVector2Array(-1040, -568, -904, -568, -904, -480, -1040, -480)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Doors/AlleyDoor" unique_id=2097976328]
+polygon = PackedVector2Array(-1040, -568, -904, -568, -904, -480, -1040, -480)
+
+[node name="CafeteriaDoor" parent="Doors" unique_id=20761531 node_paths=PackedStringArray("collider") instance=ExtResource("3_qlr4m")]
+collider = NodePath("CollisionPolygon2D")
+
+[node name="Sprite2D" parent="Doors/CafeteriaDoor" index="0" unique_id=90848083]
+texture = ExtResource("6_ap1nk")
+
+[node name="InteractableComponent" parent="Doors/CafeteriaDoor" index="1" unique_id=436105360 node_paths=PackedStringArray("parent")]
+parent = NodePath("..")
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Doors/CafeteriaDoor/InteractableComponent" index="0" unique_id=1131060287]
+polygon = PackedVector2Array(312, -96, 312, 8, 336, 8, 336, -96)
+
+[node name="InteractIcon" parent="Doors/CafeteriaDoor/InteractableComponent" index="1" unique_id=1434794891]
+position = Vector2(328, -63.99997)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Doors/CafeteriaDoor/PlayerPassThroughDetector" parent_id_path=PackedInt32Array(20761531, 1310179489) index="0" unique_id=782810771]
+polygon = PackedVector2Array(312, -96, 312, 8, 336, 8, 336, -96)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Doors/CafeteriaDoor" unique_id=2136736553]
+polygon = PackedVector2Array(312, -96, 312, 8, 336, 8, 336, -96)
+
+[node name="CubliclesDoor" parent="Doors" unique_id=260776701 node_paths=PackedStringArray("collider") instance=ExtResource("3_qlr4m")]
+collider = NodePath("CollisionPolygon2D")
+
+[node name="Sprite2D" parent="Doors/CubliclesDoor" index="0" unique_id=90848083]
+texture = ExtResource("11_4y1ln")
+
+[node name="InteractableComponent" parent="Doors/CubliclesDoor" index="1" unique_id=436105360 node_paths=PackedStringArray("parent")]
+parent = NodePath("..")
+
+[node name="InteractIcon" parent="Doors/CubliclesDoor/InteractableComponent" index="0" unique_id=1434794891]
+position = Vector2(103.99999, -335.99997)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Doors/CubliclesDoor/InteractableComponent" index="1" unique_id=1796551629]
+polygon = PackedVector2Array(88, -376, 120, -376, 120, -272, 88, -272)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Doors/CubliclesDoor/PlayerPassThroughDetector" parent_id_path=PackedInt32Array(260776701, 1310179489) index="0" unique_id=1950145319]
+polygon = PackedVector2Array(88, -376, 120, -376, 120, -272, 88, -272)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Doors/CubliclesDoor" unique_id=953537342]
+polygon = PackedVector2Array(88, -376, 120, -376, 120, -272, 88, -272)
+
+[node name="MeetingRoomDoor" parent="Doors" unique_id=936374706 node_paths=PackedStringArray("collider") instance=ExtResource("3_qlr4m")]
+collider = NodePath("CollisionPolygon2D")
+
+[node name="Sprite2D" parent="Doors/MeetingRoomDoor" index="0" unique_id=90848083]
+texture = ExtResource("9_b7olv")
+
+[node name="InteractableComponent" parent="Doors/MeetingRoomDoor" index="1" unique_id=436105360 node_paths=PackedStringArray("parent")]
+parent = NodePath("..")
+
+[node name="InteractIcon" parent="Doors/MeetingRoomDoor/InteractableComponent" index="0" unique_id=1434794891]
+position = Vector2(-207.99998, 151.99998)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Doors/MeetingRoomDoor/InteractableComponent" index="1" unique_id=1764332389]
+polygon = PackedVector2Array(-224, 112, -200, 112, -200, 224, -224, 224)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Doors/MeetingRoomDoor/PlayerPassThroughDetector" parent_id_path=PackedInt32Array(936374706, 1310179489) index="0" unique_id=1930135125]
+polygon = PackedVector2Array(-224, 112, -200, 112, -200, 224, -224, 224)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Doors/MeetingRoomDoor" unique_id=1317092407]
+polygon = PackedVector2Array(-224, 112, -200, 112, -200, 224, -224, 224)
+
+[node name="JanitorDoor" parent="Doors" unique_id=1758164949 node_paths=PackedStringArray("collider") instance=ExtResource("3_qlr4m")]
+collider = NodePath("CollisionPolygon2D")
+
+[node name="Sprite2D" parent="Doors/JanitorDoor" index="0" unique_id=90848083]
+texture = ExtResource("8_k85mt")
+
+[node name="InteractableComponent" parent="Doors/JanitorDoor" index="1" unique_id=436105360 node_paths=PackedStringArray("parent")]
+parent = NodePath("..")
+
+[node name="InteractIcon" parent="Doors/JanitorDoor/InteractableComponent" index="0" unique_id=1434794891]
+position = Vector2(-55.999996, -591.99994)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Doors/JanitorDoor/InteractableComponent" index="1" unique_id=8936169]
+polygon = PackedVector2Array(-120, -568, 8, -568, 0, -480, -112, -480)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Doors/JanitorDoor/PlayerPassThroughDetector" parent_id_path=PackedInt32Array(1758164949, 1310179489) index="0" unique_id=1995599491]
+polygon = PackedVector2Array(-120, -568, 8, -568, 0, -480, -112, -480)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Doors/JanitorDoor" unique_id=53374641]
+polygon = PackedVector2Array(-120, -568, 8, -568, 0, -480, -112, -480)
+
+[node name="OfficeDoor" parent="Doors" unique_id=2057798022 node_paths=PackedStringArray("collider") instance=ExtResource("3_qlr4m")]
+collider = NodePath("CollisionPolygon2D")
+locked = true
+
+[node name="Sprite2D" parent="Doors/OfficeDoor" index="0" unique_id=90848083]
+texture = ExtResource("10_nix5l")
+
+[node name="InteractableComponent" parent="Doors/OfficeDoor" index="1" unique_id=436105360 node_paths=PackedStringArray("parent")]
+parent = NodePath("..")
+
+[node name="InteractIcon" parent="Doors/OfficeDoor/InteractableComponent" index="0" unique_id=1434794891]
+position = Vector2(327.99997, -719.99994)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Doors/OfficeDoor/InteractableComponent" index="1" unique_id=438352261]
+polygon = PackedVector2Array(312, -752, 336, -752, 336, -640, 312, -640)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Doors/OfficeDoor/PlayerPassThroughDetector" parent_id_path=PackedInt32Array(2057798022, 1310179489) index="0" unique_id=174089847]
+polygon = PackedVector2Array(312, -752, 336, -752, 336, -640, 312, -640)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Doors/OfficeDoor" unique_id=1222056182]
+polygon = PackedVector2Array(312, -752, 336, -752, 336, -640, 312, -640)
+
+[node name="OfficeLevelWalls" type="StaticBody2D" parent="." unique_id=717818455]
+z_index = -1
+position = Vector2(1080, 808)
+collision_layer = 128
+collision_mask = 0
+
+[node name="OfficeLevelWallsSprite" type="Sprite2D" parent="OfficeLevelWalls" unique_id=1857720562]
+texture = ExtResource("3_m68pb")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="OfficeLevelWalls" unique_id=1897307854]
+position = Vector2(-1077.6, -807.19995)
+polygon = PackedVector2Array(48, 328, 0, 328, 0, 200, 32, 200)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="OfficeLevelWalls" unique_id=98327415]
+position = Vector2(-1077.6, -807.19995)
+polygon = PackedVector2Array(168, 240, 168, 328, 216, 328, 208, 1296, 1232, 1296, 1224, 1184, 1200, 1184, 1200, 544, 1176, 544, 1168, 688, 856, 688, 856, 912, 880, 912, 880, 824, 1168, 816, 1168, 1184, 880, 1184, 880, 1032, 856, 1032, 856, 1184, 232, 1184, 248, 200, 168, 200)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="OfficeLevelWalls" unique_id=1391819113]
+position = Vector2(-1077.6, -807.19995)
+polygon = PackedVector2Array(1376, 1296, 2160, 1304, 2160, 1176, 1424, 1176, 1416, 824, 1392, 824, 1400, 1184, 1384, 1184)
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="OfficeLevelWalls" unique_id=1772308489]
+position = Vector2(-1077.6, -807.19995)
+polygon = PackedVector2Array(1392, 712, 1416, 712, 1416, 440, 2168, 440, 2168, 312, 1416, 320, 1416, 168, 1392, 168)
+
+[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="OfficeLevelWalls" unique_id=1829150370]
+position = Vector2(-1077.6, -807.19995)
+polygon = PackedVector2Array(1168, 424, 1200, 424, 1200, 56, 2168, 56, 2168, 0, 0, 0, 0, 56, 840, 56, 840, 336, 968, 336, 960, 208, 864, 208, 864, 56, 1168, 56, 1168, 208, 1088, 208, 1080, 328, 1168, 328, 1168, 416)
+
+[node name="Counter" parent="." unique_id=1260658647 instance=ExtResource("13_4y1ln")]
+position = Vector2(1788, 700)
+
+[node name="OfficeLevelDesk" parent="." unique_id=1478153396 instance=ExtResource("14_a6ue2")]
+position = Vector2(2002, 267)
+
+[node name="Dumpster" parent="." unique_id=460021615 instance=ExtResource("17_a6ue2")]
+position = Vector2(58, 777)
+
+[node name="OfficeChair1" parent="." unique_id=1641549541 instance=ExtResource("14_k85mt")]
+position = Vector2(457, 837)
+
+[node name="OfficeChair2" parent="." unique_id=1866171425 instance=ExtResource("14_k85mt")]
+position = Vector2(606, 494)
+
+[node name="Cubicles" type="Node2D" parent="." unique_id=234199021]
+y_sort_enabled = true
+
+[node name="Cubicle1" parent="Cubicles" unique_id=1522095414 instance=ExtResource("13_758yn")]
+position = Vector2(519, 343)
+
+[node name="Cubicle2" parent="Cubicles" unique_id=904905215 instance=ExtResource("13_758yn")]
+position = Vector2(528, 715)
+
+[node name="Cubicle3" parent="Cubicles" unique_id=1199520617 instance=ExtResource("13_758yn")]
+position = Vector2(539, 1077)
+
+[node name="WoodTable" parent="." unique_id=1638292962 instance=ExtResource("19_jdpki")]
+position = Vector2(1026, 1085)
+
+[node name="Mop" parent="." unique_id=685412871 instance=ExtResource("20_3sxs4")]
+position = Vector2(1107, 99)
+
+[node name="Shelf" parent="." unique_id=883038331 instance=ExtResource("21_75cnu")]
+position = Vector2(898, 123)
+
+[node name="CafeteriaTables" type="Node2D" parent="." unique_id=1795991150]
+y_sort_enabled = true
+
+[node name="Table1" parent="CafeteriaTables" unique_id=2137552688 instance=ExtResource("22_lbel2")]
+position = Vector2(1980, 1100)
+
+[node name="Table2" parent="CafeteriaTables" unique_id=897591241 instance=ExtResource("22_lbel2")]
+position = Vector2(1617, 1103)
+
+[node name="Table3" parent="CafeteriaTables" unique_id=1985539290 instance=ExtResource("22_lbel2")]
+position = Vector2(1981, 863)
+
+[node name="WaterCooler" parent="." unique_id=1426409431 instance=ExtResource("23_a2a8v")]
+position = Vector2(874.00006, 335.00003)
+scale = Vector2(0.6772497, 0.6772497)
+
+[node name="Player" parent="." unique_id=579082540 instance=ExtResource("4_m68pb")]
+position = Vector2(489, 1367)
+
+[node name="PhotoAreas" type="Node" parent="." unique_id=301180790]
+
+[node name="MeetingRoomPhotoArea" parent="PhotoAreas" unique_id=147228429 instance=ExtResource("26_ef7n6")]
+description = "Constantly occupied, yet rarely produces output"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PhotoAreas/MeetingRoomPhotoArea" unique_id=1943857908]
+position = Vector2(1030.5, 998)
+shape = SubResource("RectangleShape2D_ef7n6")
+
+[editable path="Doors/FrontDoor"]
+[editable path="Doors/FrontDoor/InteractableComponent"]
+[editable path="Doors/AlleyDoor"]
+[editable path="Doors/AlleyDoor/InteractableComponent"]
+[editable path="Doors/CafeteriaDoor"]
+[editable path="Doors/CafeteriaDoor/InteractableComponent"]
+[editable path="Doors/CubliclesDoor"]
+[editable path="Doors/CubliclesDoor/InteractableComponent"]
+[editable path="Doors/MeetingRoomDoor"]
+[editable path="Doors/MeetingRoomDoor/InteractableComponent"]
+[editable path="Doors/JanitorDoor"]
+[editable path="Doors/JanitorDoor/InteractableComponent"]
+[editable path="Doors/OfficeDoor"]
+[editable path="Doors/OfficeDoor/InteractableComponent"]

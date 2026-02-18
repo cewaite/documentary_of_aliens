@@ -2,6 +2,7 @@ class_name Player extends CharacterBody2D
 
 # Components
 @export var interactComp: InteractComponent
+@export var cameraAreaComp: CameraAreaComponent
 
 # Movement
 @export var max_speed: float = 500
@@ -28,6 +29,7 @@ func _physics_process(delta):
 	player_movement(move_vector, delta)
 	player_animation(move_vector, aim_vector)
 	interact()
+	take_picture()
 
 func player_movement(move_vector, delta):
 	if move_vector != Vector2.ZERO:
@@ -70,3 +72,7 @@ func player_animation(move_vector, aim_vector):
 func interact():
 	if Input.is_action_just_pressed("interact"):
 		interactComp.trigger_interact()
+
+func take_picture():
+	if Input.is_action_just_pressed("take_picture"):
+		cameraAreaComp.take_picture()

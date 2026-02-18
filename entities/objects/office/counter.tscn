@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://cxhbu0kiu7h5a"]
+
+[ext_resource type="Texture2D" uid="uid://d37qeu2o47fa0" path="res://assets/levels/office/OfficeLevel-Counter.png" id="1_o1g6k"]
+
+[node name="Counter" type="StaticBody2D" unique_id=1260658647]
+y_sort_enabled = true
+collision_layer = 136
+collision_mask = 142
+
+[node name="OfficeLevelCounter" type="Sprite2D" parent="." unique_id=1126083011]
+position = Vector2(80, -92)
+texture = ExtResource("1_o1g6k")
+offset = Vector2(0, -25)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1652377284]
+position = Vector2(0, -25)
+polygon = PackedVector2Array(-166, -2, -170, -30, -177, -176, -85, -177, -80, -88, 376, -96, 376, -15)

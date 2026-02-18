@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://t6ucpok3auh2"]
+
+[ext_resource type="Texture2D" uid="uid://xv3qxdi8snvc" path="res://assets/levels/office/OfficeLevel-Meeting table.png" id="1_5rb1h"]
+
+[node name="WoodTable" type="StaticBody2D" unique_id=1638292962]
+collision_layer = 136
+collision_mask = 142
+
+[node name="OfficeLevelMeetingTable" type="Sprite2D" parent="." unique_id=677023881]
+position = Vector2(4, 1)
+texture = ExtResource("1_5rb1h")
+offset = Vector2(0, -70)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1952650252]
+polygon = PackedVector2Array(-2, 69, 22, 62, 43, 39, 63, -8, 67, -91, 56, -145, 37, -172, 10, -178, -15, -178, -38, -173, -59, -156, -70, -123, -75, -56, -64, 1, -44, 44, -18, 66)

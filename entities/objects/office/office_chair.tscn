@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://5x01wfa0b7br"]
+
+[ext_resource type="Texture2D" uid="uid://bcqvwm21y07lm" path="res://assets/levels/office/OfficeLevel-Chair.png" id="1_b2hv7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_74y33"]
+size = Vector2(92, 32)
+
+[node name="OfficeChair" type="StaticBody2D" unique_id=1641549541]
+y_sort_enabled = true
+collision_layer = 136
+collision_mask = 142
+
+[node name="OfficeLevelChair" type="Sprite2D" parent="." unique_id=1092572891]
+position = Vector2(8, -64)
+texture = ExtResource("1_b2hv7")
+offset = Vector2(0, -43.2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=95188661]
+position = Vector2(0, -56)
+shape = SubResource("RectangleShape2D_74y33")

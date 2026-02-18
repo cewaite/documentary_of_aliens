@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bty3h70hvdq1e"]
+
+[ext_resource type="Script" uid="uid://innyn3smvsnd" path="res://prefabs/photo_area/photo_area.gd" id="1_xa7t7"]
+
+[node name="PhotoArea" type="Area2D" unique_id=147228429]
+collision_layer = 256
+collision_mask = 512
+script = ExtResource("1_xa7t7")

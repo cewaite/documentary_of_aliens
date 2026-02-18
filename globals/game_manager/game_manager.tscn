@@ -1,25 +1,14 @@
 [gd_scene format=3 uid="uid://daar4qxgrso8k"]
 
 [ext_resource type="Script" uid="uid://dvdm7fcpxut3u" path="res://globals/game_manager/game_manager.gd" id="1_e8pdb"]
-[ext_resource type="Script" uid="uid://bgvlnjk1caxaj" path="res://scenes/ui/ui_manager.gd" id="2_ctu20"]
-[ext_resource type="PackedScene" uid="uid://3ij4rg2474ir" path="res://scenes/ui/dialogue_ui/dialogue_ui.tscn" id="3_qfmkk"]
-[ext_resource type="PackedScene" uid="uid://wwqhmf2tgxbb" path="res://scenes/ui/player_hud/player_hud.tscn" id="4_0bnvm"]
-[ext_resource type="PackedScene" uid="uid://dep4tjmrss6rq" path="res://scenes/levels/testing_level/testing_level.tscn" id="5_0bnvm"]
-[ext_resource type="Script" uid="uid://pomdvi2yxrdt" path="res://scenes/levels/level.gd" id="6_mcos4"]
+[ext_resource type="PackedScene" uid="uid://bajr7b11kd2yt" path="res://scenes/ui/ui_manager/ui_manager.tscn" id="2_qfmkk"]
+[ext_resource type="PackedScene" uid="uid://bcj24nv0puhm8" path="res://scenes/levels/the_office/the_office.tscn" id="3_q5eha"]
 
 [node name="GameManager" type="Node" unique_id=1621592908 node_paths=PackedStringArray("ui_manager", "curr_level")]
 script = ExtResource("1_e8pdb")
 ui_manager = NodePath("UIManager")
-curr_level = NodePath("TestingLevel")
+curr_level = NodePath("TheOffice")
 
-[node name="UIManager" type="CanvasLayer" parent="." unique_id=1916256828 node_paths=PackedStringArray("player_hud", "dialogue_ui")]
-script = ExtResource("2_ctu20")
-player_hud = NodePath("PlayerHUD")
-dialogue_ui = NodePath("DialogueUI")
+[node name="UIManager" parent="." unique_id=859618267 instance=ExtResource("2_qfmkk")]
 
-[node name="DialogueUI" parent="UIManager" unique_id=1494224575 instance=ExtResource("3_qfmkk")]
-
-[node name="PlayerHUD" parent="UIManager" unique_id=1985193230 instance=ExtResource("4_0bnvm")]
-
-[node name="TestingLevel" parent="." unique_id=1551172852 instance=ExtResource("5_0bnvm")]
-script = ExtResource("6_mcos4")
+[node name="TheOffice" parent="." unique_id=1679858242 instance=ExtResource("3_q5eha")]
