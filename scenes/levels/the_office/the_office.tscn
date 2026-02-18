@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://bt03jm7s4wx1u" path="res://assets/levels/office/OfficeLevel-OfficeDoor.png" id="10_nix5l"]
 [ext_resource type="Texture2D" uid="uid://c4dt1ojydfloc" path="res://assets/levels/office/OfficeLevel-ToCubiclesDoor.png" id="11_4y1ln"]
 [ext_resource type="PackedScene" uid="uid://cxhbu0kiu7h5a" path="res://entities/objects/office/counter.tscn" id="13_4y1ln"]
+[ext_resource type="Script" uid="uid://c2rf2dj3uab5y" path="res://entities/objects/door/boss_door.gd" id="13_7o1tw"]
 [ext_resource type="PackedScene" uid="uid://wvistnchmfj8" path="res://entities/objects/office/cubicle.tscn" id="13_758yn"]
 [ext_resource type="PackedScene" uid="uid://i61lwdcnudom" path="res://entities/objects/office/office_level_desk.tscn" id="14_a6ue2"]
 [ext_resource type="PackedScene" uid="uid://5x01wfa0b7br" path="res://entities/objects/office/office_chair.tscn" id="14_k85mt"]
@@ -182,6 +183,7 @@ polygon = PackedVector2Array(-120, -568, 8, -568, 0, -480, -112, -480)
 polygon = PackedVector2Array(-120, -568, 8, -568, 0, -480, -112, -480)
 
 [node name="OfficeDoor" parent="Doors" unique_id=2057798022 node_paths=PackedStringArray("collider") instance=ExtResource("3_qlr4m")]
+script = ExtResource("13_7o1tw")
 collider = NodePath("CollisionPolygon2D")
 locked = true
 
@@ -202,6 +204,10 @@ polygon = PackedVector2Array(312, -752, 336, -752, 336, -640, 312, -640)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Doors/OfficeDoor" unique_id=1222056182]
 polygon = PackedVector2Array(312, -752, 336, -752, 336, -640, 312, -640)
+
+[node name="SpeakComponent" type="Node" parent="Doors/OfficeDoor" unique_id=1180229144]
+script = ExtResource("7_sc46r")
+dialogue = Array[String](["This door is locked. Looks like it could be the Boss's Office."])
 
 [node name="OfficeLevelWalls" type="StaticBody2D" parent="." unique_id=717818455]
 z_index = -1

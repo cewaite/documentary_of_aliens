@@ -4,9 +4,10 @@ class_name BossDoor extends Door
 
 func interact():
 	if locked:
-		# Check for player inventory
-		# If badge exists, unlock
+		# Check for world condition
+		# If has_meeting, unlock
 		# Else Speak
 		speak_comp.speak()
+	# Use another if, not else, so it can be unlocked and opened in same interact
 	if not locked:
 		open()

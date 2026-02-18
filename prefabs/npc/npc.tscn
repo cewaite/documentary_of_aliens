@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://d1cyctv0r5n7p"]
+
+[ext_resource type="Script" uid="uid://5mejmmt0wq4a" path="res://prefabs/npc/npc.gd" id="1_470b1"]
+[ext_resource type="Texture2D" uid="uid://bqw50cbevh5nw" path="res://icon.svg" id="1_s40ew"]
+[ext_resource type="PackedScene" uid="uid://bi8y5oq6oj76k" path="res://prefabs/components/interactable_component/interactable_component.tscn" id="3_thrj0"]
+[ext_resource type="Script" uid="uid://bk61eruksbbok" path="res://prefabs/components/speak_component.gd" id="4_k08jm"]
+
+[node name="NPC" type="AnimatableBody2D" unique_id=143393978]
+script = ExtResource("1_470b1")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1492086816]
+position = Vector2(-1.9073486e-06, 1.000001)
+scale = Vector2(0.42983288, 0.6045394)
+texture = ExtResource("1_s40ew")
+
+[node name="InteractableComponent" parent="." unique_id=436105360 node_paths=PackedStringArray("parent") instance=ExtResource("3_thrj0")]
+parent = NodePath("..")
+
+[node name="SpeakComponent" type="Node" parent="." unique_id=1744893008]
+script = ExtResource("4_k08jm")
+metadata/_custom_type_script = "uid://bk61eruksbbok"
