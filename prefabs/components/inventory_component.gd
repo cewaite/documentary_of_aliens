@@ -7,7 +7,8 @@ func _ready() -> void:
 	parent.set_meta("InventoryComponent", self)
 
 func give_item(item: String):
-	inventory.append(item)
+	if not has_item(item):
+		inventory.append(item)
 
 func remove_item(item: String):
 	var index = inventory.find(item)

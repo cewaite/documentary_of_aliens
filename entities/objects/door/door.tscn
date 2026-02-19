@@ -3,9 +3,6 @@
 [ext_resource type="Script" uid="uid://b2fbcl8mnrakx" path="res://entities/objects/door/door.gd" id="1_bulvb"]
 [ext_resource type="PackedScene" uid="uid://bi8y5oq6oj76k" path="res://prefabs/components/interactable_component/interactable_component.tscn" id="3_icyyl"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_b2uvk"]
-size = Vector2(128, 128)
-
 [node name="Door" type="StaticBody2D" unique_id=612308812 node_paths=PackedStringArray("sprite")]
 z_index = -1
 collision_layer = 136
@@ -24,8 +21,5 @@ collision_mask = 2
 [node name="JanitorDetector" type="Area2D" parent="." unique_id=981070595]
 collision_layer = 136
 collision_mask = 4
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="JanitorDetector" unique_id=1530608991]
-shape = SubResource("RectangleShape2D_b2uvk")
 
 [connection signal="body_exited" from="PlayerPassThroughDetector" to="." method="_on_player_pass_through_detector_body_exited"]
