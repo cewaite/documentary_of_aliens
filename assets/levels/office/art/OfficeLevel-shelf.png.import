@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bn3i3rv4gd1vn"
-path="res://.godot/imported/OfficeLevel-FrontDoor.png-ecb5925dbae65098f0601035c2beaa2a.ctex"
+uid="uid://rcj0678uio20"
+path="res://.godot/imported/OfficeLevel-shelf.png-885fcd0b4026e2fd802104cbdbfd5de5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/levels/office/OfficeLevel-FrontDoor.png"
-dest_files=["res://.godot/imported/OfficeLevel-FrontDoor.png-ecb5925dbae65098f0601035c2beaa2a.ctex"]
+source_file="res://assets/levels/office/art/OfficeLevel-shelf.png"
+dest_files=["res://.godot/imported/OfficeLevel-shelf.png-885fcd0b4026e2fd802104cbdbfd5de5.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://rcj0678uio20"
-path="res://.godot/imported/OfficeLevel-shelf.png-3517402efbc724933de72acc0b1534b8.ctex"
+uid="uid://xv3qxdi8snvc"
+path="res://.godot/imported/OfficeLevel-Meeting table.png-70cbd70df6231fac35216ae18252adcb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/levels/office/OfficeLevel-shelf.png"
-dest_files=["res://.godot/imported/OfficeLevel-shelf.png-3517402efbc724933de72acc0b1534b8.ctex"]
+source_file="res://assets/levels/office/art/OfficeLevel-Meeting table.png"
+dest_files=["res://.godot/imported/OfficeLevel-Meeting table.png-70cbd70df6231fac35216ae18252adcb.ctex"]
 
 [params]
 

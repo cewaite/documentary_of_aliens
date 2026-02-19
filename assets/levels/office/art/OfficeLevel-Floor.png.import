@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bwp55vfh3vbrv"
-path="res://.godot/imported/OfficeLevel-AlleyDoor.png-6eba0d5b7856f995617ad04c19a01b6c.ctex"
+uid="uid://fht6igwd812c"
+path="res://.godot/imported/OfficeLevel-Floor.png-5ce5ac3e698b4f438c858f2b69e8376a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/levels/office/OfficeLevel-AlleyDoor.png"
-dest_files=["res://.godot/imported/OfficeLevel-AlleyDoor.png-6eba0d5b7856f995617ad04c19a01b6c.ctex"]
+source_file="res://assets/levels/office/art/OfficeLevel-Floor.png"
+dest_files=["res://.godot/imported/OfficeLevel-Floor.png-5ce5ac3e698b4f438c858f2b69e8376a.ctex"]
 
 [params]
 

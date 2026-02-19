@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dxrojgavnm4a1"
-path="res://.godot/imported/OfficeLevel-Cubicle.png-9664e2d4cd79c4b481228ddd46dfaebd.ctex"
+uid="uid://bt03jm7s4wx1u"
+path="res://.godot/imported/OfficeLevel-OfficeDoor.png-a5169099c5c6ace3866156940edb2b4b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/levels/office/OfficeLevel-Cubicle.png"
-dest_files=["res://.godot/imported/OfficeLevel-Cubicle.png-9664e2d4cd79c4b481228ddd46dfaebd.ctex"]
+source_file="res://assets/levels/office/art/OfficeLevel-OfficeDoor.png"
+dest_files=["res://.godot/imported/OfficeLevel-OfficeDoor.png-a5169099c5c6ace3866156940edb2b4b.ctex"]
 
 [params]
 

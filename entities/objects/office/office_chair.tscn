@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://5x01wfa0b7br"]
 
-[ext_resource type="Texture2D" uid="uid://bcqvwm21y07lm" path="res://assets/levels/office/OfficeLevel-Chair.png" id="1_b2hv7"]
+[ext_resource type="Texture2D" uid="uid://bcqvwm21y07lm" path="res://assets/levels/office/art/OfficeLevel-Chair.png" id="1_b2hv7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_74y33"]
 size = Vector2(92, 32)

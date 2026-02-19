@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://6mgx0igd3nw0"
-path="res://.godot/imported/OfficeLevel-MeetingRoomDoor.png-55f806655d15ae112d82305c32668dc0.ctex"
+path="res://.godot/imported/OfficeLevel-MeetingRoomDoor.png-41c82f4d9c93fdf991928f1ab440fe94.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/levels/office/OfficeLevel-MeetingRoomDoor.png"
-dest_files=["res://.godot/imported/OfficeLevel-MeetingRoomDoor.png-55f806655d15ae112d82305c32668dc0.ctex"]
+source_file="res://assets/levels/office/art/OfficeLevel-MeetingRoomDoor.png"
+dest_files=["res://.godot/imported/OfficeLevel-MeetingRoomDoor.png-41c82f4d9c93fdf991928f1ab440fe94.ctex"]
 
 [params]
 

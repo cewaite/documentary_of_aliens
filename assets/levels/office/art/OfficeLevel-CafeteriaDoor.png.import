@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bllyg6nfi8egs"
-path="res://.godot/imported/OfficeLevel-Mop.png-21d5e80c7c3af049603d96c45e46d967.ctex"
+uid="uid://bamkurb0tycga"
+path="res://.godot/imported/OfficeLevel-CafeteriaDoor.png-33be8aa8c498bf5d636070ae319f03f1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/levels/office/OfficeLevel-Mop.png"
-dest_files=["res://.godot/imported/OfficeLevel-Mop.png-21d5e80c7c3af049603d96c45e46d967.ctex"]
+source_file="res://assets/levels/office/art/OfficeLevel-CafeteriaDoor.png"
+dest_files=["res://.godot/imported/OfficeLevel-CafeteriaDoor.png-33be8aa8c498bf5d636070ae319f03f1.ctex"]
 
 [params]
 

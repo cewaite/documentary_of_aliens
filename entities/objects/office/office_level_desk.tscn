@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://i61lwdcnudom"]
 
-[ext_resource type="Texture2D" uid="uid://dmbmj56w2vv76" path="res://assets/levels/office/OfficeLevel-Desk.png" id="1_uw34e"]
+[ext_resource type="Texture2D" uid="uid://dmbmj56w2vv76" path="res://assets/levels/office/art/OfficeLevel-Desk.png" id="1_uw34e"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4y1ln"]
 radius = 23.946358

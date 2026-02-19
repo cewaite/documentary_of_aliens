@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cxhbu0kiu7h5a"]
 
-[ext_resource type="Texture2D" uid="uid://d37qeu2o47fa0" path="res://assets/levels/office/OfficeLevel-Counter.png" id="1_o1g6k"]
+[ext_resource type="Texture2D" uid="uid://d37qeu2o47fa0" path="res://assets/levels/office/art/OfficeLevel-Counter.png" id="1_o1g6k"]
 
 [node name="Counter" type="StaticBody2D" unique_id=1260658647]
 y_sort_enabled = true

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cswyidxewgaaj"]
 
-[ext_resource type="Texture2D" uid="uid://cas4ulkpfv7vo" path="res://assets/levels/office/OfficeLevel-Table.png" id="1_2kteh"]
+[ext_resource type="Texture2D" uid="uid://cas4ulkpfv7vo" path="res://assets/levels/office/art/OfficeLevel-Table.png" id="1_2kteh"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2kteh"]
 radius = 54.999947

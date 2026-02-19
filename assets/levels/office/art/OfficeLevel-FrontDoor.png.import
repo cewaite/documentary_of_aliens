@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://xv3qxdi8snvc"
-path="res://.godot/imported/OfficeLevel-Meeting table.png-4eb212343362a060b0d962ea3c4d3031.ctex"
+uid="uid://bn3i3rv4gd1vn"
+path="res://.godot/imported/OfficeLevel-FrontDoor.png-be18e6e2e30e3996a27edd7c11ac1dbd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/levels/office/OfficeLevel-Meeting table.png"
-dest_files=["res://.godot/imported/OfficeLevel-Meeting table.png-4eb212343362a060b0d962ea3c4d3031.ctex"]
+source_file="res://assets/levels/office/art/OfficeLevel-FrontDoor.png"
+dest_files=["res://.godot/imported/OfficeLevel-FrontDoor.png-be18e6e2e30e3996a27edd7c11ac1dbd.ctex"]
 
 [params]
 

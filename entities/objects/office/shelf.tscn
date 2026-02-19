@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bsi3rk3ta42nl"]
 
-[ext_resource type="Texture2D" uid="uid://rcj0678uio20" path="res://assets/levels/office/OfficeLevel-shelf.png" id="1_kpx0k"]
+[ext_resource type="Texture2D" uid="uid://rcj0678uio20" path="res://assets/levels/office/art/OfficeLevel-shelf.png" id="1_kpx0k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0icd6"]
 size = Vector2(59, 164)

@@ -1,32 +1,38 @@
 [gd_scene format=3 uid="uid://bcj24nv0puhm8"]
 
 [ext_resource type="Script" uid="uid://lfv8lw56vlk1" path="res://scenes/levels/the_office/the_office.gd" id="1_nm22k"]
-[ext_resource type="Texture2D" uid="uid://qvw50dlsv5vm" path="res://assets/levels/office/OfficeLevel-Rug.png" id="2_4y1ln"]
-[ext_resource type="Texture2D" uid="uid://fht6igwd812c" path="res://assets/levels/office/OfficeLevel-Floor.png" id="2_h5h30"]
-[ext_resource type="Texture2D" uid="uid://b5mmlnd4m0t00" path="res://assets/levels/office/OfficeLevel-Walls-revised.png" id="3_m68pb"]
+[ext_resource type="Texture2D" uid="uid://qvw50dlsv5vm" path="res://assets/levels/office/art/OfficeLevel-Rug.png" id="2_4y1ln"]
+[ext_resource type="Texture2D" uid="uid://fht6igwd812c" path="res://assets/levels/office/art/OfficeLevel-Floor.png" id="2_h5h30"]
+[ext_resource type="Texture2D" uid="uid://b5mmlnd4m0t00" path="res://assets/levels/office/art/OfficeLevel-Walls-revised.png" id="3_m68pb"]
 [ext_resource type="PackedScene" uid="uid://w6gi646m7kgj" path="res://entities/objects/door/door.tscn" id="3_qlr4m"]
 [ext_resource type="PackedScene" uid="uid://ktj4purq3iho" path="res://entities/player/player.tscn" id="4_m68pb"]
-[ext_resource type="Texture2D" uid="uid://bwp55vfh3vbrv" path="res://assets/levels/office/OfficeLevel-AlleyDoor.png" id="5_0basa"]
+[ext_resource type="Texture2D" uid="uid://bwp55vfh3vbrv" path="res://assets/levels/office/art/OfficeLevel-AlleyDoor.png" id="5_0basa"]
 [ext_resource type="Script" uid="uid://ngupu61oqfqk" path="res://entities/objects/door/office_front_door.gd" id="5_x8gdg"]
-[ext_resource type="Texture2D" uid="uid://bamkurb0tycga" path="res://assets/levels/office/OfficeLevel-CafeteriaDoor.png" id="6_ap1nk"]
-[ext_resource type="Texture2D" uid="uid://bn3i3rv4gd1vn" path="res://assets/levels/office/OfficeLevel-FrontDoor.png" id="7_758yn"]
+[ext_resource type="Texture2D" uid="uid://bamkurb0tycga" path="res://assets/levels/office/art/OfficeLevel-CafeteriaDoor.png" id="6_ap1nk"]
+[ext_resource type="Texture2D" uid="uid://bn3i3rv4gd1vn" path="res://assets/levels/office/art/OfficeLevel-FrontDoor.png" id="7_758yn"]
 [ext_resource type="Script" uid="uid://bk61eruksbbok" path="res://prefabs/components/speak_component.gd" id="7_sc46r"]
-[ext_resource type="Texture2D" uid="uid://bt75isbiuggf6" path="res://assets/levels/office/OfficeLevel-JanitorDoor.png" id="8_k85mt"]
-[ext_resource type="Texture2D" uid="uid://6mgx0igd3nw0" path="res://assets/levels/office/OfficeLevel-MeetingRoomDoor.png" id="9_b7olv"]
-[ext_resource type="Texture2D" uid="uid://bt03jm7s4wx1u" path="res://assets/levels/office/OfficeLevel-OfficeDoor.png" id="10_nix5l"]
-[ext_resource type="Texture2D" uid="uid://c4dt1ojydfloc" path="res://assets/levels/office/OfficeLevel-ToCubiclesDoor.png" id="11_4y1ln"]
+[ext_resource type="Texture2D" uid="uid://bt75isbiuggf6" path="res://assets/levels/office/art/OfficeLevel-JanitorDoor.png" id="8_k85mt"]
+[ext_resource type="Texture2D" uid="uid://6mgx0igd3nw0" path="res://assets/levels/office/art/OfficeLevel-MeetingRoomDoor.png" id="9_b7olv"]
+[ext_resource type="Texture2D" uid="uid://bt03jm7s4wx1u" path="res://assets/levels/office/art/OfficeLevel-OfficeDoor.png" id="10_nix5l"]
+[ext_resource type="Texture2D" uid="uid://c4dt1ojydfloc" path="res://assets/levels/office/art/OfficeLevel-ToCubiclesDoor.png" id="11_4y1ln"]
 [ext_resource type="PackedScene" uid="uid://cxhbu0kiu7h5a" path="res://entities/objects/office/counter.tscn" id="13_4y1ln"]
 [ext_resource type="Script" uid="uid://c2rf2dj3uab5y" path="res://entities/objects/door/boss_door.gd" id="13_7o1tw"]
-[ext_resource type="PackedScene" uid="uid://wvistnchmfj8" path="res://entities/objects/office/cubicle.tscn" id="13_758yn"]
+[ext_resource type="PackedScene" uid="uid://wvistnchmfj8" path="res://entities/objects/office/cubicle/cubicle.tscn" id="13_758yn"]
 [ext_resource type="PackedScene" uid="uid://i61lwdcnudom" path="res://entities/objects/office/office_level_desk.tscn" id="14_a6ue2"]
 [ext_resource type="PackedScene" uid="uid://5x01wfa0b7br" path="res://entities/objects/office/office_chair.tscn" id="14_k85mt"]
 [ext_resource type="PackedScene" uid="uid://b1sobl5s34u8t" path="res://entities/objects/office/dumpster.tscn" id="17_a6ue2"]
 [ext_resource type="PackedScene" uid="uid://t6ucpok3auh2" path="res://entities/objects/office/wood_table.tscn" id="19_jdpki"]
 [ext_resource type="PackedScene" uid="uid://rlrsvla77ran" path="res://entities/objects/office/mop.tscn" id="20_3sxs4"]
+[ext_resource type="PackedScene" uid="uid://bi8y5oq6oj76k" path="res://prefabs/components/interactable_component/interactable_component.tscn" id="21_4u44s"]
 [ext_resource type="PackedScene" uid="uid://bsi3rk3ta42nl" path="res://entities/objects/office/shelf.tscn" id="21_75cnu"]
+[ext_resource type="Script" uid="uid://bx7a6lpl7ss04" path="res://entities/objects/office/cubicle/im_notification.gd" id="21_u3byc"]
 [ext_resource type="PackedScene" uid="uid://cswyidxewgaaj" path="res://entities/objects/office/table.tscn" id="22_lbel2"]
+[ext_resource type="AudioStream" uid="uid://btmn0uv7404jo" path="res://assets/levels/office/sfx/microsoft-teams-message-sound-notif.mp3" id="23_7lwvy"]
 [ext_resource type="PackedScene" uid="uid://cdm3chjjayvqg" path="res://entities/objects/office/water_cooler.tscn" id="23_a2a8v"]
 [ext_resource type="PackedScene" uid="uid://bty3h70hvdq1e" path="res://prefabs/photo_area/photo_area.tscn" id="26_ef7n6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u3byc"]
+size = Vector2(83, 26)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ef7n6"]
 size = Vector2(289, 366)
@@ -258,6 +264,26 @@ y_sort_enabled = true
 
 [node name="Cubicle1" parent="Cubicles" unique_id=1522095414 instance=ExtResource("13_758yn")]
 position = Vector2(519, 343)
+script = ExtResource("21_u3byc")
+
+[node name="InteractableComponent" parent="Cubicles/Cubicle1" unique_id=2023815669 node_paths=PackedStringArray("parent") instance=ExtResource("21_4u44s")]
+parent = NodePath("..")
+
+[node name="InteractIcon" parent="Cubicles/Cubicle1/InteractableComponent" index="0" unique_id=1434794891]
+position = Vector2(-52.999996, -116)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cubicles/Cubicle1/InteractableComponent" unique_id=1296097620]
+position = Vector2(-55.5, -161)
+shape = SubResource("RectangleShape2D_u3byc")
+
+[node name="SpeakComponent" type="Node" parent="Cubicles/Cubicle1" unique_id=1837826952]
+script = ExtResource("7_sc46r")
+dialogue = Array[String](["[i]{You feel a sudden sense of anxiety from the noises emanating from this console...}[/i]"])
+metadata/_custom_type_script = "uid://bk61eruksbbok"
+
+[node name="PingNotifAudioStreamPlayer" type="AudioStreamPlayer2D" parent="Cubicles/Cubicle1" unique_id=1941411434]
+stream = ExtResource("23_7lwvy")
+area_mask = 3
 
 [node name="Cubicle2" parent="Cubicles" unique_id=904905215 instance=ExtResource("13_758yn")]
 position = Vector2(528, 715)
@@ -302,6 +328,9 @@ description = "Constantly occupied, yet rarely produces output"
 position = Vector2(1030.5, 998)
 shape = SubResource("RectangleShape2D_ef7n6")
 
+[node name="NPCs" type="Node2D" parent="." unique_id=251062327]
+y_sort_enabled = true
+
 [editable path="Doors/FrontDoor"]
 [editable path="Doors/FrontDoor/InteractableComponent"]
 [editable path="Doors/AlleyDoor"]
@@ -316,3 +345,5 @@ shape = SubResource("RectangleShape2D_ef7n6")
 [editable path="Doors/JanitorDoor/InteractableComponent"]
 [editable path="Doors/OfficeDoor"]
 [editable path="Doors/OfficeDoor/InteractableComponent"]
+[editable path="Cubicles/Cubicle1"]
+[editable path="Cubicles/Cubicle1/InteractableComponent"]

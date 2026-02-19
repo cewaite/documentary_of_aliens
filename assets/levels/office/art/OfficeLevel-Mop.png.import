@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cg074g15egcr4"
-path="res://.godot/imported/OfficeLevel-Watercooler.png-08713b4ca86bd7d23ec4a073f83b6894.ctex"
+uid="uid://bllyg6nfi8egs"
+path="res://.godot/imported/OfficeLevel-Mop.png-588382d9e7c7967f16a0ad57996a9dc3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/levels/office/OfficeLevel-Watercooler.png"
-dest_files=["res://.godot/imported/OfficeLevel-Watercooler.png-08713b4ca86bd7d23ec4a073f83b6894.ctex"]
+source_file="res://assets/levels/office/art/OfficeLevel-Mop.png"
+dest_files=["res://.godot/imported/OfficeLevel-Mop.png-588382d9e7c7967f16a0ad57996a9dc3.ctex"]
 
 [params]
 

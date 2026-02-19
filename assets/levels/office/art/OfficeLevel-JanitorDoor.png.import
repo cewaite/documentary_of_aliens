@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dhbwn2vbuxavu"
-path="res://.godot/imported/OfficeLevel-AllDoors.png-4013ef9617205cef05fba5deadcc3c9a.ctex"
+uid="uid://bt75isbiuggf6"
+path="res://.godot/imported/OfficeLevel-JanitorDoor.png-5889218640967efb3373837aeddfadeb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/levels/office/OfficeLevel-AllDoors.png"
-dest_files=["res://.godot/imported/OfficeLevel-AllDoors.png-4013ef9617205cef05fba5deadcc3c9a.ctex"]
+source_file="res://assets/levels/office/art/OfficeLevel-JanitorDoor.png"
+dest_files=["res://.godot/imported/OfficeLevel-JanitorDoor.png-5889218640967efb3373837aeddfadeb.ctex"]
 
 [params]
 

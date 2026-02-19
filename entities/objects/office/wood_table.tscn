@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://t6ucpok3auh2"]
 
-[ext_resource type="Texture2D" uid="uid://xv3qxdi8snvc" path="res://assets/levels/office/OfficeLevel-Meeting table.png" id="1_5rb1h"]
+[ext_resource type="Texture2D" uid="uid://xv3qxdi8snvc" path="res://assets/levels/office/art/OfficeLevel-Meeting table.png" id="1_5rb1h"]
 
 [node name="WoodTable" type="StaticBody2D" unique_id=1638292962]
 collision_layer = 136

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bcqvwm21y07lm"
-path="res://.godot/imported/OfficeLevel-Chair.png-151fa772b7679fae675cfd121dcd2222.ctex"
+uid="uid://b5mmlnd4m0t00"
+path="res://.godot/imported/OfficeLevel-Walls-revised.png-679890720ce3a86a8648ad7a355186a1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/levels/office/OfficeLevel-Chair.png"
-dest_files=["res://.godot/imported/OfficeLevel-Chair.png-151fa772b7679fae675cfd121dcd2222.ctex"]
+source_file="res://assets/levels/office/art/OfficeLevel-Walls-revised.png"
+dest_files=["res://.godot/imported/OfficeLevel-Walls-revised.png-679890720ce3a86a8648ad7a355186a1.ctex"]
 
 [params]
 

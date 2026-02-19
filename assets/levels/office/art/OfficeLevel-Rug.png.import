@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://fht6igwd812c"
-path="res://.godot/imported/OfficeLevel-Floor.png-78e52c1320dbf1a95f7b612732669b62.ctex"
+uid="uid://qvw50dlsv5vm"
+path="res://.godot/imported/OfficeLevel-Rug.png-a74b530d4618624fa22012e130897bae.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/levels/office/OfficeLevel-Floor.png"
-dest_files=["res://.godot/imported/OfficeLevel-Floor.png-78e52c1320dbf1a95f7b612732669b62.ctex"]
+source_file="res://assets/levels/office/art/OfficeLevel-Rug.png"
+dest_files=["res://.godot/imported/OfficeLevel-Rug.png-a74b530d4618624fa22012e130897bae.ctex"]
 
 [params]
 
