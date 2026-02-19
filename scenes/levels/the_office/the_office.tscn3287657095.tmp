@@ -40,12 +40,6 @@
 [ext_resource type="Script" uid="uid://dehblan8r8v00" path="res://entities/npcs/weirdo_npc/weirdo_npc.gd" id="34_hasut"]
 [ext_resource type="Script" uid="uid://bl8yj48td5n2p" path="res://entities/npcs/josh_npc/josh_npc.gd" id="36_heubb"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_p8vlu"]
-size = Vector2(40, 1720)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_x2lpg"]
-size = Vector2(2288, 64)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u3byc"]
 size = Vector2(83, 26)
 
@@ -140,26 +134,6 @@ script = ExtResource("1_nm22k")
 boss_door = NodePath("Doors/OfficeDoor")
 josh_npc = NodePath("NPCs/JoshNPC")
 photo_areas = [NodePath("PhotoAreas/MeetingRoomPhotoArea"), NodePath("PhotoAreas/BossPhotoArea"), NodePath("PhotoAreas/WaterCoolerPhotoArea"), NodePath("PhotoAreas/SeniorEnigneerPhotoArea")]
-
-[node name="LevelBoundaries" type="StaticBody2D" parent="." unique_id=368552706]
-collision_layer = 128
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelBoundaries" unique_id=1010338862]
-position = Vector2(-20, 796)
-shape = SubResource("RectangleShape2D_p8vlu")
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="LevelBoundaries" unique_id=2036929189]
-position = Vector2(2176, 800)
-shape = SubResource("RectangleShape2D_p8vlu")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="LevelBoundaries" unique_id=214955652]
-position = Vector2(1080, -32)
-shape = SubResource("RectangleShape2D_x2lpg")
-
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="LevelBoundaries" unique_id=1819579887]
-position = Vector2(1080, 1648)
-shape = SubResource("RectangleShape2D_x2lpg")
 
 [node name="OfficeLevelFloor" type="Sprite2D" parent="." unique_id=2035051649]
 z_index = -2
@@ -474,11 +448,10 @@ position = Vector2(1981, 863)
 position = Vector2(874.00006, 335.00003)
 scale = Vector2(0.6772497, 0.6772497)
 
-[node name="WeirdosFood" type="StaticBody2D" parent="EnvironmentObjects" unique_id=351266827 node_paths=PackedStringArray("speak_comp", "var_speak_comp")]
+[node name="WeirdosFood" type="StaticBody2D" parent="EnvironmentObjects" unique_id=351266827 node_paths=PackedStringArray("speak_comp")]
 position = Vector2(1671, 1105)
 script = ExtResource("31_prssa")
 speak_comp = NodePath("SpeakComponent")
-var_speak_comp = NodePath("VarSpeakComponent")
 
 [node name="Sprite2D" type="Sprite2D" parent="EnvironmentObjects/WeirdosFood" unique_id=893667062]
 scale = Vector2(0.24233854, 0.2461867)
@@ -503,11 +476,6 @@ shape = SubResource("CircleShape2D_4ayp5")
 script = ExtResource("7_sc46r")
 dialogue = Array[String](["[i]You pour the cleaning supplies all over his food, staring him directly in the eyes while you do it..[/i]"])
 stop_on_finished = true
-metadata/_custom_type_script = "uid://bk61eruksbbok"
-
-[node name="VarSpeakComponent" type="Node" parent="EnvironmentObjects/WeirdosFood" unique_id=34217405]
-script = ExtResource("7_sc46r")
-dialogue = Array[String](["[i]A plate of salad, oddly dry.[/i]"])
 metadata/_custom_type_script = "uid://bk61eruksbbok"
 
 [node name="NPCs" type="Node2D" parent="." unique_id=251062327]
@@ -635,7 +603,7 @@ position = Vector2(1.5, -13)
 shape = SubResource("RectangleShape2D_ethsb")
 
 [node name="SpeakComponent" parent="NPCs/JoshNPC" index="2" unique_id=1744893008]
-dialogue = Array[String](["[i]I don't know why, but I like how this guy sits.[/i]", "[b]Josh:[/b] Hey! You must be new. Have you met the boss yet?", "[b]Josh:[/b] Oh shoot, looks like his calander is triple booked for weeks. Oh well."])
+dialogue = Array[String](["[i]I don't know why, but I like how this guy sits.[/i]", "[b]Josh:[/b] Hey! You must be new. Have you met the boss yet?"])
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/JoshNPC" unique_id=580921494]
 position = Vector2(0.5, 18.5)
@@ -643,7 +611,6 @@ shape = SubResource("RectangleShape2D_qmnrj")
 
 [node name="VariantSpeakComponent" type="Node" parent="NPCs/JoshNPC" unique_id=1734588623]
 script = ExtResource("7_sc46r")
-dialogue = Array[String](["[b]Josh:[/b] Oh hey, it's you! Looks like Big Boss freed up!", "[b]Josh:[/b] You should go see him, his office is at the end of the hall."])
 metadata/_custom_type_script = "uid://bk61eruksbbok"
 
 [node name="LuisNPC" parent="NPCs" unique_id=1651208751 instance=ExtResource("28_4u44s")]

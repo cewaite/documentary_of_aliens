@@ -1,9 +1,10 @@
 class_name TheOffice extends Level
 
 @export var boss_door: Door
+@export var josh_npc: JoshNPC
 
 func _ready():
-	pass
+	josh_npc.unlock_boss_door.connect(unlock_boss_door)
 
 func unlock_boss_door():
-	pass
+	boss_door.unlock()
