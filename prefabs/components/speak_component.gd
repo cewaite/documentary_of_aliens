@@ -8,5 +8,5 @@ func speak():
 	SignalController.send_dialogue.emit(dialogue[curr_dialogue_line])
 	if curr_dialogue_line < dialogue.size() - 1:
 		curr_dialogue_line += 1
-	elif curr_dialogue_line == dialogue.size() - 1:
+	elif not finished_speaking:
 		finished_speaking = true

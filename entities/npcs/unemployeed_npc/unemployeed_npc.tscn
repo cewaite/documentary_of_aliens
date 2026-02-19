@@ -14,7 +14,7 @@ position = Vector2(0, 1.5)
 shape = SubResource("RectangleShape2D_lyabg")
 
 [node name="SpeakComponent" parent="." index="2" unique_id=1744893008]
-dialogue = Array[String](["[shake rate=20.0 level=5 connected=1]Oh hello....[/shake]", "[shake rate=20.0 level=5 connected=1]I used to work here, until Big Boss thought AI could do my job better.[/shake]", "[font_size={10}]I kept trying to tell them it can't...[/font_size]", "[shake rate=20.0 level=5 connected=1]I guess I won't need this anymore. Here, you take it..[/shake]", "[i]They hand you an employee badge[/i]", "[fade start=16 length=10]My time has come... goodbye....[/fade]"])
+dialogue = Array[String](["[b]Unemployeed Vagrant:[/b] [shake rate=20.0 level=5 connected=1]Oh hello....[/shake]", "b]Unemployeed Vagrant:[/b][shake rate=20.0 level=5 connected=1]I used to work here, until Big Boss thought AI could do my job better.[/shake]", "b]Unemployeed Vagrant:[/b][font_size={10}]I kept trying to tell them it can't...[/font_size]", "b]Unemployeed Vagrant:[/b][shake rate=20.0 level=5 connected=1]I guess I won't need this anymore. Here, you take it..[/shake]", "[i]They hand you an employee badge[/i]", "b]Unemployeed Vagrant:[/b][fade start=16 length=10]My time has come... goodbye....[/fade]"])
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="3" unique_id=462701805]
 position = Vector2(0, 1.5)
