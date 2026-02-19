@@ -30,6 +30,7 @@
 [ext_resource type="AudioStream" uid="uid://btmn0uv7404jo" path="res://assets/levels/office/sfx/microsoft-teams-message-sound-notif.mp3" id="23_7lwvy"]
 [ext_resource type="PackedScene" uid="uid://cdm3chjjayvqg" path="res://entities/objects/office/water_cooler.tscn" id="23_a2a8v"]
 [ext_resource type="PackedScene" uid="uid://bty3h70hvdq1e" path="res://prefabs/photo_area/photo_area.tscn" id="26_ef7n6"]
+[ext_resource type="PackedScene" uid="uid://de78b57y25hah" path="res://entities/npcs/unemployeed_npc/unemployeed_npc.tscn" id="31_npuky"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u3byc"]
 size = Vector2(83, 26)
@@ -278,7 +279,7 @@ shape = SubResource("RectangleShape2D_u3byc")
 
 [node name="SpeakComponent" type="Node" parent="Cubicles/Cubicle1" unique_id=1837826952]
 script = ExtResource("7_sc46r")
-dialogue = Array[String](["[i]{You feel a sudden sense of anxiety from the noises emanating from this console...}[/i]"])
+dialogue = Array[String](["[i]You feel a sudden sense of anxiety from the noises emanating from this console...[/i]"])
 metadata/_custom_type_script = "uid://bk61eruksbbok"
 
 [node name="PingNotifAudioStreamPlayer" type="AudioStreamPlayer2D" parent="Cubicles/Cubicle1" unique_id=1941411434]
@@ -330,6 +331,9 @@ shape = SubResource("RectangleShape2D_ef7n6")
 
 [node name="NPCs" type="Node2D" parent="." unique_id=251062327]
 y_sort_enabled = true
+
+[node name="UnemployeedNPC" parent="NPCs" unique_id=143393978 instance=ExtResource("31_npuky")]
+position = Vector2(36, 923)
 
 [editable path="Doors/FrontDoor"]
 [editable path="Doors/FrontDoor/InteractableComponent"]
