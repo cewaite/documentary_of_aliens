@@ -1,6 +1,6 @@
 class_name InteractComponent extends Area2D
 
-@export var parent: Player # Consider making it agnostic, Person (for NPC or Player)
+@export var parent: PhysicsBody2D # Consider making it agnostic, Person (for NPC or Player)
 var curr_interacting_with: InteractableComponent
 
 # Map for rotating collider, animation to rotation angle (degrees)
@@ -24,7 +24,8 @@ var collider_rotation_map := {
 }
 
 func _physics_process(delta: float) -> void:
-	rotate_to_facing_direction(parent.current_animation)
+	if parent is Player:
+		rotate_to_facing_direction(parent.current_animation)
 	update_curr_interacting_with()
 
 func rotate_to_facing_direction(animation: String) -> void:
@@ -38,10 +39,12 @@ func update_curr_interacting_with():
 	var areas: Array[Area2D] = get_overlapping_areas()
 	
 	if curr_interacting_with != null and not areas.has(curr_interacting_with):
-		curr_interacting_with.disable_icon()
+		if parent is Player:
+			curr_interacting_with.disable_icon()
 		curr_interacting_with = null
 
 	if curr_interacting_with == null and not areas.is_empty():
 		curr_interacting_with = areas.get(0)
-		curr_interacting_with.enable_icon()
+		if parent is Player:
+			curr_interacting_with.enable_icon()
 	

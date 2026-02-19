@@ -22,7 +22,5 @@ func interact(interactor):
 	if not locked:
 		open()
 
-func _on_player_pass_through_detector_body_exited(body: Node2D) -> void:
-	print_debug("Body exited: " + body.name)
-	if body is Player:
-		close()
+func _on_pass_through_detector_body_exited(body: PhysicsBody2D) -> void:
+	close()

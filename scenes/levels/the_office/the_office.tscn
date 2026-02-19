@@ -39,6 +39,8 @@
 [ext_resource type="Script" uid="uid://fgjwabe5tygr" path="res://entities/npcs/janitor/janitor_path_follow.gd" id="32_ti61l"]
 [ext_resource type="Script" uid="uid://dehblan8r8v00" path="res://entities/npcs/weirdo_npc/weirdo_npc.gd" id="34_hasut"]
 [ext_resource type="Script" uid="uid://bl8yj48td5n2p" path="res://entities/npcs/josh_npc/josh_npc.gd" id="36_heubb"]
+[ext_resource type="Script" uid="uid://b81ijvesetdsh" path="res://prefabs/components/interact_component/interact_component.gd" id="38_7yg5m"]
+[ext_resource type="Script" uid="uid://cinivuqham1hr" path="res://entities/npcs/janitor/janitor_npc.gd" id="38_e3k61"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p8vlu"]
 size = Vector2(40, 1720)
@@ -120,7 +122,8 @@ size = Vector2(54.167465, 77.75549)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ts3jf"]
 size = Vector2(56, 25)
 
-[sub_resource type="Curve2D" id="Curve2D_bjh1v"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bhw81"]
+size = Vector2(79.144714, 104.65216)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ef7n6"]
 size = Vector2(289, 366)
@@ -140,6 +143,27 @@ script = ExtResource("1_nm22k")
 boss_door = NodePath("Doors/OfficeDoor")
 josh_npc = NodePath("NPCs/JoshNPC")
 photo_areas = [NodePath("PhotoAreas/MeetingRoomPhotoArea"), NodePath("PhotoAreas/BossPhotoArea"), NodePath("PhotoAreas/WaterCoolerPhotoArea"), NodePath("PhotoAreas/SeniorEnigneerPhotoArea")]
+
+[node name="Doors_OfficeDoor_PassThroughDetector#CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=174089847]
+polygon = PackedVector2Array(312, -752, 336, -752, 336, -640, 312, -640)
+
+[node name="Doors_JanitorDoor_PassThroughDetector#CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1995599491]
+polygon = PackedVector2Array(-120, -568, 8, -568, 0, -480, -112, -480)
+
+[node name="Doors_MeetingRoomDoor_PassThroughDetector#CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1930135125]
+polygon = PackedVector2Array(-224, 112, -200, 112, -200, 224, -224, 224)
+
+[node name="Doors_CubliclesDoor_PassThroughDetector#CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1950145319]
+polygon = PackedVector2Array(88, -376, 120, -376, 120, -272, 88, -272)
+
+[node name="Doors_CafeteriaDoor_PassThroughDetector#CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=782810771]
+polygon = PackedVector2Array(312, -96, 312, 8, 336, 8, 336, -96)
+
+[node name="Doors_AlleyDoor_PassThroughDetector#CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1564303351]
+polygon = PackedVector2Array(-1040, -568, -904, -568, -904, -480, -1040, -480)
+
+[node name="Doors_FrontDoor_PassThroughDetector#CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1781638065]
+polygon = PackedVector2Array(144, 408, 304, 408, 296, 488, 144, 488)
 
 [node name="LevelBoundaries" type="StaticBody2D" parent="." unique_id=368552706]
 collision_layer = 128
@@ -192,9 +216,6 @@ polygon = PackedVector2Array(144, 408, 304, 408, 296, 488, 144, 488)
 [node name="InteractIcon" parent="Doors/FrontDoor/InteractableComponent" index="1" unique_id=1434794891]
 position = Vector2(224, 383.99997)
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Doors/FrontDoor/PlayerPassThroughDetector" parent_id_path=PackedInt32Array(612308812, 1310179489) index="0" unique_id=1781638065]
-polygon = PackedVector2Array(144, 408, 304, 408, 296, 488, 144, 488)
-
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Doors/FrontDoor" unique_id=1250348537]
 polygon = PackedVector2Array(144, 408, 304, 408, 296, 488, 144, 488)
 
@@ -217,9 +238,6 @@ polygon = PackedVector2Array(-1040, -568, -904, -568, -904, -480, -1040, -480)
 [node name="InteractIcon" parent="Doors/AlleyDoor/InteractableComponent" index="1" unique_id=1434794891]
 position = Vector2(-976, -592)
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Doors/AlleyDoor/PlayerPassThroughDetector" parent_id_path=PackedInt32Array(1635621157, 1310179489) index="0" unique_id=1564303351]
-polygon = PackedVector2Array(-1040, -568, -904, -568, -904, -480, -1040, -480)
-
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Doors/AlleyDoor" unique_id=2097976328]
 polygon = PackedVector2Array(-1040, -568, -904, -568, -904, -480, -1040, -480)
 
@@ -238,9 +256,6 @@ polygon = PackedVector2Array(312, -96, 312, 8, 336, 8, 336, -96)
 [node name="InteractIcon" parent="Doors/CafeteriaDoor/InteractableComponent" index="1" unique_id=1434794891]
 position = Vector2(328, -63.99997)
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Doors/CafeteriaDoor/PlayerPassThroughDetector" parent_id_path=PackedInt32Array(20761531, 1310179489) index="0" unique_id=782810771]
-polygon = PackedVector2Array(312, -96, 312, 8, 336, 8, 336, -96)
-
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Doors/CafeteriaDoor" unique_id=2136736553]
 polygon = PackedVector2Array(312, -96, 312, 8, 336, 8, 336, -96)
 
@@ -257,9 +272,6 @@ parent = NodePath("..")
 position = Vector2(103.99999, -335.99997)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Doors/CubliclesDoor/InteractableComponent" index="1" unique_id=1796551629]
-polygon = PackedVector2Array(88, -376, 120, -376, 120, -272, 88, -272)
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Doors/CubliclesDoor/PlayerPassThroughDetector" parent_id_path=PackedInt32Array(260776701, 1310179489) index="0" unique_id=1950145319]
 polygon = PackedVector2Array(88, -376, 120, -376, 120, -272, 88, -272)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Doors/CubliclesDoor" unique_id=953537342]
@@ -280,9 +292,6 @@ position = Vector2(-207.99998, 151.99998)
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Doors/MeetingRoomDoor/InteractableComponent" index="1" unique_id=1764332389]
 polygon = PackedVector2Array(-224, 112, -200, 112, -200, 224, -224, 224)
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Doors/MeetingRoomDoor/PlayerPassThroughDetector" parent_id_path=PackedInt32Array(936374706, 1310179489) index="0" unique_id=1930135125]
-polygon = PackedVector2Array(-224, 112, -200, 112, -200, 224, -224, 224)
-
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Doors/MeetingRoomDoor" unique_id=1317092407]
 polygon = PackedVector2Array(-224, 112, -200, 112, -200, 224, -224, 224)
 
@@ -299,9 +308,6 @@ parent = NodePath("..")
 position = Vector2(-55.999996, -591.99994)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Doors/JanitorDoor/InteractableComponent" index="1" unique_id=8936169]
-polygon = PackedVector2Array(-120, -568, 8, -568, 0, -480, -112, -480)
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Doors/JanitorDoor/PlayerPassThroughDetector" parent_id_path=PackedInt32Array(1758164949, 1310179489) index="0" unique_id=1995599491]
 polygon = PackedVector2Array(-120, -568, 8, -568, 0, -480, -112, -480)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Doors/JanitorDoor" unique_id=53374641]
@@ -323,9 +329,6 @@ parent = NodePath("..")
 position = Vector2(327.99997, -719.99994)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Doors/OfficeDoor/InteractableComponent" index="1" unique_id=438352261]
-polygon = PackedVector2Array(312, -752, 336, -752, 336, -640, 312, -640)
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Doors/OfficeDoor/PlayerPassThroughDetector" parent_id_path=PackedInt32Array(2057798022, 1310179489) index="0" unique_id=174089847]
 polygon = PackedVector2Array(312, -752, 336, -752, 336, -640, 312, -640)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Doors/OfficeDoor" unique_id=1222056182]
@@ -456,6 +459,7 @@ shape = SubResource("RectangleShape2D_58knn")
 [node name="SpeakComponent" type="Node" parent="EnvironmentObjects/Shelf" unique_id=1757737502]
 script = ExtResource("7_sc46r")
 dialogue = Array[String](["[b][rainbow freq=1.0 sat=0.8 val=0.8 speed=1.0]Jim Jar:[/rainbow][/b] [i]This looks dangerous. Like it could kill a baby if it drank it. Or destroy the guts of an adult...[/i]", "[i]You pick up the cleaning supplies[/i]", "[b][rainbow freq=1.0 sat=0.8 val=0.8 speed=1.0]Jim Jar:[/rainbow][/b] ╰(◣﹏◢)╯"])
+stop_on_finished = true
 metadata/_custom_type_script = "uid://bk61eruksbbok"
 
 [node name="CafeteriaTables" type="Node2D" parent="EnvironmentObjects" unique_id=1795991150]
@@ -528,7 +532,7 @@ shape = SubResource("RectangleShape2D_bjh1v")
 
 [node name="SpeakComponent" parent="NPCs/LunchPersonNPC" index="2" unique_id=1744893008]
 dialogue = Array[String](["[b]Nutrition Staff:[/b] Got your food? Good, that’ll be 30 dabloons.", "[b][rainbow freq=1.0 sat=0.8 val=0.8 speed=1.0]Jim Jar:[/rainbow][/b] But I don't have any money…", "[b]Nutrition Staff:[/b] ( ͠° ͟ʖ ͡°)﻿", "[b][rainbow freq=1.0 sat=0.8 val=0.8 speed=1.0]Jim Jar:[/rainbow][/b] Don’t I work for you? Can’t you take it out of my paycheck?", "[b]Nutrition Staff:[/b] No. Don’t be an [b][shake rate=20.0 level=8 connected=1]IDIOT[/shake][/b]."])
-stop_on_finished = true
+restart_on_finished = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/LunchPersonNPC" unique_id=1616631335]
 position = Vector2(0, 12)
@@ -569,6 +573,7 @@ shape = SubResource("RectangleShape2D_prssa")
 
 [node name="SpeakComponent" parent="NPCs/LeftWatercoolerNPC" index="2" unique_id=1744893008]
 dialogue = Array[String](["[b]Mike:[/b] Hey have you seen the projections for Q2?", "[b]Janice:[/b] Yes! Golly jee, they're off the charts!", "[b]Mike:[/b] Right?! Gosh, we're so productive!", "[b]Janice:[/b] [wave amp=50.0 freq=5.0 connected=1][i]sips fluids[/i][/wave] My stars, that's good.", "[b]Mike:[/b] I know! This water really sustains me."])
+restart_on_finished = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/LeftWatercoolerNPC" unique_id=872584139]
 position = Vector2(0.5, 12)
@@ -590,6 +595,7 @@ shape = SubResource("RectangleShape2D_e3k61")
 
 [node name="SpeakComponent" parent="NPCs/SeniorEngineerNPC" index="2" unique_id=1744893008]
 dialogue = Array[String](["[b]Senior Engineer:[/b] I swear to [shake rate=20.0 level=5 connected=1]f**kin [b]GOD[/b][/shake] this whole place would collapse without me.", "[b]Senior Engineer:[/b] Not a joke! Our servers, the network, all of our microservices, the [b]DATABASE[/b]...", "[b]Senior Engineer:[/b] [shake rate=20.0 level=5 connected=1][b]ALL OF IT![/b][/shake] Poof, without me.", "[shake rate=20.0 level=5 connected=1](╯°□°）╯︵ ┻━┻[/shake]"])
+restart_on_finished = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/SeniorEngineerNPC" unique_id=1863192537]
 position = Vector2(-0.5, 17.5)
@@ -619,6 +625,7 @@ shape = SubResource("RectangleShape2D_he2d1")
 
 [node name="SpeakComponent" parent="NPCs/StandingDeskNPC" index="2" unique_id=1744893008]
 dialogue = Array[String](["[b]Employee:[/b] Can I stop pretending like I’m not here just to make a living?", "[b]Employee:[/b] If it weren't for these standing desks, [font_size=12]and manditory in-person days[/font_size]  I wouldn't even be in the office.", "[b]Employee:[/b] All of our meetings are online anyways..."])
+restart_on_finished = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/StandingDeskNPC" unique_id=1299338409]
 position = Vector2(0, 12)
@@ -636,6 +643,7 @@ shape = SubResource("RectangleShape2D_ethsb")
 
 [node name="SpeakComponent" parent="NPCs/JoshNPC" index="2" unique_id=1744893008]
 dialogue = Array[String](["[i]I don't know why, but I like how this guy sits.[/i]", "[b]Josh:[/b] Hey! You must be new. Have you met the boss yet?", "[b]Josh:[/b] Oh shoot, looks like his calander is triple booked for weeks. Oh well."])
+restart_on_finished = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/JoshNPC" unique_id=580921494]
 position = Vector2(0.5, 18.5)
@@ -644,6 +652,7 @@ shape = SubResource("RectangleShape2D_qmnrj")
 [node name="VariantSpeakComponent" type="Node" parent="NPCs/JoshNPC" unique_id=1734588623]
 script = ExtResource("7_sc46r")
 dialogue = Array[String](["[b]Josh:[/b] Oh hey, it's you! Looks like Big Boss freed up!", "[b]Josh:[/b] You should go see him, his office is at the end of the hall."])
+restart_on_finished = true
 metadata/_custom_type_script = "uid://bk61eruksbbok"
 
 [node name="LuisNPC" parent="NPCs" unique_id=1651208751 instance=ExtResource("28_4u44s")]
@@ -655,6 +664,7 @@ shape = SubResource("RectangleShape2D_0un3i")
 
 [node name="SpeakComponent" parent="NPCs/LuisNPC" index="2" unique_id=1744893008]
 dialogue = Array[String](["[b]Luis:[/b] Sup, new guy, welcome to the team.", "[b]Luis:[/b] If you need a Build Master or some recipe recs, let me know, I've got your back.", "[b]Luis:[/b] Also, talk to Josh if you haven't. He's really good at billards."])
+restart_on_finished = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/LuisNPC" unique_id=1966541432]
 position = Vector2(0.5, 13.5)
@@ -673,6 +683,7 @@ script = ExtResource("32_ti61l")
 [node name="JanitorNPC" parent="NPCs/Path2D/PathFollow2D" unique_id=911634199 instance=ExtResource("28_4u44s")]
 position = Vector2(-1.6712036, -3.5850372)
 rotation = -1.4398966
+script = ExtResource("38_e3k61")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/Path2D/PathFollow2D/JanitorNPC/InteractableComponent" parent_id_path=PackedInt32Array(911634199, 436105360) index="1" unique_id=829555127]
 position = Vector2(0.53582764, -12.852966)
@@ -686,8 +697,17 @@ dialogue = Array[String](["[b]Janitor:[/b] Sorry, a bit busy, maybe later."])
 position = Vector2(0, 13.5)
 shape = SubResource("RectangleShape2D_ts3jf")
 
-[node name="Path2D" type="Path2D" parent="NPCs/Path2D/PathFollow2D/JanitorNPC" unique_id=573165087]
-curve = SubResource("Curve2D_bjh1v")
+[node name="InteractComponent" type="Area2D" parent="NPCs/Path2D/PathFollow2D/JanitorNPC" unique_id=697138499 node_paths=PackedStringArray("parent")]
+collision_layer = 32
+collision_mask = 16
+script = ExtResource("38_7yg5m")
+parent = NodePath("..")
+metadata/_custom_type_script = "uid://b81ijvesetdsh"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/Path2D/PathFollow2D/JanitorNPC/InteractComponent" unique_id=1205267913]
+position = Vector2(-1.2050171, -13.8582)
+scale = Vector2(1.0000002, 1.0000002)
+shape = SubResource("RectangleShape2D_bhw81")
 
 [node name="PhotoAreas" type="Node" parent="." unique_id=301180790]
 
@@ -721,7 +741,10 @@ position = Vector2(-6.5, 2.5)
 shape = SubResource("RectangleShape2D_rd7m1")
 
 [node name="Player" parent="." unique_id=579082540 instance=ExtResource("4_m68pb")]
-position = Vector2(1651, 964)
+position = Vector2(1056.0001, 608)
+
+[connection signal="area_entered" from="NPCs/Path2D/PathFollow2D/JanitorNPC/InteractComponent" to="NPCs/Path2D/PathFollow2D/JanitorNPC" method="_on_interact_component_area_entered"]
+[connection signal="area_exited" from="NPCs/Path2D/PathFollow2D/JanitorNPC/InteractComponent" to="NPCs/Path2D/PathFollow2D/JanitorNPC" method="_on_interact_component_area_exited"]
 
 [editable path="Doors/FrontDoor"]
 [editable path="Doors/FrontDoor/InteractableComponent"]
