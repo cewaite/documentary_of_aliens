@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bi8y5oq6oj76k" path="res://prefabs/components/interactable_component/interactable_component.tscn" id="3_thrj0"]
 [ext_resource type="Script" uid="uid://bk61eruksbbok" path="res://prefabs/components/speak_component.gd" id="4_k08jm"]
 
-[node name="NPC" type="AnimatableBody2D" unique_id=143393978 node_paths=PackedStringArray("speak_component")]
+[node name="NPC" type="StaticBody2D" unique_id=1319086192 node_paths=PackedStringArray("speak_component")]
 collision_layer = 4
 collision_mask = 142
 script = ExtResource("1_470b1")

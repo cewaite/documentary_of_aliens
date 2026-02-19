@@ -22,10 +22,10 @@ collision_layer = 128
 collision_mask = 2
 
 [node name="JanitorDetector" type="Area2D" parent="." unique_id=981070595]
-collision_layer = 136
-collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="JanitorDetector" unique_id=1530608991]
 shape = SubResource("RectangleShape2D_b2uvk")
 
 [connection signal="body_exited" from="PlayerPassThroughDetector" to="." method="_on_player_pass_through_detector_body_exited"]
+[connection signal="body_entered" from="JanitorDetector" to="." method="_on_janitor_detector_body_entered"]
+[connection signal="body_exited" from="JanitorDetector" to="." method="_on_janitor_detector_body_exited"]

@@ -2,5 +2,5 @@ class_name BasicSpeak extends StaticBody2D
 
 @export var speak_comp: SpeakComponent
 
-func interact():
+func interact(interactor):
 	speak_comp.speak()

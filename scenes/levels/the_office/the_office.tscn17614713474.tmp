@@ -94,7 +94,7 @@ size = Vector2(55, 25)
 
 [sub_resource type="Curve2D" id="Curve2D_ti61l"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 1006, 132, 0, 0, 0, 0, 1020, 232, 0, 0, 0, 0, 1023, 351, 0, 0, 0, 0, 969, 459, 0, 0, 0, 0, 772, 571, 0, 0, 0, 0, 757, 794, 0, 0, 0, 0, 755, 1125, 0, 0, 0, 0, 386, 1155, 0, 0, 0, 0, 302, 1105, 0, 0, 0, 0, 312, 916, 0, 0, 0, 0, 372, 842, 0, 0, 0, 0, 558, 827, 0, 0, 0, 0, 693, 812, 0, 0, 0, 0, 767, 710, 0, 0, 0, 0, 751, 515, 0, 0, 0, 0, 580, 482, 0, 0, 0, 0, 420, 482, 0, 0, 0, 0, 318, 458, 0, 0, 0, 0, 320, 137, 0, 0, 0, 0, 173, 141, 0, 0, 0, 0, 108, 153, 0, 0, 0, 0, 100, 220, 0, 0, 0, 0, 100, 397, 0, 0, 0, 0, 131, 599, 0, 0, 0, 0, 120, 764, 0, 0, 0, 0, 167, 700, 0, 0, 0, 0, 168, 539, 0, 0, 0, 0, 141, 352, 0, 0, 0, 0, 83, 184, 0, 0, 0, 0, 187, 96, 0, 0, 0, 0, 391, 110, 0, 0, 0, 0, 712, 110, 0, 0, 0, 0, 753, 213, 0, 0, 0, 0, 745, 350, 0, 0, 0, 0, 745, 453, 0, 0, 0, 0, 866, 496, 0, 0, 0, 0, 1074, 499, 0, 0, 0, 0, 1254, 496, 0, 0, 0, 0, 1242, 126, 0, 0, 0, 0, 1312, 115, 0, 0, 0, 0, 1341, 151, 0, 0, 0, 0, 1334, 311, 0, 0, 0, 0, 1333, 446, 0, 0, 0, 0, 1331, 554, 0, 0, 0, 0, 1333, 685, 0, 0, 0, 0, 1333, 772, 0, 0, 0, 0, 1461, 784, 0, 0, 0, 0, 1497, 866, 0, 0, 0, 0, 1525, 933, 0, 0, 0, 0, 1616, 949, 0, 0, 0, 0, 1749, 933, 0, 0, 0, 0, 1791, 906, 0, 0, 0, 0, 1780, 772, 0, 0, 0, 0, 1722, 721, 0, 0, 0, 0, 1650, 710, 0, 0, 0, 0, 1580, 716, 0, 0, 0, 0, 1494, 741, 0, 0, 0, 0, 1319, 764, 0, 0, 0, 0, 1264, 511, 0, 0, 0, 0, 1058, 469, 0, 0, 0, 0, 1046, 210, 0, 0, 0, 0, 1053, 151, 0, 0, 0, 0, 1025, 132, 0, 0, 0, 0, 1006, 132)
+"points": PackedVector2Array(0, 0, 0, 0, 1006, 132, 0, 0, 0, 0, 1020, 232, 0, 0, 0, 0, 1023, 351, 0, 0, 0, 0, 969, 459, 0, 0, 0, 0, 772, 571, 0, 0, 0, 0, 757, 794, 0, 0, 0, 0, 755, 1125, 0, 0, 0, 0, 386, 1155, 0, 0, 0, 0, 302, 1105, 0, 0, 0, 0, 312, 916, 0, 0, 0, 0, 372, 842, 0, 0, 0, 0, 558, 827, 0, 0, 0, 0, 693, 812, 0, 0, 0, 0, 767, 710, 0, 0, 0, 0, 751, 515, 0, 0, 0, 0, 580, 482, 0, 0, 0, 0, 420, 482, 0, 0, 0, 0, 318, 458, 0, 0, 0, 0, 318, 228, 0, 0, 0, 0, 173, 141, 0, 0, 0, 0, 108, 153, 0, 0, 0, 0, 100, 220, 0, 0, 0, 0, 100, 397, 0, 0, 0, 0, 131, 599, 0, 0, 0, 0, 120, 764, 0, 0, 0, 0, 167, 700, 0, 0, 0, 0, 168, 539, 0, 0, 0, 0, 141, 352, 0, 0, 0, 0, 83, 184, 0, 0, 0, 0, 187, 96, 0, 0, 0, 0, 391, 110, 0, 0, 0, 0, 712, 110, 0, 0, 0, 0, 753, 213, 0, 0, 0, 0, 745, 350, 0, 0, 0, 0, 745, 453, 0, 0, 0, 0, 866, 496, 0, 0, 0, 0, 1074, 499, 0, 0, 0, 0, 1254, 496, 0, 0, 0, 0, 1242, 126, 0, 0, 0, 0, 1312, 115, 0, 0, 0, 0, 1341, 151, 0, 0, 0, 0, 1334, 311, 0, 0, 0, 0, 1333, 446, 0, 0, 0, 0, 1331, 554, 0, 0, 0, 0, 1333, 685, 0, 0, 0, 0, 1333, 772, 0, 0, 0, 0, 1461, 784, 0, 0, 0, 0, 1497, 866, 0, 0, 0, 0, 1525, 933, 0, 0, 0, 0, 1616, 949, 0, 0, 0, 0, 1749, 933, 0, 0, 0, 0, 1791, 906, 0, 0, 0, 0, 1780, 772, 0, 0, 0, 0, 1722, 721, 0, 0, 0, 0, 1650, 710, 0, 0, 0, 0, 1580, 716, 0, 0, 0, 0, 1494, 741, 0, 0, 0, 0, 1319, 764, 0, 0, 0, 0, 1264, 511, 0, 0, 0, 0, 1058, 469, 0, 0, 0, 0, 1046, 210, 0, 0, 0, 0, 1053, 151, 0, 0, 0, 0, 1025, 132, 0, 0, 0, 0, 1006, 132)
 }
 point_count = 64
 
@@ -169,6 +169,7 @@ dialogue = Array[String](["[i]This door is locked. I'll probably need a key to g
 
 [node name="AlleyDoor" parent="Doors" unique_id=1635621157 node_paths=PackedStringArray("collider") instance=ExtResource("3_qlr4m")]
 collider = NodePath("CollisionPolygon2D")
+locked = false
 
 [node name="Sprite2D" parent="Doors/AlleyDoor" index="0" unique_id=90848083]
 texture = ExtResource("5_0basa")
@@ -193,6 +194,7 @@ polygon = PackedVector2Array(-1040, -568, -904, -568, -904, -480, -1040, -480)
 
 [node name="CafeteriaDoor" parent="Doors" unique_id=20761531 node_paths=PackedStringArray("collider") instance=ExtResource("3_qlr4m")]
 collider = NodePath("CollisionPolygon2D")
+locked = false
 
 [node name="Sprite2D" parent="Doors/CafeteriaDoor" index="0" unique_id=90848083]
 texture = ExtResource("6_ap1nk")
@@ -217,6 +219,7 @@ polygon = PackedVector2Array(312, -96, 312, 8, 336, 8, 336, -96)
 
 [node name="CubliclesDoor" parent="Doors" unique_id=260776701 node_paths=PackedStringArray("collider") instance=ExtResource("3_qlr4m")]
 collider = NodePath("CollisionPolygon2D")
+locked = false
 
 [node name="Sprite2D" parent="Doors/CubliclesDoor" index="0" unique_id=90848083]
 texture = ExtResource("11_4y1ln")
@@ -241,6 +244,7 @@ polygon = PackedVector2Array(88, -376, 120, -376, 120, -272, 88, -272)
 
 [node name="MeetingRoomDoor" parent="Doors" unique_id=936374706 node_paths=PackedStringArray("collider") instance=ExtResource("3_qlr4m")]
 collider = NodePath("CollisionPolygon2D")
+locked = false
 
 [node name="Sprite2D" parent="Doors/MeetingRoomDoor" index="0" unique_id=90848083]
 texture = ExtResource("9_b7olv")
@@ -265,6 +269,7 @@ polygon = PackedVector2Array(-224, 112, -200, 112, -200, 224, -224, 224)
 
 [node name="JanitorDoor" parent="Doors" unique_id=1758164949 node_paths=PackedStringArray("collider") instance=ExtResource("3_qlr4m")]
 collider = NodePath("CollisionPolygon2D")
+locked = false
 
 [node name="Sprite2D" parent="Doors/JanitorDoor" index="0" unique_id=90848083]
 texture = ExtResource("8_k85mt")
@@ -290,6 +295,7 @@ polygon = PackedVector2Array(-120, -568, 8, -568, 0, -480, -112, -480)
 [node name="OfficeDoor" parent="Doors" unique_id=2057798022 node_paths=PackedStringArray("collider") instance=ExtResource("3_qlr4m")]
 script = ExtResource("13_7o1tw")
 collider = NodePath("CollisionPolygon2D")
+locked = false
 
 [node name="Sprite2D" parent="Doors/OfficeDoor" index="0" unique_id=90848083]
 texture = ExtResource("10_nix5l")
@@ -573,7 +579,6 @@ position = Vector2(0.5, 13.5)
 shape = SubResource("RectangleShape2D_7et8m")
 
 [node name="Path2D" type="Path2D" parent="NPCs" unique_id=2042853036]
-y_sort_enabled = true
 curve = SubResource("Curve2D_ti61l")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="NPCs/Path2D" unique_id=1042630585]

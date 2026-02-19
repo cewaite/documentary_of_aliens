@@ -27,9 +27,11 @@
 [ext_resource type="Texture2D" uid="uid://fb7lhnp8wvnt" path="res://temp_assets/player/NE/player_NE_2.png" id="25_c112w"]
 [ext_resource type="PackedScene" uid="uid://7worbs38kmn6" path="res://prefabs/components/interact_component/interact_component.tscn" id="26_qpopc"]
 [ext_resource type="PackedScene" uid="uid://b1kmwkqwwcf7s" path="res://prefabs/components/camera_area_component/camera_area_component.tscn" id="27_qpopc"]
+[ext_resource type="Script" uid="uid://diilf5fe43ato" path="res://prefabs/components/inventory_component.gd" id="28_wq0jh"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qpopc"]
-radius = 8.001531
+radius = 8.665054
+height = 38.33314
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_u37te"]
 animations = [{
@@ -249,4 +251,8 @@ rotation_smoothing_speed = 10.0
 
 [node name="CameraAreaComponent" parent="." unique_id=976467438 node_paths=PackedStringArray("parent") instance=ExtResource("27_qpopc")]
 position = Vector2(0, -25.62)
+parent = NodePath("..")
+
+[node name="InventoryComponent" type="Node" parent="." unique_id=464555857 node_paths=PackedStringArray("parent")]
+script = ExtResource("28_wq0jh")
 parent = NodePath("..")

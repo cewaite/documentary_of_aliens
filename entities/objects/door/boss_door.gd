@@ -2,7 +2,7 @@ class_name BossDoor extends Door
 
 @export var speak_comp: SpeakComponent
 
-func interact():
+func interact(interactor):
 	if locked:
 		# Check for world condition
 		# If has_meeting, unlock

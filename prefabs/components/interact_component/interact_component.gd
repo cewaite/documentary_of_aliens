@@ -32,7 +32,7 @@ func rotate_to_facing_direction(animation: String) -> void:
 
 func trigger_interact() -> void:
 	if curr_interacting_with:
-		curr_interacting_with.call_parent_interact()
+		curr_interacting_with.call_parent_interact(parent)
 
 func update_curr_interacting_with():
 	var areas: Array[Area2D] = get_overlapping_areas()

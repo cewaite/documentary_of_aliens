@@ -18,10 +18,11 @@ func close():
 	collider.set_deferred("disabled", false)
 	show()
 
-func interact():
+func interact(interactor):
 	if not locked:
 		open()
 
 func _on_player_pass_through_detector_body_exited(body: Node2D) -> void:
+	print_debug("Body exited: " + body.name)
 	if body is Player:
 		close()

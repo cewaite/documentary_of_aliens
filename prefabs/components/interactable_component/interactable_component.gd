@@ -9,9 +9,9 @@ func _ready() -> void:
 	assert(parent.has_method("interact"), "Object has an InteractableComponent but no interact method: " + parent.name)
 	assert(interact_icon != null, "Object has no interact_icon: " + parent.name)
 
-func call_parent_interact():
+func call_parent_interact(interactor):
 	print_debug("Interacting with: ", parent.name)
-	parent.interact()
+	parent.interact(interactor)
 
 func enable_icon():
 	interact_icon.show()
