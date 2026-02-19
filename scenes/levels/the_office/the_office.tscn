@@ -30,6 +30,7 @@
 [ext_resource type="AudioStream" uid="uid://btmn0uv7404jo" path="res://assets/levels/office/sfx/microsoft-teams-message-sound-notif.mp3" id="23_7lwvy"]
 [ext_resource type="PackedScene" uid="uid://cdm3chjjayvqg" path="res://entities/objects/office/water_cooler.tscn" id="23_a2a8v"]
 [ext_resource type="PackedScene" uid="uid://bty3h70hvdq1e" path="res://prefabs/photo_area/photo_area.tscn" id="26_ef7n6"]
+[ext_resource type="PackedScene" uid="uid://d1cyctv0r5n7p" path="res://prefabs/npc/npc.tscn" id="28_4u44s"]
 [ext_resource type="PackedScene" uid="uid://de78b57y25hah" path="res://entities/npcs/unemployeed_npc/unemployeed_npc.tscn" id="31_npuky"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u3byc"]
@@ -37,6 +38,18 @@ size = Vector2(83, 26)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ef7n6"]
 size = Vector2(289, 366)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bjh1v"]
+size = Vector2(169, 183)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q2s8t"]
+size = Vector2(54, 28)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ti61l"]
+size = Vector2(54, 78)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5h45y"]
+size = Vector2(54, 35)
 
 [node name="TheOffice" type="Node2D" unique_id=1679858242 node_paths=PackedStringArray("photo_areas")]
 y_sort_enabled = true
@@ -82,7 +95,7 @@ polygon = PackedVector2Array(144, 408, 304, 408, 296, 488, 144, 488)
 
 [node name="SpeakComponent" type="Node" parent="Doors/FrontDoor" unique_id=1459521358]
 script = ExtResource("7_sc46r")
-dialogue = Array[String](["This door is locked. I'll probably need a key to get in. or someone really nice and dumb. "])
+dialogue = Array[String](["[i]This door is locked. I'll probably need a key to get in. or someone really nice and dumb.[/i]"])
 
 [node name="AlleyDoor" parent="Doors" unique_id=1635621157 node_paths=PackedStringArray("collider") instance=ExtResource("3_qlr4m")]
 collider = NodePath("CollisionPolygon2D")
@@ -214,7 +227,7 @@ polygon = PackedVector2Array(312, -752, 336, -752, 336, -640, 312, -640)
 
 [node name="SpeakComponent" type="Node" parent="Doors/OfficeDoor" unique_id=1180229144]
 script = ExtResource("7_sc46r")
-dialogue = Array[String](["This door is locked. Looks like it could be the Boss's Office."])
+dialogue = Array[String](["[i]This door is locked. Looks like it could be the Boss's Office.[/i]"])
 
 [node name="OfficeLevelWalls" type="StaticBody2D" parent="." unique_id=717818455]
 z_index = -1
@@ -246,7 +259,7 @@ position = Vector2(-1077.6, -807.19995)
 polygon = PackedVector2Array(1168, 424, 1200, 424, 1200, 56, 2168, 56, 2168, 0, 0, 0, 0, 56, 840, 56, 840, 336, 968, 336, 960, 208, 864, 208, 864, 56, 1168, 56, 1168, 208, 1088, 208, 1080, 328, 1168, 328, 1168, 416)
 
 [node name="Counter" parent="." unique_id=1260658647 instance=ExtResource("13_4y1ln")]
-position = Vector2(1788, 700)
+position = Vector2(1787, 702)
 
 [node name="OfficeLevelDesk" parent="." unique_id=1478153396 instance=ExtResource("14_a6ue2")]
 position = Vector2(2002, 267)
@@ -318,7 +331,7 @@ position = Vector2(874.00006, 335.00003)
 scale = Vector2(0.6772497, 0.6772497)
 
 [node name="Player" parent="." unique_id=579082540 instance=ExtResource("4_m68pb")]
-position = Vector2(489, 1367)
+position = Vector2(1668.0001, 512)
 
 [node name="PhotoAreas" type="Node" parent="." unique_id=301180790]
 
@@ -333,7 +346,40 @@ shape = SubResource("RectangleShape2D_ef7n6")
 y_sort_enabled = true
 
 [node name="UnemployeedNPC" parent="NPCs" unique_id=143393978 instance=ExtResource("31_npuky")]
-position = Vector2(36, 923)
+position = Vector2(36, 949)
+
+[node name="LunchPersonNPC" parent="NPCs" unique_id=2034760231 instance=ExtResource("28_4u44s")]
+position = Vector2(1744, 542)
+
+[node name="InteractableComponent" parent="NPCs/LunchPersonNPC" index="1" unique_id=436105360]
+position = Vector2(0, -13)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/LunchPersonNPC/InteractableComponent" index="1" unique_id=1875983635]
+position = Vector2(-47.5, 55.5)
+shape = SubResource("RectangleShape2D_bjh1v")
+
+[node name="SpeakComponent" parent="NPCs/LunchPersonNPC" index="2" unique_id=1744893008]
+dialogue = Array[String](["[b]Nutrition Staff:[/b] Got your food? Good, that’ll be 30 dabloons.", "[b][rainbow freq=1.0 sat=0.8 val=0.8 speed=1.0]Jim Jar:[/rainbow][/b] But I don't have any money…", "[b]Nutrition Staff:[/b] ( ͠° ͟ʖ ͡°)﻿", "[b][rainbow freq=1.0 sat=0.8 val=0.8 speed=1.0]Jim Jar:[/rainbow][/b] Don’t I work for you? Can’t you take it out of my paycheck?", "[b]Nutrition Staff:[/b] No. Don’t be an [b][shake rate=20.0 level=8 connected=1]IDIOT[/shake][/b]."])
+stop_on_finished = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/LunchPersonNPC" unique_id=1616631335]
+position = Vector2(0, 12)
+shape = SubResource("RectangleShape2D_q2s8t")
+
+[node name="PissNPC" parent="NPCs" unique_id=750320364 instance=ExtResource("28_4u44s")]
+position = Vector2(1731, 1114)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/PissNPC/InteractableComponent" parent_id_path=PackedInt32Array(750320364, 436105360) index="1" unique_id=282530081]
+position = Vector2(0, -13)
+shape = SubResource("RectangleShape2D_ti61l")
+
+[node name="SpeakComponent" parent="NPCs/PissNPC" index="2" unique_id=1744893008]
+dialogue = Array[String](["[b]Employee:[/b] Ever notice how there aren't any bathrooms at this office. I've just been using the janitors mop bucket (‾ ⌣ ‾)", "[i]I think this guy is strange, even by human standards...[/i]"])
+restart_on_finished = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/PissNPC" unique_id=1574602700]
+position = Vector2(0, 7.5)
+shape = SubResource("RectangleShape2D_5h45y")
 
 [editable path="Doors/FrontDoor"]
 [editable path="Doors/FrontDoor/InteractableComponent"]
@@ -351,3 +397,7 @@ position = Vector2(36, 923)
 [editable path="Doors/OfficeDoor/InteractableComponent"]
 [editable path="Cubicles/Cubicle1"]
 [editable path="Cubicles/Cubicle1/InteractableComponent"]
+[editable path="NPCs/LunchPersonNPC"]
+[editable path="NPCs/LunchPersonNPC/InteractableComponent"]
+[editable path="NPCs/PissNPC"]
+[editable path="NPCs/PissNPC/InteractableComponent"]

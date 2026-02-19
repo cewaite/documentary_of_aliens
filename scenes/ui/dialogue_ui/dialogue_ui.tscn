@@ -18,15 +18,22 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 600
-theme_override_constants/margin_top = 800
-theme_override_constants/margin_right = 600
+theme_override_constants/margin_left = 575
+theme_override_constants/margin_top = 825
+theme_override_constants/margin_right = 575
 theme_override_constants/margin_bottom = 50
 
 [node name="PanelContainer" type="PanelContainer" parent="MarginContainer" unique_id=2045890677]
 layout_mode = 2
 
-[node name="DialogueText" type="RichTextLabel" parent="MarginContainer/PanelContainer" unique_id=52008807]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer" unique_id=926424335]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="DialogueText" type="RichTextLabel" parent="MarginContainer/PanelContainer/MarginContainer" unique_id=52008807]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/normal_font_size = 25
