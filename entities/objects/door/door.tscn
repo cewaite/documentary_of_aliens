@@ -15,7 +15,7 @@ sprite = NodePath("Sprite2D")
 [node name="InteractableComponent" parent="." unique_id=436105360 instance=ExtResource("3_icyyl")]
 
 [node name="PassThroughDetector" type="Area2D" parent="." unique_id=1310179489]
-collision_layer = 136
+collision_layer = 8
 collision_mask = 6
 
 [connection signal="area_exited" from="PassThroughDetector" to="." method="_on_pass_through_detector_area_exited"]

@@ -1,7 +1,8 @@
-class_name CameraAreaComponent extends Area2D
+class_name CameraAreaComponent extends Node2D
 
 @export var parent: Player
 
+@onready var camera_area_shape_cast: ShapeCast2D = $CameraAreaShapeCast
 @onready var flash: Polygon2D = $Flash
 @onready var flash_timer: Timer = $FlashTimer
 @export var flash_time: float = 0.2
@@ -47,11 +48,12 @@ func take_picture():
 		capture_photo_area()
 
 func capture_photo_area():
-	
-	var areas = get_overlapping_areas()
-	for area in areas: 
-		if area is PhotoArea:
-			SignalController.emit_signal("complete_photo", area)
+	camera_area_shape_cast.force_shapecast_update()
+	var flash_scale = camera_area_shape_cast.get_closest_collision_unsafe_fraction()
+	flash.scale = Vector2(flash_scale, flash_scale)
+	var collider = camera_area_shape_cast.get_collider(0)
+	if collider is PhotoArea:
+		SignalController.emit_signal("complete_photo", collider)
 
 func start_cooldown():
 	cooldown_timer.wait_time = cooldown_time
@@ -68,3 +70,8 @@ func _on_timer_timeout() -> void:
 
 func _on_cooldown_timer_timeout() -> void:
 	cooldown_timer.stop()
+
+
+func _on_flash_timer_timeout() -> void:
+	flash_timer.stop()
+	flash.hide()

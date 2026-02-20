@@ -10,7 +10,6 @@ func _ready() -> void:
 	assert(interact_icon != null, "Object has no interact_icon: " + parent.name)
 
 func call_parent_interact(interactor):
-	print_debug("Interacting with: ", parent.name)
 	parent.interact(interactor)
 
 func enable_icon():

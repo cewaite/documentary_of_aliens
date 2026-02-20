@@ -744,7 +744,12 @@ position = Vector2(-6.5, 2.5)
 shape = SubResource("RectangleShape2D_rd7m1")
 
 [node name="PlayerSpawn" type="Marker2D" parent="." unique_id=305113925]
-position = Vector2(1884, 1367)
+position = Vector2(707, 1367)
+rotation = 3.1415927
+
+[node name="PlayerSpawn2" type="Marker2D" parent="." unique_id=236866117]
+position = Vector2(707, 1367)
+rotation = 3.1415927
 
 [connection signal="area_entered" from="NPCs/Path2D/PathFollow2D/JanitorNPC/InteractComponent" to="NPCs/Path2D/PathFollow2D/JanitorNPC" method="_on_interact_component_area_entered"]
 [connection signal="area_exited" from="NPCs/Path2D/PathFollow2D/JanitorNPC/InteractComponent" to="NPCs/Path2D/PathFollow2D/JanitorNPC" method="_on_interact_component_area_exited"]
