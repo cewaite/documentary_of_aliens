@@ -26,6 +26,7 @@
 [ext_resource type="PackedScene" uid="uid://bc0r4fq2eoxgq" path="res://entities/objects/park/flower/yellow_flower_two.tscn" id="24_w3ok1"]
 [ext_resource type="PackedScene" uid="uid://d1cyctv0r5n7p" path="res://prefabs/npc/npc.tscn" id="25_pcpcb"]
 [ext_resource type="Script" uid="uid://fgjwabe5tygr" path="res://entities/npcs/janitor/janitor_path_follow.gd" id="26_au81a"]
+[ext_resource type="PackedScene" uid="uid://bty3h70hvdq1e" path="res://prefabs/photo_area/photo_area.tscn" id="27_au81a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5wkf2"]
 size = Vector2(40, 1720)
@@ -111,10 +112,20 @@ size = Vector2(348, 245)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ilfmm"]
 size = Vector2(43, 21)
 
-[node name="ThePark" type="Node2D" unique_id=1381632466 node_paths=PackedStringArray("player_spawn")]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8pe3v"]
+size = Vector2(239, 194)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s1pkk"]
+size = Vector2(167, 164)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s44yr"]
+size = Vector2(256, 185)
+
+[node name="ThePark" type="Node2D" unique_id=1381632466 node_paths=PackedStringArray("player_spawn", "photo_areas")]
 y_sort_enabled = true
 script = ExtResource("1_an8yo")
 player_spawn = NodePath("PlayerSpawn")
+photo_areas = [NodePath("PhotoAreas/BiohazardPhotoArea"), NodePath("PhotoAreas/TweakerPhotoArea"), NodePath("PhotoAreas/JusticePhotoArea")]
 
 [node name="LevelBoundaries" type="StaticBody2D" parent="." unique_id=1741980189]
 collision_layer = 128
@@ -815,17 +826,17 @@ dialogue = Array[String](["[b][rainbow freq=1.0 sat=0.8 val=0.8 speed=1.0]Jim Ja
 position = Vector2(-0.2864685, -12.792419)
 shape = SubResource("RectangleShape2D_jhxbx")
 
-[node name="PervertNPC" parent="NPCs" unique_id=440517574 instance=ExtResource("25_pcpcb")]
+[node name="HidingNPC" parent="NPCs" unique_id=440517574 instance=ExtResource("25_pcpcb")]
 position = Vector2(1341, 150)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/PervertNPC/InteractableComponent" parent_id_path=PackedInt32Array(440517574, 436105360) index="1" unique_id=43073963]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/HidingNPC/InteractableComponent" parent_id_path=PackedInt32Array(440517574, 436105360) index="1" unique_id=43073963]
 position = Vector2(-0.5, -13)
 shape = SubResource("RectangleShape2D_r8pmh")
 
-[node name="SpeakComponent" parent="NPCs/PervertNPC" index="2" unique_id=1744893008]
+[node name="SpeakComponent" parent="NPCs/HidingNPC" index="2" unique_id=1744893008]
 dialogue = Array[String](["[b]Bush Person:[/b] Wait! Be quiet, I'm hiding from the cops on the street.", "[b]Bush Person:[/b] It was the wrong choice to wear a black sweater."])
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/PervertNPC" unique_id=2092342574]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/HidingNPC" unique_id=2092342574]
 position = Vector2(-0.5, 13)
 shape = SubResource("RectangleShape2D_m1k5q")
 
@@ -849,6 +860,33 @@ dialogue = Array[String](["[b][rainbow freq=1.0 sat=0.8 val=0.8 speed=1.0]Jim Ja
 position = Vector2(-0.5, -0.5)
 shape = SubResource("RectangleShape2D_ilfmm")
 
+[node name="PhotoAreas" type="Node2D" parent="." unique_id=1025286307]
+y_sort_enabled = true
+
+[node name="TweakerPhotoArea" parent="PhotoAreas" unique_id=147228429 instance=ExtResource("27_au81a")]
+position = Vector2(1629, 1354)
+description = "Someone finally talking sense."
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PhotoAreas/TweakerPhotoArea" unique_id=1751444402]
+position = Vector2(-0.5, 6)
+shape = SubResource("RectangleShape2D_8pe3v")
+
+[node name="BiohazardPhotoArea" parent="PhotoAreas" unique_id=1842343888 instance=ExtResource("27_au81a")]
+position = Vector2(1284, 574)
+description = "Love is blind, even to biohazzards."
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PhotoAreas/BiohazardPhotoArea" unique_id=1345920030]
+position = Vector2(3, -17)
+shape = SubResource("RectangleShape2D_s1pkk")
+
+[node name="JusticePhotoArea" parent="PhotoAreas" unique_id=770279688 instance=ExtResource("27_au81a")]
+position = Vector2(1960, 1467)
+description = "Justice"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PhotoAreas/JusticePhotoArea" unique_id=2103674661]
+position = Vector2(19, -11.5)
+shape = SubResource("RectangleShape2D_s44yr")
+
 [node name="PlayerSpawn" type="Marker2D" parent="." unique_id=122329523]
 position = Vector2(149, 672)
 
@@ -870,7 +908,7 @@ position = Vector2(149, 672)
 [editable path="NPCs/TweakerNPC/InteractableComponent"]
 [editable path="NPCs/HomelessNPC"]
 [editable path="NPCs/HomelessNPC/InteractableComponent"]
-[editable path="NPCs/PervertNPC"]
-[editable path="NPCs/PervertNPC/InteractableComponent"]
+[editable path="NPCs/HidingNPC"]
+[editable path="NPCs/HidingNPC/InteractableComponent"]
 [editable path="NPCs/GooseNPC"]
 [editable path="NPCs/GooseNPC/InteractableComponent"]
