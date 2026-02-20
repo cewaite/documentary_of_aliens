@@ -2,7 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://d8n7pifpc2n7" path="res://assets/levels/park/ParkLevel-8.png" id="1_o8pgv"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_ctnpk"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o8pgv"]
+size = Vector2(20, 19.247078)
 
 [node name="LampFlipped" type="StaticBody2D" unique_id=1755511099]
 collision_layer = 8
@@ -11,8 +12,9 @@ collision_mask = 6
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1940173924]
 position = Vector2(-32, -56)
 texture = ExtResource("1_o8pgv")
+offset = Vector2(0, -12)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=847378466]
-position = Vector2(0, 32.000004)
-scale = Vector2(2.3598645, -1.4936537)
-shape = SubResource("CircleShape2D_ctnpk")
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=1961407802]
+position = Vector2(0, 18.732801)
+scale = Vector2(2.55018, -1.9465604)
+shape = SubResource("RectangleShape2D_o8pgv")

@@ -9,9 +9,8 @@ var player: Player
 
 func _ready():
 	#Spawn player
-	#spawn_player()
+	spawn_player()
 	#set camera bounds
-	pass
 
 func spawn_player():
 	player = PLAYER_SCENE.instantiate()

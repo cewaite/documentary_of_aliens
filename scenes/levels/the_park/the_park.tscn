@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://bhqtbniogf1pl" path="res://assets/levels/park/ParkLevel-18.png" id="5_6kjjg"]
 [ext_resource type="Texture2D" uid="uid://b407ygq3wry2s" path="res://assets/levels/park/ParkLevel-22.png" id="6_gib6n"]
 [ext_resource type="PackedScene" uid="uid://dltkstfh1orx5" path="res://entities/objects/park/park_level_lake.tscn" id="7_u8mgf"]
-[ext_resource type="PackedScene" uid="uid://ktj4purq3iho" path="res://entities/player/player.tscn" id="8_51fdp"]
 [ext_resource type="PackedScene" uid="uid://ccw5sfnikeq02" path="res://entities/objects/park/tree.tscn" id="8_gqamw"]
 [ext_resource type="PackedScene" uid="uid://c0f18i47ewmb" path="res://entities/objects/park/bench.tscn" id="9_vy6mk"]
 [ext_resource type="PackedScene" uid="uid://bwln1bkc88p6t" path="res://entities/objects/park/trash_can.tscn" id="10_ohpih"]
@@ -25,6 +24,8 @@
 [ext_resource type="PackedScene" uid="uid://cj3sid5lcvdkl" path="res://entities/objects/park/flower/purple_flower.tscn" id="22_pcpcb"]
 [ext_resource type="PackedScene" uid="uid://c5udw5dn7mqjd" path="res://entities/objects/park/flower/yellow_flower_one.tscn" id="23_au81a"]
 [ext_resource type="PackedScene" uid="uid://bc0r4fq2eoxgq" path="res://entities/objects/park/flower/yellow_flower_two.tscn" id="24_w3ok1"]
+[ext_resource type="PackedScene" uid="uid://d1cyctv0r5n7p" path="res://prefabs/npc/npc.tscn" id="25_pcpcb"]
+[ext_resource type="Script" uid="uid://fgjwabe5tygr" path="res://entities/npcs/janitor/janitor_path_follow.gd" id="26_au81a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5wkf2"]
 size = Vector2(40, 1720)
@@ -32,18 +33,88 @@ size = Vector2(40, 1720)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3iifi"]
 size = Vector2(2288, 64)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6kjjg"]
-size = Vector2(96, 960)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x1wha"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_gib6n"]
-size = Vector2(64, 400)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qgb22"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l30f7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4wecf"]
+size = Vector2(20, 27.189083)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u8mgf"]
 size = Vector2(312, 96)
 
-[node name="ThePark" type="Node2D" unique_id=1381632466]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_au81a"]
+size = Vector2(211, 81)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w3ok1"]
+size = Vector2(54, 26)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pcpcb"]
+size = Vector2(53, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vtchf"]
+size = Vector2(52.92169, 76.0542)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x56np"]
+size = Vector2(56, 77)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ldk3l"]
+size = Vector2(56, 28)
+
+[sub_resource type="Curve2D" id="Curve2D_pcpcb"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 34, 845, 0, 0, 0, 0, 119, 727, 0, 0, 0, 0, 235, 655, 0, 0, 0, 0, 367, 572, 0, 0, 0, 0, 509, 528, 0, 0, 0, 0, 617, 500, 0, 0, 0, 0, 712, 495, 0, 0, 0, 0, 817, 503, 0, 0, 0, 0, 923, 531, 0, 0, 0, 0, 1024, 580, 0, 0, 0, 0, 1085, 648, 0, 0, 0, 0, 1135, 734, 0, 0, 0, 0, 1183, 799, 0, 0, 0, 0, 1249, 854, 0, 0, 0, 0, 1326, 898, 0, 0, 0, 0, 1404, 924, 0, 0, 0, 0, 1480, 951, 0, 0, 0, 0, 1537, 973, 0, 0, 0, 0, 1606, 1001, 0, 0, 0, 0, 1733, 1061, 0, 0, 0, 0, 1814, 1114, 0, 0, 0, 0, 1817, 1027, 0, 0, 0, 0, 1723, 959, 0, 0, 0, 0, 1624, 921, 0, 0, 0, 0, 1544, 897, 0, 0, 0, 0, 1449, 860, 0, 0, 0, 0, 1378, 828, 0, 0, 0, 0, 1329, 801, 0, 0, 0, 0, 1296, 766, 0, 0, 0, 0, 1265, 721, 0, 0, 0, 0, 1240, 675, 0, 0, 0, 0, 1201, 619, 0, 0, 0, 0, 1149, 558, 0, 0, 0, 0, 1106, 515, 0, 0, 0, 0, 1054, 488, 0, 0, 0, 0, 1007, 464, 0, 0, 0, 0, 920, 426, 0, 0, 0, 0, 825, 408, 0, 0, 0, 0, 702, 386, 0, 0, 0, 0, 559, 409, 0, 0, 0, 0, 477, 428, 0, 0, 0, 0, 364, 473, 0, 0, 0, 0, 272, 529, 0, 0, 0, 0, 205, 587, 0, 0, 0, 0, 118, 648, 0, 0, 0, 0, 47, 703, 0, 0, 0, 0, 35, 711, 0, 0, 0, 0, 17, 844, 0, 0, 0, 0, 18, 845, 0, 0, 0, 0, 18, 845)
+}
+point_count = 50
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_241sk"]
+size = Vector2(54.927647, 77.05167)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7f02l"]
+size = Vector2(53.975563, 26.050781)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fooy6"]
+size = Vector2(56, 78)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g7rsw"]
+size = Vector2(56, 25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_opsyf"]
+size = Vector2(55, 77)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kk0ld"]
+size = Vector2(55, 27)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nvbmg"]
+size = Vector2(54, 78)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ec21m"]
+size = Vector2(55, 23)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ad4m5"]
+size = Vector2(54.218933, 77.60358)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jhxbx"]
+size = Vector2(53.441772, 77.16197)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r8pmh"]
+size = Vector2(55, 78)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m1k5q"]
+size = Vector2(55, 26)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_koe06"]
+size = Vector2(348, 245)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ilfmm"]
+size = Vector2(43, 21)
+
+[node name="ThePark" type="Node2D" unique_id=1381632466 node_paths=PackedStringArray("player_spawn")]
 y_sort_enabled = true
 script = ExtResource("1_an8yo")
+player_spawn = NodePath("PlayerSpawn")
 
 [node name="LevelBoundaries" type="StaticBody2D" parent="." unique_id=1741980189]
 collision_layer = 128
@@ -88,13 +159,25 @@ collision_mask = 6
 position = Vector2(1080, 808)
 texture = ExtResource("5_6kjjg")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ParkLevelBushWall" unique_id=992550782]
-position = Vector2(1800, 480)
-shape = SubResource("RectangleShape2D_6kjjg")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ParkLevelBushWall" unique_id=2049803865]
+position = Vector2(1808, 133)
+scale = Vector2(4.2705007, 14.137385)
+shape = SubResource("RectangleShape2D_x1wha")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="ParkLevelBushWall" unique_id=152894493]
-position = Vector2(1816, 1416)
-shape = SubResource("RectangleShape2D_gib6n")
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="ParkLevelBushWall" unique_id=2063376671]
+position = Vector2(1813, 462.99997)
+scale = Vector2(4.827244, 16.843218)
+shape = SubResource("RectangleShape2D_qgb22")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="ParkLevelBushWall" unique_id=1509000900]
+position = Vector2(1813, 815)
+scale = Vector2(4.22574, 15.105288)
+shape = SubResource("RectangleShape2D_l30f7")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="ParkLevelBushWall" unique_id=90820315]
+position = Vector2(1816, 1409)
+scale = Vector2(4.7151313, 14.417549)
+shape = SubResource("RectangleShape2D_4wecf")
 
 [node name="ParkLevelPoliceBarrier" type="StaticBody2D" parent="." unique_id=758444538]
 collision_layer = 128
@@ -140,6 +223,7 @@ position = Vector2(504, 360)
 
 [node name="Lamps" type="Node2D" parent="EnvironmentObjects" unique_id=1608254423]
 y_sort_enabled = true
+position = Vector2(0, 9.31)
 
 [node name="Lamp" parent="EnvironmentObjects/Lamps" unique_id=1466682331 instance=ExtResource("11_a802e")]
 position = Vector2(944, 344)
@@ -600,5 +684,193 @@ position = Vector2(1647, 1417)
 [node name="GrassSpriteOne35" parent="EnvironmentObjects/Vegetation" unique_id=606947506 instance=ExtResource("18_htgib")]
 position = Vector2(1603, 1376)
 
-[node name="Player" parent="." unique_id=579082540 instance=ExtResource("8_51fdp")]
-position = Vector2(1536, 808.0001)
+[node name="NPCs" type="Node2D" parent="." unique_id=953570619]
+y_sort_enabled = true
+
+[node name="LeftCopNPC" parent="NPCs" unique_id=1319086192 instance=ExtResource("25_pcpcb")]
+position = Vector2(1880, 1460)
+
+[node name="InteractIcon" parent="NPCs/LeftCopNPC/InteractableComponent" parent_id_path=PackedInt32Array(1319086192, 436105360) index="0" unique_id=1434794891]
+position = Vector2(76.99999, -61)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/LeftCopNPC/InteractableComponent" parent_id_path=PackedInt32Array(1319086192, 436105360) index="1" unique_id=647758010]
+position = Vector2(78.5, -13.5)
+shape = SubResource("RectangleShape2D_au81a")
+
+[node name="SpeakComponent" parent="NPCs/LeftCopNPC" index="2" unique_id=1744893008]
+dialogue = Array[String](["[b]Cop1:[/b] We caught this dirtbag driving their car on the road close to where we were standing!", "[b]Cop2:[/b] That'll teach you to be passive aggressive towards law enforcement!"])
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/LeftCopNPC" unique_id=541078129]
+position = Vector2(0, 13)
+shape = SubResource("RectangleShape2D_w3ok1")
+
+[node name="RightCopNPC" parent="NPCs" unique_id=705629344 instance=ExtResource("25_pcpcb")]
+position = Vector2(2037, 1461)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/RightCopNPC" unique_id=280350871]
+position = Vector2(-0.5, 13)
+shape = SubResource("RectangleShape2D_pcpcb")
+
+[node name="InnocentNPC" parent="NPCs" unique_id=1435401080 instance=ExtResource("25_pcpcb")]
+position = Vector2(1944.9999, 1460)
+rotation = 1.5718292
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/InnocentNPC" unique_id=1660979741]
+position = Vector2(-0.5136719, -12.999756)
+shape = SubResource("RectangleShape2D_vtchf")
+
+[node name="DogLoverNPC" parent="NPCs" unique_id=1002009680 instance=ExtResource("25_pcpcb")]
+position = Vector2(1267, 569)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/DogLoverNPC/InteractableComponent" parent_id_path=PackedInt32Array(1002009680, 436105360) index="1" unique_id=753111189]
+position = Vector2(0, -12.5)
+shape = SubResource("RectangleShape2D_x56np")
+
+[node name="SpeakComponent" parent="NPCs/DogLoverNPC" index="2" unique_id=1744893008]
+dialogue = Array[String](["[b]Dog Lover:[/b] [i]Aggressively kissing pet.[/i]", "[b]Dog Lover:[/b] Good dog! [wave amp=50.0 freq=5.0 connected=1]Gooood dog![/wave]", "[b]Dog:[/b] ^⨀ᴥ⨀^", "[b][rainbow freq=1.0 sat=0.8 val=0.8 speed=1.0]Jim Jar:[/rainbow][/b] [i]It's covered in something. Ew...[/i]"])
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/DogLoverNPC" unique_id=1112682125]
+position = Vector2(0, 12)
+shape = SubResource("RectangleShape2D_ldk3l")
+
+[node name="Path2D" type="Path2D" parent="NPCs" unique_id=1922293279]
+y_sort_enabled = true
+curve = SubResource("Curve2D_pcpcb")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="NPCs/Path2D" unique_id=1184279808]
+position = Vector2(34, 845)
+rotation = -0.86286837
+rotates = false
+script = ExtResource("26_au81a")
+speed = 0.075
+
+[node name="SaitamaNPC" parent="NPCs/Path2D/PathFollow2D" unique_id=959289137 instance=ExtResource("25_pcpcb")]
+rotation = 0.86192894
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/Path2D/PathFollow2D/SaitamaNPC/InteractableComponent" parent_id_path=PackedInt32Array(959289137, 436105360) index="1" unique_id=697030847]
+position = Vector2(-0.48825455, -12.500488)
+shape = SubResource("RectangleShape2D_241sk")
+
+[node name="SpeakComponent" parent="NPCs/Path2D/PathFollow2D/SaitamaNPC" index="2" unique_id=1744893008]
+dialogue = Array[String](["[b]Gogima:[/b] 100 push-ups! 100 sit-ups! 100 squats! And a 10km run!", "[b]Gogima:[/b] Thats what it takes to make it!", "[b]Gogima:[/b] Stay [shake rate=20.0 level=5 connected=1]HARD![/shake]", "[b][rainbow freq=1.0 sat=0.8 val=0.8 speed=1.0]Jim Jar:[/rainbow][/b] I think I'll stick with what makes me feel fulfilled and people watch, thanks"])
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/Path2D/PathFollow2D/SaitamaNPC" unique_id=1041114724]
+position = Vector2(-0.012208939, 13)
+shape = SubResource("RectangleShape2D_7f02l")
+
+[node name="RobberNPC" parent="NPCs" unique_id=457128781 instance=ExtResource("25_pcpcb")]
+position = Vector2(2117, 263)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/RobberNPC/InteractableComponent" parent_id_path=PackedInt32Array(457128781, 436105360) index="1" unique_id=1622978418]
+position = Vector2(0, -13)
+shape = SubResource("RectangleShape2D_fooy6")
+
+[node name="SpeakComponent" parent="NPCs/RobberNPC" index="2" unique_id=1744893008]
+dialogue = Array[String](["[b]Robber:[/b] Yo! Check it, just robbed the store down the street. Fat wads of cash in hand, saw the blues and, get this...", "[b]Robber:[/b] Walked right past! Guess they were too busy beatin' on that poor bystander they couldn't be bothered!", "[b]Robber:[/b] So, been running so hard, thought I'd have a rest and a smoke.", "[b][rainbow freq=1.0 sat=0.8 val=0.8 speed=1.0]Jim Jar:[/rainbow][/b] It's still illegal, why not give it up?", "[b]Robber:[/b] I love robbing. And in this economy?! Besides, beats working at the office's up the street from here. Now that's a strange place, that is..."])
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/RobberNPC" unique_id=421905168]
+position = Vector2(0, 13.5)
+shape = SubResource("RectangleShape2D_g7rsw")
+
+[node name="EnlightenedNPC" parent="NPCs" unique_id=255447619 instance=ExtResource("25_pcpcb")]
+position = Vector2(349, 1508)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="NPCs/EnlightenedNPC/InteractableComponent" parent_id_path=PackedInt32Array(255447619, 436105360) index="1" unique_id=984362775]
+position = Vector2(0.5, -12.5)
+shape = SubResource("RectangleShape2D_opsyf")
+
+[node name="SpeakComponent" parent="NPCs/EnlightenedNPC" index="2" unique_id=1744893008]
+dialogue = Array[String](["[b]Thinker:[/b] And to think, we're all made up of the same matter and energy that makes up our reality. We get so caught up in our minds that we've lost our senses.", "[b]Thinker:[/b] We are more than our body and conciousness. We are the [rainbow freq=2.0 sat=0.8 val=0.8 speed=0.5]universe[/rainbow] experiencing itself! Sucking air through a meat tube!", "[b]Thinker:[/b] Wake up and realize everything is nothing and the only certain thing is uncertainty. You and I [i]will[/i] die. I find that thought comforting.", "[b]Thinker:[/b] So go [shake rate=20.0 level=5 connected=1]LIVE[/shake]", "[b][rainbow freq=1.0 sat=0.8 val=0.8 speed=1.0]Jim Jar:[/rainbow][/b] [wave amp=50.0 freq=5.0 connected=1]...[/wave]", "[b][rainbow freq=1.0 sat=0.8 val=0.8 speed=1.0]Jim Jar:[/rainbow][/b] [i]Well, that made no f**king sense.[/i]"])
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/EnlightenedNPC" unique_id=1758181576]
+position = Vector2(0.5, 12.5)
+shape = SubResource("RectangleShape2D_kk0ld")
+
+[node name="TweakerNPC" parent="NPCs" unique_id=375660277 instance=ExtResource("25_pcpcb")]
+position = Vector2(1630, 1348)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/TweakerNPC/InteractableComponent" parent_id_path=PackedInt32Array(375660277, 436105360) index="1" unique_id=795705296]
+position = Vector2(0, -13)
+shape = SubResource("RectangleShape2D_nvbmg")
+
+[node name="SpeakComponent" parent="NPCs/TweakerNPC" index="2" unique_id=1744893008]
+dialogue = Array[String](["[b]Tweaker:[/b] [shake rate=20.0 level=2 connected=1]ahhhh[/shake] [shake rate=20.0 level=8 connected=1]AHHHHH[/shake]", "[b]Tweaker:[/b] Uh... What?", "[b]Tweaker:[/b] [shake rate=20.0 level=8 connected=1]AHHHHH[/shake]", "[b]Tweaker:[/b] Naw yeah, naw yeah, two mangos, five dabloons... you can get like 40 of them....", "[b]Tweaker:[/b] f**kin' [shake rate=30.0 level=12 connected=1]AHHHHH[/shake]", "[b]Tweaker:[/b] What are you? King Larinox in disguise or smthin'?", "[b]Tweaker:[/b] [shake rate=30.0 level=12 connected=1]I'LL KILL YA![/shake]"])
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/TweakerNPC" unique_id=1028164259]
+position = Vector2(0.5, 14.5)
+shape = SubResource("RectangleShape2D_ec21m")
+
+[node name="HomelessNPC" parent="NPCs" unique_id=493561639 instance=ExtResource("25_pcpcb")]
+position = Vector2(620.00006, 330)
+rotation = -1.6365833
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/HomelessNPC/InteractableComponent" parent_id_path=PackedInt32Array(493561639, 436105360) index="1" unique_id=2040914032]
+position = Vector2(-0.6750488, -12.571594)
+shape = SubResource("RectangleShape2D_ad4m5")
+
+[node name="SpeakComponent" parent="NPCs/HomelessNPC" index="2" unique_id=1744893008]
+dialogue = Array[String](["[b][rainbow freq=1.0 sat=0.8 val=0.8 speed=1.0]Jim Jar:[/rainbow][/b] [i]I guess humans aren't great at making beds, his back looks broken.[/i]", "[b]Unhoused Man:[/b] [font_size={size}]Damn, antihomeless architecture...[/font_size]"])
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/HomelessNPC" unique_id=139882757]
+position = Vector2(-0.2864685, -12.792419)
+shape = SubResource("RectangleShape2D_jhxbx")
+
+[node name="PervertNPC" parent="NPCs" unique_id=440517574 instance=ExtResource("25_pcpcb")]
+position = Vector2(1341, 150)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/PervertNPC/InteractableComponent" parent_id_path=PackedInt32Array(440517574, 436105360) index="1" unique_id=43073963]
+position = Vector2(-0.5, -13)
+shape = SubResource("RectangleShape2D_r8pmh")
+
+[node name="SpeakComponent" parent="NPCs/PervertNPC" index="2" unique_id=1744893008]
+dialogue = Array[String](["[b]Bush Person:[/b] Wait! Be quiet, I'm hiding from the cops on the street.", "[b]Bush Person:[/b] It was the wrong choice to wear a black sweater."])
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/PervertNPC" unique_id=2092342574]
+position = Vector2(-0.5, 13)
+shape = SubResource("RectangleShape2D_m1k5q")
+
+[node name="GooseNPC" parent="NPCs" unique_id=1771945102 instance=ExtResource("25_pcpcb")]
+position = Vector2(715, 108)
+
+[node name="Sprite2D" parent="NPCs/GooseNPC" index="0" unique_id=1492086816]
+scale = Vector2(0.43858626, 0.39747596)
+
+[node name="InteractIcon" parent="NPCs/GooseNPC/InteractableComponent" parent_id_path=PackedInt32Array(1771945102, 436105360) index="0" unique_id=1434794891]
+visible = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/GooseNPC/InteractableComponent" parent_id_path=PackedInt32Array(1771945102, 436105360) index="1" unique_id=519298945]
+position = Vector2(0, 11.5)
+shape = SubResource("RectangleShape2D_koe06")
+
+[node name="SpeakComponent" parent="NPCs/GooseNPC" index="2" unique_id=1744893008]
+dialogue = Array[String](["[b][rainbow freq=1.0 sat=0.8 val=0.8 speed=1.0]Jim Jar:[/rainbow][/b] [i]Oh sh*t, is that a goose? They have these here too?[/i]", "[b][rainbow freq=1.0 sat=0.8 val=0.8 speed=1.0]Jim Jar:[/rainbow][/b] [i]I hope the humans have developed goose fighting mega-mechs already.[/i]", "[b][rainbow freq=1.0 sat=0.8 val=0.8 speed=1.0]Jim Jar:[/rainbow][/b] [i]Anyways, shouldn't get too close...[/i]", "[b]Goose:[/b] [shake rate=20.0 level=5 connected=1][i][b]HONK![/b][/i][/shake]", "[b][rainbow freq=1.0 sat=0.8 val=0.8 speed=1.0]Jim Jar:[/rainbow][/b] AH!"])
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/GooseNPC" unique_id=1210948492]
+position = Vector2(-0.5, -0.5)
+shape = SubResource("RectangleShape2D_ilfmm")
+
+[node name="PlayerSpawn" type="Marker2D" parent="." unique_id=122329523]
+position = Vector2(149, 672)
+
+[editable path="NPCs/LeftCopNPC"]
+[editable path="NPCs/LeftCopNPC/InteractableComponent"]
+[editable path="NPCs/RightCopNPC"]
+[editable path="NPCs/RightCopNPC/InteractableComponent"]
+[editable path="NPCs/InnocentNPC"]
+[editable path="NPCs/InnocentNPC/InteractableComponent"]
+[editable path="NPCs/DogLoverNPC"]
+[editable path="NPCs/DogLoverNPC/InteractableComponent"]
+[editable path="NPCs/Path2D/PathFollow2D/SaitamaNPC"]
+[editable path="NPCs/Path2D/PathFollow2D/SaitamaNPC/InteractableComponent"]
+[editable path="NPCs/RobberNPC"]
+[editable path="NPCs/RobberNPC/InteractableComponent"]
+[editable path="NPCs/EnlightenedNPC"]
+[editable path="NPCs/EnlightenedNPC/InteractableComponent"]
+[editable path="NPCs/TweakerNPC"]
+[editable path="NPCs/TweakerNPC/InteractableComponent"]
+[editable path="NPCs/HomelessNPC"]
+[editable path="NPCs/HomelessNPC/InteractableComponent"]
+[editable path="NPCs/PervertNPC"]
+[editable path="NPCs/PervertNPC/InteractableComponent"]
+[editable path="NPCs/GooseNPC"]
+[editable path="NPCs/GooseNPC/InteractableComponent"]

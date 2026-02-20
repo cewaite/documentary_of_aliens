@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bujp2usxl34m7" path="res://assets/levels/park/ParkLevel-19.png" id="1_rbwto"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_rbwto"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rbwto"]
 
 [node name="DoubleBush" type="StaticBody2D" unique_id=780959825]
 collision_layer = 8
@@ -15,4 +15,4 @@ texture = ExtResource("1_rbwto")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1390059215]
 position = Vector2(0, 8)
 scale = Vector2(11.766518, 2.0307696)
-shape = SubResource("CircleShape2D_rbwto")
+shape = SubResource("RectangleShape2D_rbwto")
