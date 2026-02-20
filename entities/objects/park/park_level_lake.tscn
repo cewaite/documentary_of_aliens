@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://dltkstfh1orx5"]
+
+[ext_resource type="Texture2D" uid="uid://c0bn14adl2mfr" path="res://assets/levels/park/ParkLevel-2.png" id="1_ov0x1"]
+
+[node name="ParkLevelLake" type="StaticBody2D" unique_id=1668920006]
+collision_layer = 128
+collision_mask = 6
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=479836750]
+position = Vector2(368, -240)
+texture = ExtResource("1_ov0x1")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1177295560]
+polygon = PackedVector2Array(-232, -416, -336, -376, -392, -336, -440, -264, -496, -160, -528, -56, -536, 8, -528, 56, -504, 120, -472, 184, -416, 232, -368, 272, -320, 288, -264, 304, 544, 312, 632, 304, 696, 280, 736, 248, 776, 192, 792, 144, 792, 112, 768, 72, 728, 24, 680, -16, 648, -32, 600, -48, 552, -64, 520, -80, 472, -96, 424, -128, 384, -176, 344, -240, 320, -296, 280, -368, 256, -392, 200, -424, 152, -440, 112, -448, 56, -456, -8, -448, -72, -440, -136, -432)

@@ -1,0 +1,98 @@
+[gd_scene format=3 uid="uid://ck7e8c74ab57m"]
+
+[ext_resource type="Script" uid="uid://dlvavoctew42j" path="res://scenes/levels/the_park/the_park.gd" id="1_an8yo"]
+[ext_resource type="Texture2D" uid="uid://d1ygsj7fg8ylk" path="res://assets/levels/park/ParkLevel-1.png" id="2_5wkf2"]
+[ext_resource type="Texture2D" uid="uid://bqd7hqlqqyfll" path="res://assets/levels/park/ParkLevel-3.png" id="3_3iifi"]
+[ext_resource type="Texture2D" uid="uid://bh45mpcvuc6nv" path="res://assets/levels/park/ParkLevel-5.png" id="4_h0qxt"]
+[ext_resource type="Texture2D" uid="uid://bhqtbniogf1pl" path="res://assets/levels/park/ParkLevel-18.png" id="5_6kjjg"]
+[ext_resource type="Texture2D" uid="uid://b407ygq3wry2s" path="res://assets/levels/park/ParkLevel-22.png" id="6_gib6n"]
+[ext_resource type="PackedScene" uid="uid://dltkstfh1orx5" path="res://entities/objects/park/park_level_lake.tscn" id="7_u8mgf"]
+[ext_resource type="PackedScene" uid="uid://ktj4purq3iho" path="res://entities/player/player.tscn" id="8_51fdp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5wkf2"]
+size = Vector2(40, 1720)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3iifi"]
+size = Vector2(2288, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6kjjg"]
+size = Vector2(96, 960)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gib6n"]
+size = Vector2(64, 400)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u8mgf"]
+size = Vector2(312, 96)
+
+[node name="ThePark" type="Node2D" unique_id=1381632466]
+y_sort_enabled = true
+script = ExtResource("1_an8yo")
+
+[node name="LevelBoundaries" type="StaticBody2D" parent="." unique_id=1741980189]
+collision_layer = 128
+collision_mask = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelBoundaries" unique_id=1686186907]
+position = Vector2(-20, 796)
+shape = SubResource("RectangleShape2D_5wkf2")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="LevelBoundaries" unique_id=1248447342]
+position = Vector2(2176, 800)
+shape = SubResource("RectangleShape2D_5wkf2")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="LevelBoundaries" unique_id=270614086]
+position = Vector2(1080, -32)
+shape = SubResource("RectangleShape2D_3iifi")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="LevelBoundaries" unique_id=811457805]
+position = Vector2(1080, 1648)
+shape = SubResource("RectangleShape2D_3iifi")
+
+[node name="ParkLevelFloor" type="Sprite2D" parent="." unique_id=2026097779]
+z_index = -2
+position = Vector2(1080, 808)
+texture = ExtResource("2_5wkf2")
+
+[node name="ParkLevelPath" type="Sprite2D" parent="." unique_id=1161737208]
+z_index = -2
+position = Vector2(1080, 808)
+texture = ExtResource("3_3iifi")
+
+[node name="ParkLevelBlanket" type="Sprite2D" parent="." unique_id=532392541]
+z_index = -2
+position = Vector2(352, 1504)
+texture = ExtResource("4_h0qxt")
+
+[node name="ParkLevelBushWall" type="StaticBody2D" parent="." unique_id=811247387]
+collision_layer = 128
+collision_mask = 6
+
+[node name="ParkLevelBushWallSprite" type="Sprite2D" parent="ParkLevelBushWall" unique_id=274348619]
+position = Vector2(1080, 808)
+texture = ExtResource("5_6kjjg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ParkLevelBushWall" unique_id=992550782]
+position = Vector2(1800, 480)
+shape = SubResource("RectangleShape2D_6kjjg")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="ParkLevelBushWall" unique_id=152894493]
+position = Vector2(1816, 1416)
+shape = SubResource("RectangleShape2D_gib6n")
+
+[node name="ParkLevelPoliceBarrier" type="StaticBody2D" parent="." unique_id=758444538]
+collision_layer = 128
+collision_mask = 6
+
+[node name="Sprite2D" type="Sprite2D" parent="ParkLevelPoliceBarrier" unique_id=2102284294]
+position = Vector2(1080, 808)
+texture = ExtResource("6_gib6n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ParkLevelPoliceBarrier" unique_id=1665565123]
+position = Vector2(2004, 1568)
+shape = SubResource("RectangleShape2D_u8mgf")
+
+[node name="ParkLevelLake" parent="." unique_id=1668920006 instance=ExtResource("7_u8mgf")]
+position = Vector2(704, 1040)
+
+[node name="Player" parent="." unique_id=579082540 instance=ExtResource("8_51fdp")]
+position = Vector2(864, 1448)

@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://bwln1bkc88p6t"]
+
+[ext_resource type="Texture2D" uid="uid://bou608u5m6fa6" path="res://assets/levels/park/ParkLevel-6.png" id="1_uam1s"]
+
+[node name="TrashCan" type="StaticBody2D" unique_id=227156759]
+collision_layer = 8
+collision_mask = 6
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=95068939]
+position = Vector2(0, -16)
+texture = ExtResource("1_uam1s")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1318084861]
+polygon = PackedVector2Array(-32, 32, -36, -7, 44, -19, 46, 8)

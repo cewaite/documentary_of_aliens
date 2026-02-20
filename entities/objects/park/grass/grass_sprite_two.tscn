@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://ca3w6mhrbwqyk"]
+
+[ext_resource type="Texture2D" uid="uid://hlvj51107dsd" path="res://assets/levels/park/ParkLevel-Foliage6.png" id="1_7p5fi"]
+
+[node name="GrassSpriteTwo" type="Sprite2D" unique_id=188183311]
+texture = ExtResource("1_7p5fi")
+offset = Vector2(0, -10.61)

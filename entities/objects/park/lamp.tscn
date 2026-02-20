@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://cffoaoa6vyw1b"]
+
+[ext_resource type="Texture2D" uid="uid://c3uyryi1rmqwk" path="res://assets/levels/park/ParkLevel-7.png" id="1_x4orp"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_i4axq"]
+
+[node name="Lamp" type="StaticBody2D" unique_id=1466682331]
+collision_layer = 8
+collision_mask = 6
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1626661847]
+position = Vector2(32, -56)
+texture = ExtResource("1_x4orp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=859687022]
+position = Vector2(0, 32.000004)
+scale = Vector2(2.3598645, -1.4936537)
+shape = SubResource("CircleShape2D_i4axq")

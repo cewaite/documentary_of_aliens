@@ -2,7 +2,7 @@ class_name SpeakComponent extends Node
 
 @export var dialogue: Array[String]
 @export var stop_on_finished: bool = false
-@export var restart_on_finished: bool = false
+@export var restart_on_finished: bool = true
 var curr_dialogue_line: int = 0
 var finished_speaking: bool = false
 

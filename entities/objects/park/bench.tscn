@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://c0f18i47ewmb"]
+
+[ext_resource type="Texture2D" uid="uid://n0s8v414fja3" path="res://assets/levels/park/ParkLevel-6.2.png" id="1_e48l4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n2kpr"]
+size = Vector2(216, 29.110334)
+
+[node name="Bench" type="StaticBody2D" unique_id=2054400722]
+collision_layer = 8
+collision_mask = 6
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=129937686]
+position = Vector2(1, -11)
+texture = ExtResource("1_e48l4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=52466494]
+position = Vector2(-4.2263455, -9.545122)
+rotation = -0.0886997
+shape = SubResource("RectangleShape2D_n2kpr")

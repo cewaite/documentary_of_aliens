@@ -5,12 +5,12 @@
 [ext_resource type="Texture2D" uid="uid://fht6igwd812c" path="res://assets/levels/office/art/OfficeLevel-Floor.png" id="2_h5h30"]
 [ext_resource type="Texture2D" uid="uid://b5mmlnd4m0t00" path="res://assets/levels/office/art/OfficeLevel-Walls-revised.png" id="3_m68pb"]
 [ext_resource type="PackedScene" uid="uid://w6gi646m7kgj" path="res://entities/objects/door/door.tscn" id="3_qlr4m"]
-[ext_resource type="PackedScene" uid="uid://ktj4purq3iho" path="res://entities/player/player.tscn" id="4_m68pb"]
 [ext_resource type="Texture2D" uid="uid://bwp55vfh3vbrv" path="res://assets/levels/office/art/OfficeLevel-AlleyDoor.png" id="5_0basa"]
 [ext_resource type="Script" uid="uid://ngupu61oqfqk" path="res://entities/objects/door/office_front_door.gd" id="5_x8gdg"]
 [ext_resource type="Texture2D" uid="uid://bamkurb0tycga" path="res://assets/levels/office/art/OfficeLevel-CafeteriaDoor.png" id="6_ap1nk"]
 [ext_resource type="Texture2D" uid="uid://bn3i3rv4gd1vn" path="res://assets/levels/office/art/OfficeLevel-FrontDoor.png" id="7_758yn"]
 [ext_resource type="Script" uid="uid://bk61eruksbbok" path="res://prefabs/components/speak_component.gd" id="7_sc46r"]
+[ext_resource type="Script" uid="uid://bb55nxaljkucb" path="res://entities/objects/door/alley_door.gd" id="8_bq5pn"]
 [ext_resource type="Texture2D" uid="uid://bt75isbiuggf6" path="res://assets/levels/office/art/OfficeLevel-JanitorDoor.png" id="8_k85mt"]
 [ext_resource type="Texture2D" uid="uid://6mgx0igd3nw0" path="res://assets/levels/office/art/OfficeLevel-MeetingRoomDoor.png" id="9_b7olv"]
 [ext_resource type="Texture2D" uid="uid://bt03jm7s4wx1u" path="res://assets/levels/office/art/OfficeLevel-OfficeDoor.png" id="10_nix5l"]
@@ -137,33 +137,13 @@ size = Vector2(177, 78)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rd7m1"]
 size = Vector2(129, 173)
 
-[node name="TheOffice" type="Node2D" unique_id=1679858242 node_paths=PackedStringArray("boss_door", "josh_npc", "photo_areas")]
+[node name="TheOffice" type="Node2D" unique_id=1679858242 node_paths=PackedStringArray("boss_door", "josh_npc", "player_spawn", "photo_areas")]
 y_sort_enabled = true
 script = ExtResource("1_nm22k")
 boss_door = NodePath("Doors/OfficeDoor")
 josh_npc = NodePath("NPCs/JoshNPC")
+player_spawn = NodePath("PlayerSpawn")
 photo_areas = [NodePath("PhotoAreas/MeetingRoomPhotoArea"), NodePath("PhotoAreas/BossPhotoArea"), NodePath("PhotoAreas/WaterCoolerPhotoArea"), NodePath("PhotoAreas/SeniorEnigneerPhotoArea")]
-
-[node name="Doors_OfficeDoor_PassThroughDetector#CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=174089847]
-polygon = PackedVector2Array(312, -752, 336, -752, 336, -640, 312, -640)
-
-[node name="Doors_JanitorDoor_PassThroughDetector#CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1995599491]
-polygon = PackedVector2Array(-120, -568, 8, -568, 0, -480, -112, -480)
-
-[node name="Doors_MeetingRoomDoor_PassThroughDetector#CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1930135125]
-polygon = PackedVector2Array(-224, 112, -200, 112, -200, 224, -224, 224)
-
-[node name="Doors_CubliclesDoor_PassThroughDetector#CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1950145319]
-polygon = PackedVector2Array(88, -376, 120, -376, 120, -272, 88, -272)
-
-[node name="Doors_CafeteriaDoor_PassThroughDetector#CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=782810771]
-polygon = PackedVector2Array(312, -96, 312, 8, 336, 8, 336, -96)
-
-[node name="Doors_AlleyDoor_PassThroughDetector#CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1564303351]
-polygon = PackedVector2Array(-1040, -568, -904, -568, -904, -480, -1040, -480)
-
-[node name="Doors_FrontDoor_PassThroughDetector#CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1781638065]
-polygon = PackedVector2Array(144, 408, 304, 408, 296, 488, 144, 488)
 
 [node name="LevelBoundaries" type="StaticBody2D" parent="." unique_id=368552706]
 collision_layer = 128
@@ -216,15 +196,21 @@ polygon = PackedVector2Array(144, 408, 304, 408, 296, 488, 144, 488)
 [node name="InteractIcon" parent="Doors/FrontDoor/InteractableComponent" index="1" unique_id=1434794891]
 position = Vector2(224, 383.99997)
 
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Doors/FrontDoor/PassThroughDetector" parent_id_path=PackedInt32Array(612308812, 1310179489) index="0" unique_id=1454943438]
+polygon = PackedVector2Array(144, 408, 304, 408, 296, 488, 144, 488)
+
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Doors/FrontDoor" unique_id=1250348537]
 polygon = PackedVector2Array(144, 408, 304, 408, 296, 488, 144, 488)
 
 [node name="SpeakComponent" type="Node" parent="Doors/FrontDoor" unique_id=1459521358]
 script = ExtResource("7_sc46r")
-dialogue = Array[String](["[i]This door is locked. I'll probably need a key to get in. or someone really nice and dumb.[/i]"])
+dialogue = Array[String](["[i]This door is locked.[/i]", "[b][rainbow freq=1.0 sat=0.8 val=0.8 speed=1.0]Jim Jar:[/rainbow][/b] [i]I'll probably need a key to get in or someone too considerate to ignore obvious security protocols and open it for me.[/i]"])
 
-[node name="AlleyDoor" parent="Doors" unique_id=1635621157 node_paths=PackedStringArray("collider") instance=ExtResource("3_qlr4m")]
+[node name="AlleyDoor" parent="Doors" unique_id=1635621157 node_paths=PackedStringArray("speak_comp", "collider") instance=ExtResource("3_qlr4m")]
+script = ExtResource("8_bq5pn")
+speak_comp = NodePath("SpeakComponent")
 collider = NodePath("CollisionPolygon2D")
+locked = true
 
 [node name="Sprite2D" parent="Doors/AlleyDoor" index="0" unique_id=90848083]
 texture = ExtResource("5_0basa")
@@ -238,8 +224,16 @@ polygon = PackedVector2Array(-1040, -568, -904, -568, -904, -480, -1040, -480)
 [node name="InteractIcon" parent="Doors/AlleyDoor/InteractableComponent" index="1" unique_id=1434794891]
 position = Vector2(-976, -592)
 
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Doors/AlleyDoor/PassThroughDetector" parent_id_path=PackedInt32Array(1635621157, 1310179489) index="0" unique_id=1631811938]
+polygon = PackedVector2Array(-1040, -568, -904, -568, -904, -480, -1040, -480)
+
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Doors/AlleyDoor" unique_id=2097976328]
 polygon = PackedVector2Array(-1040, -568, -904, -568, -904, -480, -1040, -480)
+
+[node name="SpeakComponent" type="Node" parent="Doors/AlleyDoor" unique_id=141295688]
+script = ExtResource("7_sc46r")
+dialogue = Array[String](["[i]This door is locked.[/i]", "[b][rainbow freq=1.0 sat=0.8 val=0.8 speed=1.0]Jim Jar:[/rainbow][/b] [i]There's no where to place a badge, either...[/i]"])
+metadata/_custom_type_script = "uid://bk61eruksbbok"
 
 [node name="CafeteriaDoor" parent="Doors" unique_id=20761531 node_paths=PackedStringArray("collider") instance=ExtResource("3_qlr4m")]
 collider = NodePath("CollisionPolygon2D")
@@ -255,6 +249,9 @@ polygon = PackedVector2Array(312, -96, 312, 8, 336, 8, 336, -96)
 
 [node name="InteractIcon" parent="Doors/CafeteriaDoor/InteractableComponent" index="1" unique_id=1434794891]
 position = Vector2(328, -63.99997)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Doors/CafeteriaDoor/PassThroughDetector" parent_id_path=PackedInt32Array(20761531, 1310179489) index="0" unique_id=1268097321]
+polygon = PackedVector2Array(312, -96, 312, 8, 336, 8, 336, -96)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Doors/CafeteriaDoor" unique_id=2136736553]
 polygon = PackedVector2Array(312, -96, 312, 8, 336, 8, 336, -96)
@@ -272,6 +269,9 @@ parent = NodePath("..")
 position = Vector2(103.99999, -335.99997)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Doors/CubliclesDoor/InteractableComponent" index="1" unique_id=1796551629]
+polygon = PackedVector2Array(88, -376, 120, -376, 120, -272, 88, -272)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Doors/CubliclesDoor/PassThroughDetector" parent_id_path=PackedInt32Array(260776701, 1310179489) index="0" unique_id=1743112564]
 polygon = PackedVector2Array(88, -376, 120, -376, 120, -272, 88, -272)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Doors/CubliclesDoor" unique_id=953537342]
@@ -292,6 +292,9 @@ position = Vector2(-207.99998, 151.99998)
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Doors/MeetingRoomDoor/InteractableComponent" index="1" unique_id=1764332389]
 polygon = PackedVector2Array(-224, 112, -200, 112, -200, 224, -224, 224)
 
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Doors/MeetingRoomDoor/PassThroughDetector" parent_id_path=PackedInt32Array(936374706, 1310179489) index="0" unique_id=896995373]
+polygon = PackedVector2Array(-224, 112, -200, 112, -200, 224, -224, 224)
+
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Doors/MeetingRoomDoor" unique_id=1317092407]
 polygon = PackedVector2Array(-224, 112, -200, 112, -200, 224, -224, 224)
 
@@ -308,6 +311,9 @@ parent = NodePath("..")
 position = Vector2(-55.999996, -591.99994)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Doors/JanitorDoor/InteractableComponent" index="1" unique_id=8936169]
+polygon = PackedVector2Array(-120, -568, 8, -568, 0, -480, -112, -480)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Doors/JanitorDoor/PassThroughDetector" parent_id_path=PackedInt32Array(1758164949, 1310179489) index="0" unique_id=1879868726]
 polygon = PackedVector2Array(-120, -568, 8, -568, 0, -480, -112, -480)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Doors/JanitorDoor" unique_id=53374641]
@@ -331,12 +337,15 @@ position = Vector2(327.99997, -719.99994)
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Doors/OfficeDoor/InteractableComponent" index="1" unique_id=438352261]
 polygon = PackedVector2Array(312, -752, 336, -752, 336, -640, 312, -640)
 
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Doors/OfficeDoor/PassThroughDetector" parent_id_path=PackedInt32Array(2057798022, 1310179489) index="0" unique_id=296128634]
+polygon = PackedVector2Array(312, -752, 336, -752, 336, -640, 312, -640)
+
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Doors/OfficeDoor" unique_id=1222056182]
 polygon = PackedVector2Array(312, -752, 336, -752, 336, -640, 312, -640)
 
 [node name="SpeakComponent" type="Node" parent="Doors/OfficeDoor" unique_id=1180229144]
 script = ExtResource("7_sc46r")
-dialogue = Array[String](["[i]This door is locked. Looks like it could be the Boss's Office.[/i]"])
+dialogue = Array[String](["[i]This door is locked.[/i]", "[b][rainbow freq=1.0 sat=0.8 val=0.8 speed=1.0]Jim Jar:[/rainbow][/b] [i] Looks like it could be the Boss's Office.[/i]"])
 
 [node name="OfficeLevelWalls" type="StaticBody2D" parent="." unique_id=717818455]
 z_index = -1
@@ -432,7 +441,6 @@ shape = SubResource("RectangleShape2D_4ayp5")
 [node name="SpeakComponent" type="Node" parent="EnvironmentObjects/Cubicles/Cubicle3" unique_id=2135632278]
 script = ExtResource("7_sc46r")
 dialogue = Array[String](["[i]There's a minimized task. Seems the employee was playing Wizard101 in the middle of a meeting.[/i]", "[b][rainbow freq=1.0 sat=0.8 val=0.8 speed=1.0]Jim Jar:[/rainbow][/b] [i]I don't blame them.[/i]"])
-restart_on_finished = true
 metadata/_custom_type_script = "uid://bk61eruksbbok"
 
 [node name="WoodTable" parent="EnvironmentObjects" unique_id=1638292962 instance=ExtResource("19_jdpki")]
@@ -460,6 +468,7 @@ shape = SubResource("RectangleShape2D_58knn")
 script = ExtResource("7_sc46r")
 dialogue = Array[String](["[b][rainbow freq=1.0 sat=0.8 val=0.8 speed=1.0]Jim Jar:[/rainbow][/b] [i]This looks dangerous. Like it could kill a baby if it drank it. Or destroy the guts of an adult...[/i]", "[i]You pick up the cleaning supplies[/i]", "[b][rainbow freq=1.0 sat=0.8 val=0.8 speed=1.0]Jim Jar:[/rainbow][/b] ╰(◣﹏◢)╯"])
 stop_on_finished = true
+restart_on_finished = false
 metadata/_custom_type_script = "uid://bk61eruksbbok"
 
 [node name="CafeteriaTables" type="Node2D" parent="EnvironmentObjects" unique_id=1795991150]
@@ -507,6 +516,7 @@ shape = SubResource("CircleShape2D_4ayp5")
 script = ExtResource("7_sc46r")
 dialogue = Array[String](["[i]You pour the cleaning supplies all over his food, staring him directly in the eyes while you do it..[/i]"])
 stop_on_finished = true
+restart_on_finished = false
 metadata/_custom_type_script = "uid://bk61eruksbbok"
 
 [node name="VarSpeakComponent" type="Node" parent="EnvironmentObjects/WeirdosFood" unique_id=34217405]
@@ -532,7 +542,6 @@ shape = SubResource("RectangleShape2D_bjh1v")
 
 [node name="SpeakComponent" parent="NPCs/LunchPersonNPC" index="2" unique_id=1744893008]
 dialogue = Array[String](["[b]Nutrition Staff:[/b] Got your food? Good, that’ll be 30 dabloons.", "[b][rainbow freq=1.0 sat=0.8 val=0.8 speed=1.0]Jim Jar:[/rainbow][/b] But I don't have any money…", "[b]Nutrition Staff:[/b] ( ͠° ͟ʖ ͡°)﻿", "[b][rainbow freq=1.0 sat=0.8 val=0.8 speed=1.0]Jim Jar:[/rainbow][/b] Don’t I work for you? Can’t you take it out of my paycheck?", "[b]Nutrition Staff:[/b] No. Don’t be an [b][shake rate=20.0 level=8 connected=1]IDIOT[/shake][/b]."])
-restart_on_finished = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/LunchPersonNPC" unique_id=1616631335]
 position = Vector2(0, 12)
@@ -550,7 +559,6 @@ shape = SubResource("RectangleShape2D_ti61l")
 
 [node name="SpeakComponent" parent="NPCs/WeirdoNPC" index="2" unique_id=1744893008]
 dialogue = Array[String](["[b]Employee?:[/b] Ever notice how there aren't any bathrooms at this office. I've just been using the janitors mop bucket (‾ ⌣ ‾)", "[b][rainbow freq=1.0 sat=0.8 val=0.8 speed=1.0]Jim Jar:[/rainbow][/b] [i]Okay, this planet is weird, but this guy is f**ked, even by human standards...[/i]", "[b]Employee?:[/b] I'm so excited for my meeting with Big Boss! I'm going to get so much praise for all my hard work!", "[b][rainbow freq=1.0 sat=0.8 val=0.8 speed=1.0]Jim Jar:[/rainbow][/b] [i]Oh, no, he's just a little dumb. Poor thing.[/i]"])
-restart_on_finished = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/WeirdoNPC" unique_id=1574602700]
 position = Vector2(0, 7.5)
@@ -559,6 +567,8 @@ shape = SubResource("RectangleShape2D_5h45y")
 [node name="VariantSpeakComponent" type="Node" parent="NPCs/WeirdoNPC" unique_id=416026589]
 script = ExtResource("7_sc46r")
 dialogue = Array[String](["[b]Idiot:[/b] Oooo, dressing? My [wave amp=50.0 freq=5.0 connected=1]favorite![/wave]", "[b]Idiot:[/b] [i]takes a bite.[/i]", "[b]Idiot:[/b] [shake rate=20.0 level=5 connected=1]ughh... I mean... tasty...[/shake]"])
+stop_on_finished = true
+restart_on_finished = false
 metadata/_custom_type_script = "uid://bk61eruksbbok"
 
 [node name="LeftWatercoolerNPC" parent="NPCs" unique_id=1285043288 instance=ExtResource("28_4u44s")]
@@ -573,7 +583,6 @@ shape = SubResource("RectangleShape2D_prssa")
 
 [node name="SpeakComponent" parent="NPCs/LeftWatercoolerNPC" index="2" unique_id=1744893008]
 dialogue = Array[String](["[b]Mike:[/b] Hey have you seen the projections for Q2?", "[b]Janice:[/b] Yes! Golly jee, they're off the charts!", "[b]Mike:[/b] Right?! Gosh, we're so productive!", "[b]Janice:[/b] [wave amp=50.0 freq=5.0 connected=1][i]sips fluids[/i][/wave] My stars, that's good.", "[b]Mike:[/b] I know! This water really sustains me."])
-restart_on_finished = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/LeftWatercoolerNPC" unique_id=872584139]
 position = Vector2(0.5, 12)
@@ -594,8 +603,7 @@ position = Vector2(1.5, -16)
 shape = SubResource("RectangleShape2D_e3k61")
 
 [node name="SpeakComponent" parent="NPCs/SeniorEngineerNPC" index="2" unique_id=1744893008]
-dialogue = Array[String](["[b]Senior Engineer:[/b] I swear to [shake rate=20.0 level=5 connected=1]f**kin [b]GOD[/b][/shake] this whole place would collapse without me.", "[b]Senior Engineer:[/b] Not a joke! Our servers, the network, all of our microservices, the [b]DATABASE[/b]...", "[b]Senior Engineer:[/b] [shake rate=20.0 level=5 connected=1][b]ALL OF IT![/b][/shake] Poof, without me.", "[shake rate=20.0 level=5 connected=1](╯°□°）╯︵ ┻━┻[/shake]"])
-restart_on_finished = true
+dialogue = Array[String](["[b]Senior Engineer:[/b] I swear to [shake rate=20.0 level=5 connected=1]f**kin [b]GOD[/b][/shake] this whole place would collapse without me.", "[b]Senior Engineer:[/b] Not a joke! Our servers, the network, all of our microservices, the [b]DATABASE[/b]...", "[b]Senior Engineer:[/b] [shake rate=20.0 level=5 connected=1][b]ALL OF IT![/b][/shake] Poof, without me.", "[b]Senior Engineer:[/b] [shake rate=20.0 level=5 connected=1](╯°□°）╯︵ ┻━┻[/shake]"])
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/SeniorEngineerNPC" unique_id=1863192537]
 position = Vector2(-0.5, 17.5)
@@ -610,7 +618,6 @@ shape = SubResource("RectangleShape2D_0coyi")
 
 [node name="SpeakComponent" parent="NPCs/BossNPC" index="2" unique_id=1744893008]
 dialogue = Array[String](["[b]Big Boss:[/b] We’re very focused on modernizing our legacy systems, focused on data, we have to reduce friction in day to day AI utilization.", "[b]Big Boss:[/b] With data, comes [tornado radius=10.0 freq=1.0 connected=1]AI![/tornado] So many use cases.", "[b]Big Boss:[/b] We need to leverage what’s been done and innovate our strategies to get ahead of the game.", "[b]Big Boss:[/b] Friends? Family? What are you talking about?? [shake rate=20.0 level=5 connected=1]There's no time![/shake] You have the PTO hours for that??", "[b]Big Boss:[/b] Our customers expect speed and the analogy is you need to go fast but you need controls in the car. Literally, we’re demystifying…", "[b][rainbow freq=1.0 sat=0.8 val=0.8 speed=1.0]Jim Jar:[/rainbow][/b] [i]...what is this one talking about?[/i]"])
-restart_on_finished = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/BossNPC" unique_id=529254716]
 position = Vector2(0.5, 8.5)
@@ -625,7 +632,6 @@ shape = SubResource("RectangleShape2D_he2d1")
 
 [node name="SpeakComponent" parent="NPCs/StandingDeskNPC" index="2" unique_id=1744893008]
 dialogue = Array[String](["[b]Employee:[/b] Can I stop pretending like I’m not here just to make a living?", "[b]Employee:[/b] If it weren't for these standing desks, [font_size=12]and manditory in-person days[/font_size]  I wouldn't even be in the office.", "[b]Employee:[/b] All of our meetings are online anyways..."])
-restart_on_finished = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/StandingDeskNPC" unique_id=1299338409]
 position = Vector2(0, 12)
@@ -643,7 +649,6 @@ shape = SubResource("RectangleShape2D_ethsb")
 
 [node name="SpeakComponent" parent="NPCs/JoshNPC" index="2" unique_id=1744893008]
 dialogue = Array[String](["[i]I don't know why, but I like how this guy sits.[/i]", "[b]Josh:[/b] Hey! You must be new. Have you met the boss yet?", "[b]Josh:[/b] Oh shoot, looks like his calander is triple booked for weeks. Oh well."])
-restart_on_finished = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/JoshNPC" unique_id=580921494]
 position = Vector2(0.5, 18.5)
@@ -652,7 +657,6 @@ shape = SubResource("RectangleShape2D_qmnrj")
 [node name="VariantSpeakComponent" type="Node" parent="NPCs/JoshNPC" unique_id=1734588623]
 script = ExtResource("7_sc46r")
 dialogue = Array[String](["[b]Josh:[/b] Oh hey, it's you! Looks like Big Boss freed up!", "[b]Josh:[/b] You should go see him, his office is at the end of the hall."])
-restart_on_finished = true
 metadata/_custom_type_script = "uid://bk61eruksbbok"
 
 [node name="LuisNPC" parent="NPCs" unique_id=1651208751 instance=ExtResource("28_4u44s")]
@@ -664,7 +668,6 @@ shape = SubResource("RectangleShape2D_0un3i")
 
 [node name="SpeakComponent" parent="NPCs/LuisNPC" index="2" unique_id=1744893008]
 dialogue = Array[String](["[b]Luis:[/b] Sup, new guy, welcome to the team.", "[b]Luis:[/b] If you need a Build Master or some recipe recs, let me know, I've got your back.", "[b]Luis:[/b] Also, talk to Josh if you haven't. He's really good at billards."])
-restart_on_finished = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/LuisNPC" unique_id=1966541432]
 position = Vector2(0.5, 13.5)
@@ -740,8 +743,8 @@ description = "Meets Expectations."
 position = Vector2(-6.5, 2.5)
 shape = SubResource("RectangleShape2D_rd7m1")
 
-[node name="Player" parent="." unique_id=579082540 instance=ExtResource("4_m68pb")]
-position = Vector2(1056.0001, 608)
+[node name="PlayerSpawn" type="Marker2D" parent="." unique_id=305113925]
+position = Vector2(1884, 1367)
 
 [connection signal="area_entered" from="NPCs/Path2D/PathFollow2D/JanitorNPC/InteractComponent" to="NPCs/Path2D/PathFollow2D/JanitorNPC" method="_on_interact_component_area_entered"]
 [connection signal="area_exited" from="NPCs/Path2D/PathFollow2D/JanitorNPC/InteractComponent" to="NPCs/Path2D/PathFollow2D/JanitorNPC" method="_on_interact_component_area_exited"]

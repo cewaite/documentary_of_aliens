@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://ccw5sfnikeq02"]
+
+[ext_resource type="Texture2D" uid="uid://dt070kobfl3ns" path="res://assets/levels/park/ParkLevel-4.png" id="1_kdhy7"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kdhy7"]
+radius = 8.242116
+
+[node name="Tree" type="StaticBody2D" unique_id=1800596266]
+collision_layer = 8
+collision_mask = 6
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=784993417]
+position = Vector2(-8, -96)
+texture = ExtResource("1_kdhy7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1594400110]
+position = Vector2(-8, 40)
+scale = Vector2(8.735621, 4.8912816)
+shape = SubResource("CircleShape2D_kdhy7")

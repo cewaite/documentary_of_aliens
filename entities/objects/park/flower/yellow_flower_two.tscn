@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://bc0r4fq2eoxgq"]
+
+[ext_resource type="Texture2D" uid="uid://b8uxlxtihq5dv" path="res://assets/levels/park/ParkLevel-Foliage3.png" id="1_ygop7"]
+
+[node name="YellowFlowerTwo" type="Sprite2D" unique_id=1458019754]
+texture = ExtResource("1_ygop7")
+offset = Vector2(0, -11.27)

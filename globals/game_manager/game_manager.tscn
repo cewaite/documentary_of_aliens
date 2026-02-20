@@ -4,11 +4,9 @@
 [ext_resource type="PackedScene" uid="uid://bajr7b11kd2yt" path="res://scenes/ui/ui_manager/ui_manager.tscn" id="2_qfmkk"]
 [ext_resource type="PackedScene" uid="uid://bcj24nv0puhm8" path="res://scenes/levels/the_office/the_office.tscn" id="3_q5eha"]
 
-[node name="GameManager" type="Node" unique_id=1621592908 node_paths=PackedStringArray("ui_manager", "curr_level")]
+[node name="GameManager" type="Node" unique_id=1621592908 node_paths=PackedStringArray("ui_manager")]
 script = ExtResource("1_e8pdb")
 ui_manager = NodePath("UIManager")
-curr_level = NodePath("TheOffice")
+levels = Array[PackedScene]([ExtResource("3_q5eha")])
 
 [node name="UIManager" parent="." unique_id=859618267 instance=ExtResource("2_qfmkk")]
-
-[node name="TheOffice" parent="." unique_id=1679858242 instance=ExtResource("3_q5eha")]

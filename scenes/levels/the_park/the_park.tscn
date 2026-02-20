@@ -1,0 +1,604 @@
+[gd_scene format=3 uid="uid://ck7e8c74ab57m"]
+
+[ext_resource type="Script" uid="uid://dlvavoctew42j" path="res://scenes/levels/the_park/the_park.gd" id="1_an8yo"]
+[ext_resource type="Texture2D" uid="uid://d1ygsj7fg8ylk" path="res://assets/levels/park/ParkLevel-1.png" id="2_5wkf2"]
+[ext_resource type="Texture2D" uid="uid://bqd7hqlqqyfll" path="res://assets/levels/park/ParkLevel-3.png" id="3_3iifi"]
+[ext_resource type="Texture2D" uid="uid://bh45mpcvuc6nv" path="res://assets/levels/park/ParkLevel-5.png" id="4_h0qxt"]
+[ext_resource type="Texture2D" uid="uid://bhqtbniogf1pl" path="res://assets/levels/park/ParkLevel-18.png" id="5_6kjjg"]
+[ext_resource type="Texture2D" uid="uid://b407ygq3wry2s" path="res://assets/levels/park/ParkLevel-22.png" id="6_gib6n"]
+[ext_resource type="PackedScene" uid="uid://dltkstfh1orx5" path="res://entities/objects/park/park_level_lake.tscn" id="7_u8mgf"]
+[ext_resource type="PackedScene" uid="uid://ktj4purq3iho" path="res://entities/player/player.tscn" id="8_51fdp"]
+[ext_resource type="PackedScene" uid="uid://ccw5sfnikeq02" path="res://entities/objects/park/tree.tscn" id="8_gqamw"]
+[ext_resource type="PackedScene" uid="uid://c0f18i47ewmb" path="res://entities/objects/park/bench.tscn" id="9_vy6mk"]
+[ext_resource type="PackedScene" uid="uid://bwln1bkc88p6t" path="res://entities/objects/park/trash_can.tscn" id="10_ohpih"]
+[ext_resource type="PackedScene" uid="uid://cffoaoa6vyw1b" path="res://entities/objects/park/lamp.tscn" id="11_a802e"]
+[ext_resource type="PackedScene" uid="uid://mcd0o4ent7ws" path="res://entities/objects/park/lamp_flipped.tscn" id="12_mj66k"]
+[ext_resource type="PackedScene" uid="uid://dmrh7bluoorkt" path="res://entities/objects/park/double_bush.tscn" id="13_4ctbo"]
+[ext_resource type="PackedScene" uid="uid://c2ouretjk3ou5" path="res://entities/objects/park/medium_bush.tscn" id="14_vsh6r"]
+[ext_resource type="PackedScene" uid="uid://rphu21oi36j4" path="res://entities/objects/park/small_bush.tscn" id="15_2aqtd"]
+[ext_resource type="PackedScene" uid="uid://b82palajeyvcx" path="res://entities/objects/park/grass/grass_sprite_five.tscn" id="16_thbbl"]
+[ext_resource type="PackedScene" uid="uid://112cxayufsbn" path="res://entities/objects/park/grass/grass_sprite_four.tscn" id="17_6fm3u"]
+[ext_resource type="PackedScene" uid="uid://4vch7hprb1cr" path="res://entities/objects/park/grass/grass_sprite_one.tscn" id="18_htgib"]
+[ext_resource type="PackedScene" uid="uid://7ywb4hyo61mt" path="res://entities/objects/park/grass/grass_sprite_three.tscn" id="19_hmuc1"]
+[ext_resource type="PackedScene" uid="uid://ca3w6mhrbwqyk" path="res://entities/objects/park/grass/grass_sprite_two.tscn" id="20_xy7ec"]
+[ext_resource type="PackedScene" uid="uid://f8lwklkv2aek" path="res://entities/objects/park/flower/blue_flower.tscn" id="21_xy7ec"]
+[ext_resource type="PackedScene" uid="uid://cj3sid5lcvdkl" path="res://entities/objects/park/flower/purple_flower.tscn" id="22_pcpcb"]
+[ext_resource type="PackedScene" uid="uid://c5udw5dn7mqjd" path="res://entities/objects/park/flower/yellow_flower_one.tscn" id="23_au81a"]
+[ext_resource type="PackedScene" uid="uid://bc0r4fq2eoxgq" path="res://entities/objects/park/flower/yellow_flower_two.tscn" id="24_w3ok1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5wkf2"]
+size = Vector2(40, 1720)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3iifi"]
+size = Vector2(2288, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6kjjg"]
+size = Vector2(96, 960)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gib6n"]
+size = Vector2(64, 400)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u8mgf"]
+size = Vector2(312, 96)
+
+[node name="ThePark" type="Node2D" unique_id=1381632466]
+y_sort_enabled = true
+script = ExtResource("1_an8yo")
+
+[node name="LevelBoundaries" type="StaticBody2D" parent="." unique_id=1741980189]
+collision_layer = 128
+collision_mask = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelBoundaries" unique_id=1686186907]
+position = Vector2(-20, 796)
+shape = SubResource("RectangleShape2D_5wkf2")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="LevelBoundaries" unique_id=1248447342]
+position = Vector2(2176, 800)
+shape = SubResource("RectangleShape2D_5wkf2")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="LevelBoundaries" unique_id=270614086]
+position = Vector2(1080, -32)
+shape = SubResource("RectangleShape2D_3iifi")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="LevelBoundaries" unique_id=811457805]
+position = Vector2(1080, 1648)
+shape = SubResource("RectangleShape2D_3iifi")
+
+[node name="ParkLevelFloor" type="Sprite2D" parent="." unique_id=2026097779]
+z_index = -2
+position = Vector2(1080, 808)
+texture = ExtResource("2_5wkf2")
+
+[node name="ParkLevelPath" type="Sprite2D" parent="." unique_id=1161737208]
+z_index = -2
+position = Vector2(1080, 808)
+texture = ExtResource("3_3iifi")
+
+[node name="ParkLevelBlanket" type="Sprite2D" parent="." unique_id=532392541]
+z_index = -2
+position = Vector2(352, 1504)
+texture = ExtResource("4_h0qxt")
+
+[node name="ParkLevelBushWall" type="StaticBody2D" parent="." unique_id=811247387]
+collision_layer = 128
+collision_mask = 6
+
+[node name="ParkLevelBushWallSprite" type="Sprite2D" parent="ParkLevelBushWall" unique_id=274348619]
+position = Vector2(1080, 808)
+texture = ExtResource("5_6kjjg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ParkLevelBushWall" unique_id=992550782]
+position = Vector2(1800, 480)
+shape = SubResource("RectangleShape2D_6kjjg")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="ParkLevelBushWall" unique_id=152894493]
+position = Vector2(1816, 1416)
+shape = SubResource("RectangleShape2D_gib6n")
+
+[node name="ParkLevelPoliceBarrier" type="StaticBody2D" parent="." unique_id=758444538]
+collision_layer = 128
+collision_mask = 6
+
+[node name="Sprite2D" type="Sprite2D" parent="ParkLevelPoliceBarrier" unique_id=2102284294]
+position = Vector2(1080, 808)
+texture = ExtResource("6_gib6n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ParkLevelPoliceBarrier" unique_id=1665565123]
+position = Vector2(2004, 1568)
+shape = SubResource("RectangleShape2D_u8mgf")
+
+[node name="ParkLevelLake" parent="." unique_id=1668920006 instance=ExtResource("7_u8mgf")]
+position = Vector2(704, 1040)
+
+[node name="EnvironmentObjects" type="Node2D" parent="." unique_id=1739329665]
+y_sort_enabled = true
+
+[node name="Trees" type="Node2D" parent="EnvironmentObjects" unique_id=591742577]
+y_sort_enabled = true
+
+[node name="Tree" parent="EnvironmentObjects/Trees" unique_id=1800596266 instance=ExtResource("8_gqamw")]
+position = Vector2(1496, 576)
+
+[node name="Tree2" parent="EnvironmentObjects/Trees" unique_id=1054281996 instance=ExtResource("8_gqamw")]
+position = Vector2(320, 296)
+
+[node name="Tree3" parent="EnvironmentObjects/Trees" unique_id=231940047 instance=ExtResource("8_gqamw")]
+position = Vector2(120, 1240)
+
+[node name="Tree4" parent="EnvironmentObjects/Trees" unique_id=1053935683 instance=ExtResource("8_gqamw")]
+position = Vector2(928, 1448)
+
+[node name="Tree5" parent="EnvironmentObjects/Trees" unique_id=305494352 instance=ExtResource("8_gqamw")]
+position = Vector2(1648, 1248)
+
+[node name="Bench" parent="EnvironmentObjects" unique_id=2054400722 instance=ExtResource("9_vy6mk")]
+position = Vector2(672, 328)
+
+[node name="TrashCan" parent="EnvironmentObjects" unique_id=227156759 instance=ExtResource("10_ohpih")]
+position = Vector2(504, 360)
+
+[node name="Lamps" type="Node2D" parent="EnvironmentObjects" unique_id=1608254423]
+y_sort_enabled = true
+
+[node name="Lamp" parent="EnvironmentObjects/Lamps" unique_id=1466682331 instance=ExtResource("11_a802e")]
+position = Vector2(944, 344)
+
+[node name="Lamp2" parent="EnvironmentObjects/Lamps" unique_id=280803764 instance=ExtResource("11_a802e")]
+position = Vector2(160, 504)
+
+[node name="LampFlipped" parent="EnvironmentObjects/Lamps" unique_id=1755511099 instance=ExtResource("12_mj66k")]
+position = Vector2(1456, 752)
+
+[node name="Bushes" type="Node2D" parent="EnvironmentObjects" unique_id=191812024]
+y_sort_enabled = true
+
+[node name="DoubleBush" parent="EnvironmentObjects/Bushes" unique_id=780959825 instance=ExtResource("13_4ctbo")]
+position = Vector2(1336, 216)
+
+[node name="DoubleBush2" parent="EnvironmentObjects/Bushes" unique_id=442731757 instance=ExtResource("13_4ctbo")]
+position = Vector2(152, 136)
+
+[node name="DoubleBush3" parent="EnvironmentObjects/Bushes" unique_id=1268053705 instance=ExtResource("13_4ctbo")]
+position = Vector2(1384, 1440)
+
+[node name="MediumBush" parent="EnvironmentObjects/Bushes" unique_id=1745739866 instance=ExtResource("14_vsh6r")]
+position = Vector2(1496, 88)
+
+[node name="MediumBush2" parent="EnvironmentObjects/Bushes" unique_id=2036203294 instance=ExtResource("14_vsh6r")]
+position = Vector2(112, 32)
+
+[node name="MediumBush3" parent="EnvironmentObjects/Bushes" unique_id=1673530160 instance=ExtResource("14_vsh6r")]
+position = Vector2(48, 1304)
+
+[node name="MediumBush4" parent="EnvironmentObjects/Bushes" unique_id=474709735 instance=ExtResource("14_vsh6r")]
+position = Vector2(1576, 1520)
+
+[node name="SmallBush" parent="EnvironmentObjects/Bushes" unique_id=2094694971 instance=ExtResource("15_2aqtd")]
+position = Vector2(1344, 72)
+
+[node name="SmallBush2" parent="EnvironmentObjects/Bushes" unique_id=1962926730 instance=ExtResource("15_2aqtd")]
+position = Vector2(1216, 152)
+
+[node name="SmallBush3" parent="EnvironmentObjects/Bushes" unique_id=1440476416 instance=ExtResource("15_2aqtd")]
+position = Vector2(264, 336)
+
+[node name="SmallBush4" parent="EnvironmentObjects/Bushes" unique_id=288447552 instance=ExtResource("15_2aqtd")]
+position = Vector2(1560, 624)
+
+[node name="SmallBush5" parent="EnvironmentObjects/Bushes" unique_id=1517873578 instance=ExtResource("15_2aqtd")]
+position = Vector2(1688, 1488)
+
+[node name="SmallBush6" parent="EnvironmentObjects/Bushes" unique_id=1768996794 instance=ExtResource("15_2aqtd")]
+position = Vector2(832, 1488)
+
+[node name="SmallBush7" parent="EnvironmentObjects/Bushes" unique_id=533708777 instance=ExtResource("15_2aqtd")]
+position = Vector2(984, 1512)
+
+[node name="Vegetation" type="Node2D" parent="EnvironmentObjects" unique_id=1226342452]
+y_sort_enabled = true
+
+[node name="GrassSpriteFive" parent="EnvironmentObjects/Vegetation" unique_id=1838905865 instance=ExtResource("16_thbbl")]
+position = Vector2(689, 136)
+
+[node name="GrassSpriteFour" parent="EnvironmentObjects/Vegetation" unique_id=486804176 instance=ExtResource("17_6fm3u")]
+position = Vector2(741, 135)
+
+[node name="GrassSpriteOne" parent="EnvironmentObjects/Vegetation" unique_id=447990880 instance=ExtResource("18_htgib")]
+position = Vector2(808, 167)
+
+[node name="GrassSpriteThree" parent="EnvironmentObjects/Vegetation" unique_id=1549903081 instance=ExtResource("19_hmuc1")]
+position = Vector2(672, 190)
+
+[node name="GrassSpriteTwo" parent="EnvironmentObjects/Vegetation" unique_id=188183311 instance=ExtResource("20_xy7ec")]
+position = Vector2(723, 172)
+
+[node name="BlueFlower" parent="EnvironmentObjects/Vegetation" unique_id=1260107645 instance=ExtResource("21_xy7ec")]
+position = Vector2(653, 151)
+
+[node name="PurpleFlower" parent="EnvironmentObjects/Vegetation" unique_id=137755603 instance=ExtResource("22_pcpcb")]
+position = Vector2(714, 193)
+
+[node name="YellowFlowerOne" parent="EnvironmentObjects/Vegetation" unique_id=353151306 instance=ExtResource("23_au81a")]
+position = Vector2(713, 105)
+
+[node name="YellowFlowerTwo" parent="EnvironmentObjects/Vegetation" unique_id=1458019754 instance=ExtResource("24_w3ok1")]
+position = Vector2(767, 155)
+
+[node name="GrassSpriteFive2" parent="EnvironmentObjects/Vegetation" unique_id=94284451 instance=ExtResource("16_thbbl")]
+position = Vector2(1596.5, 257.62)
+
+[node name="GrassSpriteFour2" parent="EnvironmentObjects/Vegetation" unique_id=1261800345 instance=ExtResource("17_6fm3u")]
+position = Vector2(1648.5, 256.62)
+
+[node name="GrassSpriteOne2" parent="EnvironmentObjects/Vegetation" unique_id=112699806 instance=ExtResource("18_htgib")]
+position = Vector2(1715.5, 288.62)
+
+[node name="GrassSpriteThree2" parent="EnvironmentObjects/Vegetation" unique_id=662541649 instance=ExtResource("19_hmuc1")]
+position = Vector2(1579.5, 311.62)
+
+[node name="GrassSpriteTwo2" parent="EnvironmentObjects/Vegetation" unique_id=971078645 instance=ExtResource("20_xy7ec")]
+position = Vector2(1630.5, 293.62)
+
+[node name="BlueFlower2" parent="EnvironmentObjects/Vegetation" unique_id=492833534 instance=ExtResource("21_xy7ec")]
+position = Vector2(1623, 239)
+
+[node name="YellowFlowerOne2" parent="EnvironmentObjects/Vegetation" unique_id=1973924555 instance=ExtResource("23_au81a")]
+position = Vector2(1609, 311)
+
+[node name="YellowFlowerTwo2" parent="EnvironmentObjects/Vegetation" unique_id=1146709856 instance=ExtResource("24_w3ok1")]
+position = Vector2(1674.5, 276.62)
+
+[node name="GrassSpriteFour3" parent="EnvironmentObjects/Vegetation" unique_id=2067955342 instance=ExtResource("17_6fm3u")]
+position = Vector2(1678, 317)
+
+[node name="GrassSpriteOne3" parent="EnvironmentObjects/Vegetation" unique_id=178337081 instance=ExtResource("18_htgib")]
+position = Vector2(1557, 274)
+
+[node name="GrassSpriteFour4" parent="EnvironmentObjects/Vegetation" unique_id=712762189 instance=ExtResource("17_6fm3u")]
+position = Vector2(1683, 227)
+
+[node name="GrassSpriteThree3" parent="EnvironmentObjects/Vegetation" unique_id=1652450956 instance=ExtResource("19_hmuc1")]
+position = Vector2(1583, 208)
+
+[node name="GrassSpriteThree4" parent="EnvironmentObjects/Vegetation" unique_id=605464941 instance=ExtResource("19_hmuc1")]
+position = Vector2(1151, 331)
+
+[node name="GrassSpriteThree5" parent="EnvironmentObjects/Vegetation" unique_id=246788334 instance=ExtResource("19_hmuc1")]
+position = Vector2(1254, 427)
+
+[node name="GrassSpriteFour5" parent="EnvironmentObjects/Vegetation" unique_id=1319204653 instance=ExtResource("17_6fm3u")]
+position = Vector2(1093, 417)
+
+[node name="GrassSpriteThree6" parent="EnvironmentObjects/Vegetation" unique_id=1413693439 instance=ExtResource("19_hmuc1")]
+position = Vector2(1233, 347)
+
+[node name="GrassSpriteFour6" parent="EnvironmentObjects/Vegetation" unique_id=1519738376 instance=ExtResource("17_6fm3u")]
+position = Vector2(1168, 395)
+
+[node name="GrassSpriteFive3" parent="EnvironmentObjects/Vegetation" unique_id=804698376 instance=ExtResource("16_thbbl")]
+position = Vector2(1214, 465)
+
+[node name="BlueFlower3" parent="EnvironmentObjects/Vegetation" unique_id=138926735 instance=ExtResource("21_xy7ec")]
+position = Vector2(1114, 363)
+
+[node name="YellowFlowerOne3" parent="EnvironmentObjects/Vegetation" unique_id=421427978 instance=ExtResource("23_au81a")]
+position = Vector2(1291, 466)
+
+[node name="YellowFlowerTwo3" parent="EnvironmentObjects/Vegetation" unique_id=2130712266 instance=ExtResource("24_w3ok1")]
+position = Vector2(1156, 438)
+
+[node name="BlueFlower4" parent="EnvironmentObjects/Vegetation" unique_id=726121224 instance=ExtResource("21_xy7ec")]
+position = Vector2(1195, 325)
+
+[node name="GrassSpriteFour7" parent="EnvironmentObjects/Vegetation" unique_id=16643896 instance=ExtResource("17_6fm3u")]
+position = Vector2(1227, 377)
+
+[node name="GrassSpriteOne4" parent="EnvironmentObjects/Vegetation" unique_id=1877617624 instance=ExtResource("18_htgib")]
+position = Vector2(1290, 385)
+
+[node name="GrassSpriteFour8" parent="EnvironmentObjects/Vegetation" unique_id=1796392839 instance=ExtResource("17_6fm3u")]
+position = Vector2(1123, 285)
+
+[node name="GrassSpriteOne5" parent="EnvironmentObjects/Vegetation" unique_id=1823361088 instance=ExtResource("18_htgib")]
+position = Vector2(113, 238)
+
+[node name="GrassSpriteFour9" parent="EnvironmentObjects/Vegetation" unique_id=288795363 instance=ExtResource("17_6fm3u")]
+position = Vector2(198, 240)
+
+[node name="GrassSpriteFour10" parent="EnvironmentObjects/Vegetation" unique_id=2079417284 instance=ExtResource("17_6fm3u")]
+position = Vector2(93, 365)
+
+[node name="GrassSpriteFive4" parent="EnvironmentObjects/Vegetation" unique_id=962457674 instance=ExtResource("16_thbbl")]
+position = Vector2(93, 292)
+
+[node name="GrassSpriteOne6" parent="EnvironmentObjects/Vegetation" unique_id=1348151718 instance=ExtResource("18_htgib")]
+position = Vector2(170, 288)
+
+[node name="GrassSpriteFive5" parent="EnvironmentObjects/Vegetation" unique_id=1401334656 instance=ExtResource("16_thbbl")]
+position = Vector2(41, 242)
+
+[node name="GrassSpriteThree7" parent="EnvironmentObjects/Vegetation" unique_id=1846777753 instance=ExtResource("19_hmuc1")]
+position = Vector2(56, 323)
+
+[node name="GrassSpriteTwo3" parent="EnvironmentObjects/Vegetation" unique_id=1257338881 instance=ExtResource("20_xy7ec")]
+position = Vector2(242, 255)
+
+[node name="GrassSpriteFive6" parent="EnvironmentObjects/Vegetation" unique_id=2048351883 instance=ExtResource("16_thbbl")]
+position = Vector2(277, 196)
+
+[node name="GrassSpriteThree8" parent="EnvironmentObjects/Vegetation" unique_id=311351940 instance=ExtResource("19_hmuc1")]
+position = Vector2(140, 344)
+
+[node name="PurpleFlower2" parent="EnvironmentObjects/Vegetation" unique_id=793320687 instance=ExtResource("22_pcpcb")]
+position = Vector2(133, 283)
+
+[node name="GrassSpriteOne7" parent="EnvironmentObjects/Vegetation" unique_id=533900469 instance=ExtResource("18_htgib")]
+position = Vector2(35, 391)
+
+[node name="GrassSpriteTwo4" parent="EnvironmentObjects/Vegetation" unique_id=101601984 instance=ExtResource("20_xy7ec")]
+position = Vector2(562, 76)
+
+[node name="GrassSpriteThree9" parent="EnvironmentObjects/Vegetation" unique_id=146282523 instance=ExtResource("19_hmuc1")]
+position = Vector2(456, 156)
+
+[node name="GrassSpriteOne8" parent="EnvironmentObjects/Vegetation" unique_id=1238619402 instance=ExtResource("18_htgib")]
+position = Vector2(571, 156)
+
+[node name="GrassSpriteFour11" parent="EnvironmentObjects/Vegetation" unique_id=286935240 instance=ExtResource("17_6fm3u")]
+position = Vector2(517, 115)
+
+[node name="GrassSpriteThree10" parent="EnvironmentObjects/Vegetation" unique_id=324042258 instance=ExtResource("19_hmuc1")]
+position = Vector2(951, 108)
+
+[node name="GrassSpriteOne9" parent="EnvironmentObjects/Vegetation" unique_id=45505652 instance=ExtResource("18_htgib")]
+position = Vector2(907, 69)
+
+[node name="GrassSpriteThree11" parent="EnvironmentObjects/Vegetation" unique_id=2140010543 instance=ExtResource("19_hmuc1")]
+position = Vector2(850, 74)
+
+[node name="GrassSpriteTwo5" parent="EnvironmentObjects/Vegetation" unique_id=1831908845 instance=ExtResource("20_xy7ec")]
+position = Vector2(896, 180)
+
+[node name="GrassSpriteOne10" parent="EnvironmentObjects/Vegetation" unique_id=226902834 instance=ExtResource("18_htgib")]
+position = Vector2(871, 122)
+
+[node name="GrassSpriteFour12" parent="EnvironmentObjects/Vegetation" unique_id=337588327 instance=ExtResource("17_6fm3u")]
+position = Vector2(1054, 131)
+
+[node name="GrassSpriteFive7" parent="EnvironmentObjects/Vegetation" unique_id=456946940 instance=ExtResource("16_thbbl")]
+position = Vector2(764, 64)
+
+[node name="GrassSpriteOne11" parent="EnvironmentObjects/Vegetation" unique_id=679415601 instance=ExtResource("18_htgib")]
+position = Vector2(636, 70)
+
+[node name="GrassSpriteFive8" parent="EnvironmentObjects/Vegetation" unique_id=1757524093 instance=ExtResource("16_thbbl")]
+position = Vector2(601, 113)
+
+[node name="GrassSpriteThree12" parent="EnvironmentObjects/Vegetation" unique_id=440813476 instance=ExtResource("19_hmuc1")]
+position = Vector2(522, 196)
+
+[node name="GrassSpriteFour13" parent="EnvironmentObjects/Vegetation" unique_id=1461465642 instance=ExtResource("17_6fm3u")]
+position = Vector2(852, 227)
+
+[node name="GrassSpriteTwo6" parent="EnvironmentObjects/Vegetation" unique_id=1512472991 instance=ExtResource("20_xy7ec")]
+position = Vector2(584, 224)
+
+[node name="GrassSpriteFour14" parent="EnvironmentObjects/Vegetation" unique_id=964582895 instance=ExtResource("17_6fm3u")]
+position = Vector2(992, 156)
+
+[node name="GrassSpriteOne12" parent="EnvironmentObjects/Vegetation" unique_id=1808820214 instance=ExtResource("18_htgib")]
+position = Vector2(1007, 29)
+
+[node name="GrassSpriteFour15" parent="EnvironmentObjects/Vegetation" unique_id=1937421692 instance=ExtResource("17_6fm3u")]
+position = Vector2(1022, 106)
+
+[node name="GrassSpriteFour16" parent="EnvironmentObjects/Vegetation" unique_id=1375882143 instance=ExtResource("17_6fm3u")]
+position = Vector2(990, 68)
+
+[node name="GrassSpriteFour17" parent="EnvironmentObjects/Vegetation" unique_id=1887050205 instance=ExtResource("17_6fm3u")]
+position = Vector2(893, 101)
+
+[node name="GrassSpriteThree13" parent="EnvironmentObjects/Vegetation" unique_id=135377697 instance=ExtResource("19_hmuc1")]
+position = Vector2(763, 208)
+
+[node name="GrassSpriteFour18" parent="EnvironmentObjects/Vegetation" unique_id=1775157258 instance=ExtResource("17_6fm3u")]
+position = Vector2(668, 94)
+
+[node name="GrassSpriteOne13" parent="EnvironmentObjects/Vegetation" unique_id=478535311 instance=ExtResource("18_htgib")]
+position = Vector2(548, 128)
+
+[node name="GrassSpriteOne14" parent="EnvironmentObjects/Vegetation" unique_id=1105340764 instance=ExtResource("18_htgib")]
+position = Vector2(593, 184)
+
+[node name="GrassSpriteThree14" parent="EnvironmentObjects/Vegetation" unique_id=1614249505 instance=ExtResource("19_hmuc1")]
+position = Vector2(514, 156)
+
+[node name="GrassSpriteOne15" parent="EnvironmentObjects/Vegetation" unique_id=1852714227 instance=ExtResource("18_htgib")]
+position = Vector2(629, 152)
+
+[node name="GrassSpriteThree15" parent="EnvironmentObjects/Vegetation" unique_id=1756228773 instance=ExtResource("19_hmuc1")]
+position = Vector2(813, 98)
+
+[node name="GrassSpriteOne16" parent="EnvironmentObjects/Vegetation" unique_id=1078205495 instance=ExtResource("18_htgib")]
+position = Vector2(950, 165)
+
+[node name="GrassSpriteOne17" parent="EnvironmentObjects/Vegetation" unique_id=1349632425 instance=ExtResource("18_htgib")]
+position = Vector2(838, 133)
+
+[node name="YellowFlowerOne4" parent="EnvironmentObjects/Vegetation" unique_id=1290650041 instance=ExtResource("23_au81a")]
+position = Vector2(648, 1420)
+
+[node name="GrassSpriteOne18" parent="EnvironmentObjects/Vegetation" unique_id=1032934103 instance=ExtResource("18_htgib")]
+position = Vector2(506, 1476)
+
+[node name="GrassSpriteFour19" parent="EnvironmentObjects/Vegetation" unique_id=899339338 instance=ExtResource("17_6fm3u")]
+position = Vector2(563, 1397)
+
+[node name="PurpleFlower3" parent="EnvironmentObjects/Vegetation" unique_id=1795487726 instance=ExtResource("22_pcpcb")]
+position = Vector2(640, 1517)
+
+[node name="YellowFlowerOne5" parent="EnvironmentObjects/Vegetation" unique_id=1929673989 instance=ExtResource("23_au81a")]
+position = Vector2(544, 1541)
+
+[node name="YellowFlowerTwo4" parent="EnvironmentObjects/Vegetation" unique_id=1223597329 instance=ExtResource("24_w3ok1")]
+position = Vector2(631, 1457)
+
+[node name="GrassSpriteOne19" parent="EnvironmentObjects/Vegetation" unique_id=202924517 instance=ExtResource("18_htgib")]
+position = Vector2(549, 1418)
+
+[node name="GrassSpriteOne20" parent="EnvironmentObjects/Vegetation" unique_id=648112959 instance=ExtResource("18_htgib")]
+position = Vector2(446, 1378)
+
+[node name="GrassSpriteOne21" parent="EnvironmentObjects/Vegetation" unique_id=1268637865 instance=ExtResource("18_htgib")]
+position = Vector2(322, 1354)
+
+[node name="GrassSpriteOne22" parent="EnvironmentObjects/Vegetation" unique_id=1339668356 instance=ExtResource("18_htgib")]
+position = Vector2(348, 1404)
+
+[node name="GrassSpriteOne23" parent="EnvironmentObjects/Vegetation" unique_id=1811828389 instance=ExtResource("18_htgib")]
+position = Vector2(434, 1404)
+
+[node name="GrassSpriteThree16" parent="EnvironmentObjects/Vegetation" unique_id=1356254587 instance=ExtResource("19_hmuc1")]
+position = Vector2(753, 1433)
+
+[node name="GrassSpriteTwo7" parent="EnvironmentObjects/Vegetation" unique_id=1525827456 instance=ExtResource("20_xy7ec")]
+position = Vector2(597, 1473)
+
+[node name="GrassSpriteTwo8" parent="EnvironmentObjects/Vegetation" unique_id=1101892169 instance=ExtResource("20_xy7ec")]
+position = Vector2(724, 1511)
+
+[node name="GrassSpriteTwo9" parent="EnvironmentObjects/Vegetation" unique_id=1826069483 instance=ExtResource("20_xy7ec")]
+position = Vector2(855, 159)
+
+[node name="GrassSpriteThree17" parent="EnvironmentObjects/Vegetation" unique_id=1152686033 instance=ExtResource("19_hmuc1")]
+position = Vector2(153, 1438)
+
+[node name="GrassSpriteOne24" parent="EnvironmentObjects/Vegetation" unique_id=1835975697 instance=ExtResource("18_htgib")]
+position = Vector2(247, 1366)
+
+[node name="GrassSpriteOne25" parent="EnvironmentObjects/Vegetation" unique_id=911581373 instance=ExtResource("18_htgib")]
+position = Vector2(73, 1504)
+
+[node name="GrassSpriteThree18" parent="EnvironmentObjects/Vegetation" unique_id=1080061778 instance=ExtResource("19_hmuc1")]
+position = Vector2(214, 1443)
+
+[node name="GrassSpriteThree19" parent="EnvironmentObjects/Vegetation" unique_id=249548640 instance=ExtResource("19_hmuc1")]
+position = Vector2(200, 1551)
+
+[node name="GrassSpriteOne26" parent="EnvironmentObjects/Vegetation" unique_id=497582431 instance=ExtResource("18_htgib")]
+position = Vector2(170, 1510)
+
+[node name="GrassSpriteThree20" parent="EnvironmentObjects/Vegetation" unique_id=377434396 instance=ExtResource("19_hmuc1")]
+position = Vector2(109, 1543)
+
+[node name="GrassSpriteOne27" parent="EnvironmentObjects/Vegetation" unique_id=177400705 instance=ExtResource("18_htgib")]
+position = Vector2(703, 1529)
+
+[node name="GrassSpriteThree21" parent="EnvironmentObjects/Vegetation" unique_id=659312902 instance=ExtResource("19_hmuc1")]
+position = Vector2(590, 1562)
+
+[node name="GrassSpriteThree22" parent="EnvironmentObjects/Vegetation" unique_id=2063819834 instance=ExtResource("19_hmuc1")]
+position = Vector2(761, 1554)
+
+[node name="GrassSpriteTwo10" parent="EnvironmentObjects/Vegetation" unique_id=1029657262 instance=ExtResource("20_xy7ec")]
+position = Vector2(686, 1559)
+
+[node name="GrassSpriteOne28" parent="EnvironmentObjects/Vegetation" unique_id=1129187410 instance=ExtResource("18_htgib")]
+position = Vector2(708, 1461)
+
+[node name="GrassSpriteFive9" parent="EnvironmentObjects/Vegetation" unique_id=1795066685 instance=ExtResource("16_thbbl")]
+position = Vector2(817, 1398)
+
+[node name="BlueFlower5" parent="EnvironmentObjects/Vegetation" unique_id=1373112367 instance=ExtResource("21_xy7ec")]
+position = Vector2(383, 1385)
+
+[node name="GrassSpriteThree23" parent="EnvironmentObjects/Vegetation" unique_id=941683597 instance=ExtResource("19_hmuc1")]
+position = Vector2(626, 1418)
+
+[node name="GrassSpriteFive10" parent="EnvironmentObjects/Vegetation" unique_id=298669676 instance=ExtResource("16_thbbl")]
+position = Vector2(712, 1395)
+
+[node name="GrassSpriteOne29" parent="EnvironmentObjects/Vegetation" unique_id=1405225487 instance=ExtResource("18_htgib")]
+position = Vector2(1212, 1426)
+
+[node name="GrassSpriteFour20" parent="EnvironmentObjects/Vegetation" unique_id=1080049784 instance=ExtResource("17_6fm3u")]
+position = Vector2(1156, 1389)
+
+[node name="GrassSpriteThree24" parent="EnvironmentObjects/Vegetation" unique_id=960481347 instance=ExtResource("19_hmuc1")]
+position = Vector2(1090, 1422)
+
+[node name="GrassSpriteOne30" parent="EnvironmentObjects/Vegetation" unique_id=1183964555 instance=ExtResource("18_htgib")]
+position = Vector2(1322, 1548)
+
+[node name="GrassSpriteFour21" parent="EnvironmentObjects/Vegetation" unique_id=2105630699 instance=ExtResource("17_6fm3u")]
+position = Vector2(1134, 1428)
+
+[node name="GrassSpriteFive11" parent="EnvironmentObjects/Vegetation" unique_id=700365376 instance=ExtResource("16_thbbl")]
+position = Vector2(1208, 1517)
+
+[node name="GrassSpriteTwo11" parent="EnvironmentObjects/Vegetation" unique_id=83933709 instance=ExtResource("20_xy7ec")]
+position = Vector2(1174, 1475)
+
+[node name="GrassSpriteOne31" parent="EnvironmentObjects/Vegetation" unique_id=649824698 instance=ExtResource("18_htgib")]
+position = Vector2(1109, 1553)
+
+[node name="GrassSpriteFour22" parent="EnvironmentObjects/Vegetation" unique_id=1818493097 instance=ExtResource("17_6fm3u")]
+position = Vector2(1127, 1499)
+
+[node name="GrassSpriteOne32" parent="EnvironmentObjects/Vegetation" unique_id=1724550395 instance=ExtResource("18_htgib")]
+position = Vector2(1331, 1607)
+
+[node name="GrassSpriteFour23" parent="EnvironmentObjects/Vegetation" unique_id=282791284 instance=ExtResource("17_6fm3u")]
+position = Vector2(1202, 1589)
+
+[node name="GrassSpriteFive12" parent="EnvironmentObjects/Vegetation" unique_id=1179184169 instance=ExtResource("16_thbbl")]
+position = Vector2(1424, 1530)
+
+[node name="GrassSpriteFive13" parent="EnvironmentObjects/Vegetation" unique_id=174628294 instance=ExtResource("16_thbbl")]
+position = Vector2(1278, 1574)
+
+[node name="GrassSpriteOne33" parent="EnvironmentObjects/Vegetation" unique_id=1326775779 instance=ExtResource("18_htgib")]
+position = Vector2(1268, 1526)
+
+[node name="GrassSpriteFour24" parent="EnvironmentObjects/Vegetation" unique_id=1323158775 instance=ExtResource("17_6fm3u")]
+position = Vector2(1692, 731)
+
+[node name="GrassSpriteOne34" parent="EnvironmentObjects/Vegetation" unique_id=577863604 instance=ExtResource("18_htgib")]
+position = Vector2(1653, 807)
+
+[node name="GrassSpriteTwo12" parent="EnvironmentObjects/Vegetation" unique_id=69914677 instance=ExtResource("20_xy7ec")]
+position = Vector2(1741, 871)
+
+[node name="GrassSpriteFour25" parent="EnvironmentObjects/Vegetation" unique_id=415852104 instance=ExtResource("17_6fm3u")]
+position = Vector2(1721, 773)
+
+[node name="GrassSpriteFive14" parent="EnvironmentObjects/Vegetation" unique_id=824215555 instance=ExtResource("16_thbbl")]
+position = Vector2(1664, 865)
+
+[node name="PurpleFlower4" parent="EnvironmentObjects/Vegetation" unique_id=1092860136 instance=ExtResource("22_pcpcb")]
+position = Vector2(1723, 822)
+
+[node name="GrassSpriteFour26" parent="EnvironmentObjects/Vegetation" unique_id=1738986219 instance=ExtResource("17_6fm3u")]
+position = Vector2(1666, 746)
+
+[node name="GrassSpriteThree25" parent="EnvironmentObjects/Vegetation" unique_id=1857980486 instance=ExtResource("19_hmuc1")]
+position = Vector2(1564, 829)
+
+[node name="GrassSpriteTwo13" parent="EnvironmentObjects/Vegetation" unique_id=378969031 instance=ExtResource("20_xy7ec")]
+position = Vector2(1615, 742)
+
+[node name="GrassSpriteThree26" parent="EnvironmentObjects/Vegetation" unique_id=108358108 instance=ExtResource("19_hmuc1")]
+position = Vector2(1714, 1379)
+
+[node name="GrassSpriteThree27" parent="EnvironmentObjects/Vegetation" unique_id=1846870520 instance=ExtResource("19_hmuc1")]
+position = Vector2(1654, 1347)
+
+[node name="GrassSpriteThree28" parent="EnvironmentObjects/Vegetation" unique_id=962022642 instance=ExtResource("19_hmuc1")]
+position = Vector2(1647, 1417)
+
+[node name="GrassSpriteOne35" parent="EnvironmentObjects/Vegetation" unique_id=606947506 instance=ExtResource("18_htgib")]
+position = Vector2(1603, 1376)
+
+[node name="Player" parent="." unique_id=579082540 instance=ExtResource("8_51fdp")]
+position = Vector2(1536, 808.0001)
