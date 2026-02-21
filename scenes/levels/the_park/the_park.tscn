@@ -121,6 +121,9 @@ size = Vector2(167, 164)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s44yr"]
 size = Vector2(256, 185)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ijyfr"]
+size = Vector2(163, 139)
+
 [node name="ThePark" type="Node2D" unique_id=1381632466 node_paths=PackedStringArray("player_spawn", "photo_areas")]
 y_sort_enabled = true
 script = ExtResource("1_an8yo")
@@ -834,7 +837,7 @@ position = Vector2(-0.5, -13)
 shape = SubResource("RectangleShape2D_r8pmh")
 
 [node name="SpeakComponent" parent="NPCs/HidingNPC" index="2" unique_id=1744893008]
-dialogue = Array[String](["[b]Bush Person:[/b] Wait! Be quiet, I'm hiding from the cops on the street.", "[b]Bush Person:[/b] It was the wrong choice to wear a black sweater."])
+dialogue = Array[String](["[b]Bush Person:[/b] Hehe, whats goin' on, mate?", "[b]Bush Person:[/b] You want some of this?", "[b][rainbow freq=1.0 sat=0.8 val=0.8 speed=1.0]Jim Jar:[/rainbow][/b] Aww, naw, but enjoy, mate.", "[b]Bush Person:[/b] Hehe, right on, little dude.", "[b]Bush Person:[/b] ✌.|•͡˘‿•͡˘|.✌"])
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/HidingNPC" unique_id=2092342574]
 position = Vector2(-0.5, 13)
@@ -845,9 +848,6 @@ position = Vector2(715, 108)
 
 [node name="Sprite2D" parent="NPCs/GooseNPC" index="0" unique_id=1492086816]
 scale = Vector2(0.43858626, 0.39747596)
-
-[node name="InteractIcon" parent="NPCs/GooseNPC/InteractableComponent" parent_id_path=PackedInt32Array(1771945102, 436105360) index="0" unique_id=1434794891]
-visible = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/GooseNPC/InteractableComponent" parent_id_path=PackedInt32Array(1771945102, 436105360) index="1" unique_id=519298945]
 position = Vector2(0, 11.5)
@@ -886,6 +886,14 @@ description = "Justice"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PhotoAreas/JusticePhotoArea" unique_id=2103674661]
 position = Vector2(19, -11.5)
 shape = SubResource("RectangleShape2D_s44yr")
+
+[node name="SmokinPhotoArea" parent="PhotoAreas" unique_id=540965971 instance=ExtResource("27_au81a")]
+position = Vector2(1342, 144)
+description = "Mood altering, perspective shifting air particulates."
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PhotoAreas/SmokinPhotoArea" unique_id=484798171]
+position = Vector2(0.5, -2.5)
+shape = SubResource("RectangleShape2D_ijyfr")
 
 [node name="PlayerSpawn" type="Marker2D" parent="." unique_id=122329523]
 position = Vector2(149, 672)

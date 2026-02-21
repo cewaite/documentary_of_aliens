@@ -8,6 +8,6 @@
 [node name="GameManager" type="Node" unique_id=1621592908 node_paths=PackedStringArray("ui_manager")]
 script = ExtResource("1_e8pdb")
 ui_manager = NodePath("UIManager")
-levels = Array[PackedScene]([ExtResource("3_q5eha"), ExtResource("2_0bnvm")])
+levels = Array[PackedScene]([ExtResource("2_0bnvm"), ExtResource("3_q5eha")])
 
 [node name="UIManager" parent="." unique_id=859618267 instance=ExtResource("2_qfmkk")]
