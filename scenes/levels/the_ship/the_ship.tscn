@@ -1,0 +1,127 @@
+[gd_scene format=3 uid="uid://xlbu3vmk30in"]
+
+[ext_resource type="Script" uid="uid://pomdvi2yxrdt" path="res://scenes/levels/level.gd" id="1_1j57n"]
+[ext_resource type="Texture2D" uid="uid://ccfpcja2fwjrb" path="res://assets/levels/ship/Ship-1.png" id="2_bnwpt"]
+[ext_resource type="PackedScene" uid="uid://cf1ves8qho7vh" path="res://prefabs/level_exit/level_exit.tscn" id="3_1j57n"]
+[ext_resource type="Texture2D" uid="uid://bpykjpogo2mej" path="res://assets/start_icon.png" id="4_bnwpt"]
+[ext_resource type="Script" uid="uid://dcjfmkiotvkgo" path="res://scenes/levels/the_ship/console_logs.gd" id="5_ofa0y"]
+[ext_resource type="PackedScene" uid="uid://bi8y5oq6oj76k" path="res://prefabs/components/interactable_component/interactable_component.tscn" id="5_sm30f"]
+[ext_resource type="AudioStream" uid="uid://dngbgbeqvsry0" path="res://assets/music/Mother Ship.wav" id="6_wcm60"]
+[ext_resource type="Script" uid="uid://bk61eruksbbok" path="res://prefabs/components/speak_component.gd" id="7_mc1ta"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cskqq"]
+size = Vector2(370, 146)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1j57n"]
+size = Vector2(154, 50)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ofa0y"]
+size = Vector2(16, 386)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mc1ta"]
+size = Vector2(378, 20)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1j57n"]
+radius = 24.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bnwpt"]
+size = Vector2(80, 56)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sm30f"]
+size = Vector2(72, 40)
+
+[node name="TheShip" type="Node2D" unique_id=1427134215 node_paths=PackedStringArray("player_spawn", "exit_area", "camera_bound")]
+scale = Vector2(1.2370603, 1.2370603)
+script = ExtResource("1_1j57n")
+player_spawn = NodePath("Marker2D")
+exit_area = NodePath("LevelExit")
+camera_bound = NodePath("Marker2D2")
+metadata/_custom_type_script = "uid://pomdvi2yxrdt"
+
+[node name="ShipEnvironment" type="Sprite2D" parent="." unique_id=1189908243]
+position = Vector2(184, 184)
+scale = Vector2(0.18011865, 0.18011865)
+texture = ExtResource("2_bnwpt")
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=1628602877]
+position = Vector2(184, 296)
+
+[node name="EnvironmentLimits" type="StaticBody2D" parent="." unique_id=1104656817]
+collision_layer = 128
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnvironmentLimits" unique_id=1934572305]
+position = Vector2(183, 103)
+shape = SubResource("RectangleShape2D_cskqq")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="EnvironmentLimits" unique_id=798844111]
+position = Vector2(187, 199)
+shape = SubResource("RectangleShape2D_1j57n")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="EnvironmentLimits" unique_id=1704899068]
+position = Vector2(-8, 183)
+shape = SubResource("RectangleShape2D_ofa0y")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="EnvironmentLimits" unique_id=1759262940]
+position = Vector2(376, 184)
+shape = SubResource("RectangleShape2D_ofa0y")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="EnvironmentLimits" unique_id=1398306264]
+position = Vector2(179, 0)
+shape = SubResource("RectangleShape2D_mc1ta")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="EnvironmentLimits" unique_id=810852683]
+position = Vector2(184, 376)
+shape = SubResource("RectangleShape2D_mc1ta")
+
+[node name="LevelExit" parent="." unique_id=1541003558 instance=ExtResource("3_1j57n")]
+position = Vector2(152, 168)
+
+[node name="InteractIcon" parent="LevelExit/InteractableComponent" parent_id_path=PackedInt32Array(1541003558, 436105360) index="0" unique_id=1434794891]
+position = Vector2(0, -32)
+texture = ExtResource("4_bnwpt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelExit/InteractableComponent" parent_id_path=PackedInt32Array(1541003558, 436105360) index="1" unique_id=1892993981]
+shape = SubResource("CircleShape2D_1j57n")
+
+[node name="ConsoleLogs" type="StaticBody2D" parent="." unique_id=2056425087 node_paths=PackedStringArray("speak_comp")]
+position = Vector2(328, 168)
+collision_layer = 128
+collision_mask = 2
+script = ExtResource("5_ofa0y")
+speak_comp = NodePath("SpeakComponent")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="ConsoleLogs" unique_id=1889782669]
+position = Vector2(0, 36)
+shape = SubResource("RectangleShape2D_bnwpt")
+
+[node name="InteractableComponent" parent="ConsoleLogs" unique_id=436105360 node_paths=PackedStringArray("parent") instance=ExtResource("5_sm30f")]
+parent = NodePath("..")
+
+[node name="InteractIcon" parent="ConsoleLogs/InteractableComponent" index="0" unique_id=1434794891]
+position = Vector2(0, -80)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ConsoleLogs/InteractableComponent" unique_id=1165888126]
+position = Vector2(-4, 4)
+shape = SubResource("RectangleShape2D_sm30f")
+
+[node name="SpeakComponent" type="Node" parent="ConsoleLogs" unique_id=191954046]
+script = ExtResource("7_mc1ta")
+dialogue = Array[String](["[b][rainbow freq=1.0 sat=0.8 val=0.8 speed=1.0]Jim Jar:[/rainbow][/b] Captains logs, Day 69420 [font_size=16]hehe nice...[/font_size]", "[b][rainbow freq=1.0 sat=0.8 val=0.8 speed=1.0]Jim Jar:[/rainbow][/b] I've come across a very strange place.. or planet, for that matter. I plan to investigate the environemt and it's odd inhabitants, taking photo evidence of the odd society of these primative creatures.", "[b][rainbow freq=1.0 sat=0.8 val=0.8 speed=1.0]Jim Jar:[/rainbow][/b] I've picked a form sutible for thier simple eyeballs. Remember how to operate it: WASD to Move, Space to Interact, and E to Take Pictures.", "[b][rainbow freq=1.0 sat=0.8 val=0.8 speed=1.0]Jim Jar:[/rainbow][/b] I've compiled a small list of picutre's I'd like to take but not all are neccessary. Though I hope to compile them into a documentary after my travels. Wish me luck..."])
+metadata/_custom_type_script = "uid://bk61eruksbbok"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2066382490]
+stream = ExtResource("6_wcm60")
+volume_db = -10.0
+autoplay = true
+
+[node name="Marker2D2" type="Marker2D" parent="." unique_id=1549928140]
+position = Vector2(368, 368)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=2002213989]
+position = Vector2(181.07443, 181.07443)
+zoom = Vector2(4.285, 2.455)
+
+[editable path="LevelExit"]
+[editable path="LevelExit/InteractableComponent"]
+[editable path="ConsoleLogs/InteractableComponent"]

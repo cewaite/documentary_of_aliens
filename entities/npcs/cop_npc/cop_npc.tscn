@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://n2hst8xab4y"]
+
+[ext_resource type="PackedScene" uid="uid://d1cyctv0r5n7p" path="res://prefabs/npc/npc.tscn" id="1_kf0o4"]
+[ext_resource type="Texture2D" uid="uid://brtc01m6nq2n2" path="res://assets/levels/park/cop/SWAT-1.png" id="2_ue8wh"]
+[ext_resource type="Texture2D" uid="uid://dr5dbiwg1yilr" path="res://assets/levels/park/cop/SWAT-2.png" id="3_gt3sa"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_b5kms"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ue8wh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_gt3sa")
+}],
+"loop": true,
+"name": &"kick",
+"speed": 2.0
+}]
+
+[node name="CopNPC" unique_id=1319086192 instance=ExtResource("1_kf0o4")]
+
+[node name="BodySprite2D" parent="." index="0" unique_id=1492086816]
+visible = false
+
+[node name="HeadSprite2D" parent="." index="1" unique_id=1375784835]
+visible = false
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="5" unique_id=534873578]
+scale = Vector2(0.05, 0.05)
+sprite_frames = SubResource("SpriteFrames_b5kms")
+animation = &"kick"
+autoplay = "kick"
+frame_progress = 0.37278795
+offset = Vector2(0, -550)
+
+[editable path="InteractableComponent"]

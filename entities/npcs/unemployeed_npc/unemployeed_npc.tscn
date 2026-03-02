@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://d1cyctv0r5n7p" path="res://prefabs/npc/npc.tscn" id="1_pc6ku"]
 [ext_resource type="Script" uid="uid://ddjnqdqp2wgyc" path="res://entities/npcs/unemployeed_npc/unemployeed_npc.gd" id="2_lyabg"]
+[ext_resource type="Texture2D" uid="uid://dg0df3vjv51ms" path="res://assets/levels/office/art/misc/Homelessman-1.png" id="3_tuoyv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lyabg"]
 size = Vector2(54, 77)
@@ -9,20 +10,26 @@ size = Vector2(54, 77)
 [node name="UnemployeedNPC" unique_id=143393978 instance=ExtResource("1_pc6ku")]
 script = ExtResource("2_lyabg")
 
-[node name="InteractableComponent" parent="." index="1" unique_id=436105360]
+[node name="BodySprite2D" parent="." index="0" unique_id=1492086816]
+texture = ExtResource("3_tuoyv")
+
+[node name="HeadSprite2D" parent="." index="1" unique_id=1375784835]
+visible = false
+
+[node name="InteractableComponent" parent="." index="2" unique_id=436105360]
 position = Vector2(0, -14)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableComponent" index="1" unique_id=1150536491]
 position = Vector2(0, 1.5)
 shape = SubResource("RectangleShape2D_lyabg")
 
-[node name="SpeakComponent" parent="." index="2" unique_id=1744893008]
-dialogue = Array[String](["[b]Unemployeed Vagrant:[/b] [shake rate=20.0 level=5 connected=1]Oh hello....[/shake]", "[b]Unemployeed Vagrant:[/b] [shake rate=20.0 level=5 connected=1]I used to work here, until Big Boss thought AI could do my job better.[/shake]", "[b]Unemployeed Vagrant:[/b] [font_size=12]I kept trying to tell them it can't...[/font_size]", "[b]Unemployeed Vagrant:[/b] [shake rate=20.0 level=5 connected=1]I guess I won't need this anymore. Here, you take it..[/shake]", "[i]They hand you an employee badge[/i]", "[b]Unemployeed Vagrant:[/b] [fade start=16 length=10]My time has come... goodbye....[/fade]"])
-stop_on_finished = true
-restart_on_finished = false
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="3" unique_id=462701805]
 position = Vector2(0, -12.5)
 shape = SubResource("RectangleShape2D_lyabg")
+
+[node name="SpeakComponent" parent="." index="4" unique_id=1744893008]
+dialogue = Array[String](["[b]Unemployeed Vagrant:[/b] [shake rate=20.0 level=5 connected=1]Oh hello....[/shake]", "[b]Unemployeed Vagrant:[/b] [shake rate=20.0 level=5 connected=1]I used to work here, until Big Boss thought AI could do my job better.[/shake]", "[b]Unemployeed Vagrant:[/b] [font_size=12]I kept trying to tell them it can't...[/font_size]", "[b]Unemployeed Vagrant:[/b] [shake rate=20.0 level=5 connected=1]I guess I won't need this anymore. Here, you take it..[/shake]", "[i]They hand you an employee badge[/i]", "[b]Unemployeed Vagrant:[/b] [fade start=16 length=10]My time has come... goodbye....[/fade]"])
+stop_on_finished = true
+restart_on_finished = false
 
 [editable path="InteractableComponent"]

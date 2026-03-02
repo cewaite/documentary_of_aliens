@@ -212,12 +212,13 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Player" type="CharacterBody2D" unique_id=579082540 node_paths=PackedStringArray("interactComp", "cameraAreaComp")]
+[node name="Player" type="CharacterBody2D" unique_id=579082540 node_paths=PackedStringArray("camera", "interactComp", "cameraAreaComp")]
 y_sort_enabled = true
 scale = Vector2(1.5, 1.5)
 collision_layer = 2
 collision_mask = 140
 script = ExtResource("1_abrql")
+camera = NodePath("Camera2D")
 interactComp = NodePath("InteractComponent")
 cameraAreaComp = NodePath("CameraAreaComponent")
 max_speed = 300.0

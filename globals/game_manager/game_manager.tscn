@@ -2,12 +2,14 @@
 
 [ext_resource type="Script" uid="uid://dvdm7fcpxut3u" path="res://globals/game_manager/game_manager.gd" id="1_e8pdb"]
 [ext_resource type="PackedScene" uid="uid://ck7e8c74ab57m" path="res://scenes/levels/the_park/the_park.tscn" id="2_0bnvm"]
+[ext_resource type="PackedScene" uid="uid://cm0r67qtclisf" path="res://scenes/levels/title_level/title_level.tscn" id="2_j3sgn"]
+[ext_resource type="PackedScene" uid="uid://xlbu3vmk30in" path="res://scenes/levels/the_ship/the_ship.tscn" id="2_mcos4"]
 [ext_resource type="PackedScene" uid="uid://bajr7b11kd2yt" path="res://scenes/ui/ui_manager/ui_manager.tscn" id="2_qfmkk"]
 [ext_resource type="PackedScene" uid="uid://bcj24nv0puhm8" path="res://scenes/levels/the_office/the_office.tscn" id="3_q5eha"]
 
 [node name="GameManager" type="Node" unique_id=1621592908 node_paths=PackedStringArray("ui_manager")]
 script = ExtResource("1_e8pdb")
 ui_manager = NodePath("UIManager")
-levels = Array[PackedScene]([ExtResource("2_0bnvm"), ExtResource("3_q5eha")])
+levels = Array[PackedScene]([ExtResource("2_j3sgn"), ExtResource("2_mcos4"), ExtResource("2_0bnvm"), ExtResource("3_q5eha")])
 
 [node name="UIManager" parent="." unique_id=859618267 instance=ExtResource("2_qfmkk")]

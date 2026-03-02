@@ -2,6 +2,7 @@ class_name UIManager extends CanvasLayer
 
 @export var player_hud: PlayerHUD
 @export var dialogue_ui: DialogueUI
+@export var fade_effect: FadeEffect
 
 func connect_hud_to_player(player):
 	pass
@@ -17,8 +18,15 @@ func connect_hud_to_player(player):
 			#player_interact_comp.hovering.connect(player_hud._on_player_interact_hovering)
 
 func load_photo_descriptions(photo_areas: Array[PhotoArea]):
+	player_hud.clear_photo_descriptions()
 	for photo_area in photo_areas:
 		player_hud.add_photo_description(photo_area.description)
 
 func cross_off_photo(photo: PhotoArea):
 	player_hud.strikethrough_photo_description(photo.description)
+
+func fade_in():
+	await fade_effect.fade(0.0).finished
+
+func fade_out():
+	await fade_effect.fade(1.0).finished

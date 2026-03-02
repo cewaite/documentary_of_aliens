@@ -33,14 +33,33 @@
 [ext_resource type="PackedScene" uid="uid://bty3h70hvdq1e" path="res://prefabs/photo_area/photo_area.tscn" id="26_ef7n6"]
 [ext_resource type="PackedScene" uid="uid://d1cyctv0r5n7p" path="res://prefabs/npc/npc.tscn" id="28_4u44s"]
 [ext_resource type="Script" uid="uid://bxtnyqei0f4kw" path="res://entities/objects/office/shelf.gd" id="28_5h45y"]
-[ext_resource type="Texture2D" uid="uid://bqw50cbevh5nw" path="res://icon.svg" id="31_4ayp5"]
 [ext_resource type="PackedScene" uid="uid://de78b57y25hah" path="res://entities/npcs/unemployeed_npc/unemployeed_npc.tscn" id="31_npuky"]
 [ext_resource type="Script" uid="uid://bg40r40p82cee" path="res://entities/npcs/weirdo_npc/weirdos_food.gd" id="31_prssa"]
-[ext_resource type="Script" uid="uid://fgjwabe5tygr" path="res://entities/npcs/janitor/janitor_path_follow.gd" id="32_ti61l"]
+[ext_resource type="Script" uid="uid://fgjwabe5tygr" path="res://prefabs/npc/path_follow.gd" id="32_ti61l"]
+[ext_resource type="Texture2D" uid="uid://weekqnrwsbny" path="res://assets/levels/office/art/misc/Untitled_Artwork-1.png" id="33_ker88"]
 [ext_resource type="Script" uid="uid://dehblan8r8v00" path="res://entities/npcs/weirdo_npc/weirdo_npc.gd" id="34_hasut"]
+[ext_resource type="Texture2D" uid="uid://g7ngk51mm4fu" path="res://assets/levels/office/art/lunchlady/Lunch_lady-1.png" id="36_0coyi"]
 [ext_resource type="Script" uid="uid://bl8yj48td5n2p" path="res://entities/npcs/josh_npc/josh_npc.gd" id="36_heubb"]
-[ext_resource type="Script" uid="uid://b81ijvesetdsh" path="res://prefabs/components/interact_component/interact_component.gd" id="38_7yg5m"]
-[ext_resource type="Script" uid="uid://cinivuqham1hr" path="res://entities/npcs/janitor/janitor_npc.gd" id="38_e3k61"]
+[ext_resource type="Texture2D" uid="uid://pa1vmsoeb3na" path="res://assets/levels/office/art/lunchlady/Lunch_lady-2.png" id="37_dus5t"]
+[ext_resource type="PackedScene" uid="uid://xwp3qjlpty2v" path="res://entities/npcs/janitor/janitor_npc.tscn" id="39_e3k61"]
+[ext_resource type="Texture2D" uid="uid://bts7yt8pmir60" path="res://assets/levels/office/art/weirdo/weirdo-1.png" id="39_he2d1"]
+[ext_resource type="Texture2D" uid="uid://b3sd48432ru36" path="res://assets/levels/office/art/weirdo/weirdo-2.png" id="40_qmnrj"]
+[ext_resource type="Texture2D" uid="uid://dwgeh648150ui" path="res://assets/levels/office/art/marco/Marco-1.png" id="41_ethsb"]
+[ext_resource type="Texture2D" uid="uid://djrf3hjxfbi54" path="res://assets/levels/office/art/marco/Marco-2.png" id="42_7et8m"]
+[ext_resource type="PackedScene" uid="uid://cf1ves8qho7vh" path="res://prefabs/level_exit/level_exit.tscn" id="42_bq5pn"]
+[ext_resource type="Texture2D" uid="uid://dvhfxi33kbuew" path="res://assets/levels/office/art/janice/Janice-1.png" id="43_0un3i"]
+[ext_resource type="Texture2D" uid="uid://cov8jsfr3udtf" path="res://assets/levels/office/art/janice/Janice-2.png" id="44_1txvq"]
+[ext_resource type="Texture2D" uid="uid://bjucxyjepkjuf" path="res://assets/levels/office/art/swe/SWE-1.png" id="45_j3aji"]
+[ext_resource type="Texture2D" uid="uid://cktk6ja6347wf" path="res://assets/levels/office/art/swe/SWE-2.png" id="46_rd7m1"]
+[ext_resource type="Texture2D" uid="uid://dm17xfcvpngp7" path="res://assets/levels/office/art/boss/Big_boss-1.png" id="47_58knn"]
+[ext_resource type="Texture2D" uid="uid://cvelmjyoolc0e" path="res://assets/levels/office/art/boss/Big_boss-2.png" id="48_p8vlu"]
+[ext_resource type="Texture2D" uid="uid://drutg26luhvf2" path="res://assets/levels/office/art/josh/JOSH-1.png" id="48_ts3jf"]
+[ext_resource type="Texture2D" uid="uid://iqficpoalwce" path="res://assets/levels/office/art/josh/JOSH-2.png" id="49_mvkf6"]
+[ext_resource type="Texture2D" uid="uid://bvqtkcvg78sre" path="res://assets/levels/office/art/standing_deskguy/standing_Desk_guy-1.png" id="49_x2lpg"]
+[ext_resource type="Texture2D" uid="uid://bnl743nspwum3" path="res://assets/levels/office/art/standing_deskguy/standing_Desk_guy-2.png" id="50_bhw81"]
+[ext_resource type="Texture2D" uid="uid://njd4ti38l1lo" path="res://assets/levels/office/art/luis/LUIS-1.png" id="54_ker88"]
+[ext_resource type="Texture2D" uid="uid://b1xkqd8iwsrvo" path="res://assets/levels/office/art/luis/LUIS-2.png" id="55_dcqtw"]
+[ext_resource type="AudioStream" uid="uid://dqlqa3udx5mjs" path="res://assets/music/Clocking In.wav" id="60_dcqtw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p8vlu"]
 size = Vector2(40, 1720)
@@ -66,10 +85,10 @@ size = Vector2(169, 183)
 size = Vector2(54, 28)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ti61l"]
-size = Vector2(54, 78)
+size = Vector2(50, 103)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5h45y"]
-size = Vector2(54, 35)
+size = Vector2(54, 42)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_prssa"]
 size = Vector2(174, 77)
@@ -87,7 +106,7 @@ size = Vector2(87, 92)
 size = Vector2(55, 35)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0coyi"]
-size = Vector2(270, 193)
+size = Vector2(270, 168.36432)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bq5pn"]
 size = Vector2(55, 37)
@@ -112,18 +131,9 @@ size = Vector2(55, 25)
 
 [sub_resource type="Curve2D" id="Curve2D_ti61l"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 1006, 132, 0, 0, 0, 0, 1020, 232, 0, 0, 0, 0, 1023, 351, 0, 0, 0, 0, 969, 459, 0, 0, 0, 0, 772, 571, 0, 0, 0, 0, 757, 794, 0, 0, 0, 0, 755, 1125, 0, 0, 0, 0, 386, 1155, 0, 0, 0, 0, 302, 1105, 0, 0, 0, 0, 312, 916, 0, 0, 0, 0, 372, 842, 0, 0, 0, 0, 558, 827, 0, 0, 0, 0, 693, 812, 0, 0, 0, 0, 767, 710, 0, 0, 0, 0, 751, 515, 0, 0, 0, 0, 580, 482, 0, 0, 0, 0, 420, 482, 0, 0, 0, 0, 318, 458, 0, 0, 0, 0, 320, 137, 0, 0, 0, 0, 173, 141, 0, 0, 0, 0, 114, 145, 0, 0, 0, 0, 100, 220, 0, 0, 0, 0, 100, 397, 0, 0, 0, 0, 131, 599, 0, 0, 0, 0, 120, 764, 0, 0, 0, 0, 167, 700, 0, 0, 0, 0, 168, 539, 0, 0, 0, 0, 101, 370, 0, 0, 0, 0, 101, 199, 0, 0, 0, 0, 141, 121, 0, 0, 0, 0, 187, 96, 0, 0, 0, 0, 391, 110, 0, 0, 0, 0, 712, 110, 0, 0, 0, 0, 753, 213, 0, 0, 0, 0, 745, 350, 0, 0, 0, 0, 745, 453, 0, 0, 0, 0, 866, 496, 0, 0, 0, 0, 1074, 499, 0, 0, 0, 0, 1254, 496, 0, 0, 0, 0, 1242, 126, 0, 0, 0, 0, 1312, 115, 0, 0, 0, 0, 1341, 151, 0, 0, 0, 0, 1334, 311, 0, 0, 0, 0, 1333, 446, 0, 0, 0, 0, 1331, 554, 0, 0, 0, 0, 1333, 685, 0, 0, 0, 0, 1333, 772, 0, 0, 0, 0, 1489, 769, 0, 0, 0, 0, 1497, 866, 0, 0, 0, 0, 1525, 933, 0, 0, 0, 0, 1616, 949, 0, 0, 0, 0, 1749, 933, 0, 0, 0, 0, 1791, 906, 0, 0, 0, 0, 1780, 772, 0, 0, 0, 0, 1722, 721, 0, 0, 0, 0, 1650, 710, 0, 0, 0, 0, 1580, 716, 0, 0, 0, 0, 1493, 759, 0, 0, 0, 0, 1319, 764, 0, 0, 0, 0, 1264, 511, 0, 0, 0, 0, 1058, 469, 0, 0, 0, 0, 1046, 210, 0, 0, 0, 0, 1053, 151, 0, 0, 0, 0, 1025, 132, 0, 0, 0, 0, 1006, 132)
+"points": PackedVector2Array(0, 0, 0, 0, 1008, 142, 0, 0, 0, 0, 1020, 396, 0, 0, 0, 0, 805, 406, 0, 0, 0, 0, 608, 389, 0, 0, 0, 0, 293, 403, 0, 0, 0, 0, 276, 575, 0, 0, 0, 0, 282, 708, 0, 0, 0, 0, 286, 923, 0, 0, 0, 0, 288, 1050, 0, 0, 0, 0, 483, 1110, 0, 0, 0, 0, 766, 1114, 0, 0, 0, 0, 758, 1032, 0, 0, 0, 0, 603, 1029, 0, 0, 0, 0, 583, 919, 0, 0, 0, 0, 585, 752, 0, 0, 0, 0, 573, 499, 0, 0, 0, 0, 589, 357, 0, 0, 0, 0, 577, 181, 0, 0, 0, 0, 568, 104, 0, 0, 0, 0, 410, 97, 0, 0, 0, 0, 276, 106, 0, 0, 0, 0, 133, 105, 0, 0, 0, 0, 114, 160, 0, 0, 0, 0, 104, 363, 0, 0, 0, 0, 107, 523, 0, 0, 0, 0, 118, 659, 0, 0, 0, 0, 121, 758, 0, 0, 0, 0, 178, 761, 0, 0, 0, 0, 168, 577, 0, 0, 0, 0, 118, 360, 0, 0, 0, 0, 104, 100, 0, 0, 0, 0, 573, 100, 0, 0, 0, 0, 586, 396, 0, 0, 0, 0, 895, 411, 0, 0, 0, 0, 913, 593, 0, 0, 0, 0, 1041, 602, 0, 0, 0, 0, 1090, 493, 0, 0, 0, 0, 1271, 485, 0, 0, 0, 0, 1254, 764, 0, 0, 0, 0, 1375, 770, 0, 0, 0, 0, 1470, 776, 0, 0, 0, 0, 1500, 892, 0, 0, 0, 0, 1549, 955, 0, 0, 0, 0, 1696, 941, 0, 0, 0, 0, 1753, 908, 0, 0, 0, 0, 1744, 785, 0, 0, 0, 0, 1719, 749, 0, 0, 0, 0, 1623, 735, 0, 0, 0, 0, 1504, 740, 0, 0, 0, 0, 1451, 755, 0, 0, 0, 0, 1292, 756, 0, 0, 0, 0, 1327, 523, 0, 0, 0, 0, 1332, 317, 0, 0, 0, 0, 1338, 249, 0, 0, 0, 0, 1285, 251, 0, 0, 0, 0, 1243, 250, 0, 0, 0, 0, 1242, 319, 0, 0, 0, 0, 1242, 365, 0, 0, 0, 0, 1260, 437, 0, 0, 0, 0, 1255, 483, 0, 0, 0, 0, 1076, 478, 0, 0, 0, 0, 1020, 406, 0, 0, 0, 0, 1024, 144, 0, 0, 0, 0, 1008, 142)
 }
-point_count = 65
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_mvkf6"]
-size = Vector2(54.167465, 77.75549)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ts3jf"]
-size = Vector2(56, 25)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bhw81"]
-size = Vector2(79.144714, 104.65216)
+point_count = 64
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ef7n6"]
 size = Vector2(289, 366)
@@ -137,12 +147,17 @@ size = Vector2(177, 78)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rd7m1"]
 size = Vector2(129, 173)
 
-[node name="TheOffice" type="Node2D" unique_id=1679858242 node_paths=PackedStringArray("boss_door", "josh_npc", "player_spawn", "photo_areas")]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dcqtw"]
+size = Vector2(183, 327)
+
+[node name="TheOffice" type="Node2D" unique_id=1679858242 node_paths=PackedStringArray("boss_door", "josh_npc", "player_spawn", "exit_area", "camera_bound", "photo_areas")]
 y_sort_enabled = true
 script = ExtResource("1_nm22k")
 boss_door = NodePath("Doors/OfficeDoor")
 josh_npc = NodePath("NPCs/JoshNPC")
 player_spawn = NodePath("PlayerSpawn")
+exit_area = NodePath("LevelExit")
+camera_bound = NodePath("Marker2D")
 photo_areas = [NodePath("PhotoAreas/MeetingRoomPhotoArea"), NodePath("PhotoAreas/BossPhotoArea"), NodePath("PhotoAreas/WaterCoolerPhotoArea"), NodePath("PhotoAreas/SeniorEnigneerPhotoArea")]
 
 [node name="LevelBoundaries" type="StaticBody2D" parent="." unique_id=368552706]
@@ -389,16 +404,23 @@ position = Vector2(2002, 165)
 position = Vector2(58, 777)
 
 [node name="OfficeChair1" parent="EnvironmentObjects" unique_id=1641549541 instance=ExtResource("14_k85mt")]
-position = Vector2(457, 837)
+position = Vector2(683, 680)
+
+[node name="OfficeLevelChair" parent="EnvironmentObjects/OfficeChair1" index="0" unique_id=1092572891]
+position = Vector2(-64, -67)
+flip_h = true
+
+[node name="CollisionShape2D" parent="EnvironmentObjects/OfficeChair1" index="1" unique_id=95188661]
+position = Vector2(-52, -58)
 
 [node name="OfficeChair2" parent="EnvironmentObjects" unique_id=1866171425 instance=ExtResource("14_k85mt")]
-position = Vector2(606, 494)
+position = Vector2(489, 374)
 
 [node name="Cubicles" type="Node2D" parent="EnvironmentObjects" unique_id=234199021]
 y_sort_enabled = true
 
 [node name="Cubicle1" parent="EnvironmentObjects/Cubicles" unique_id=1522095414 instance=ExtResource("13_758yn")]
-position = Vector2(519, 343)
+position = Vector2(428, 290)
 script = ExtResource("21_u3byc")
 
 [node name="InteractableComponent" parent="EnvironmentObjects/Cubicles/Cubicle1" unique_id=2023815669 node_paths=PackedStringArray("parent") instance=ExtResource("21_4u44s")]
@@ -421,10 +443,10 @@ stream = ExtResource("23_7lwvy")
 area_mask = 3
 
 [node name="Cubicle2" parent="EnvironmentObjects/Cubicles" unique_id=904905215 instance=ExtResource("13_758yn")]
-position = Vector2(528, 715)
+position = Vector2(723, 288)
 
 [node name="Cubicle3" parent="EnvironmentObjects/Cubicles" unique_id=1199520617 node_paths=PackedStringArray("speak_comp") instance=ExtResource("13_758yn")]
-position = Vector2(539, 1077)
+position = Vector2(738, 918)
 script = ExtResource("24_bjh1v")
 speak_comp = NodePath("SpeakComponent")
 
@@ -442,6 +464,15 @@ shape = SubResource("RectangleShape2D_4ayp5")
 script = ExtResource("7_sc46r")
 dialogue = Array[String](["[i]There's a minimized task. Seems the employee was playing Wizard101 in the middle of a meeting.[/i]", "[b][rainbow freq=1.0 sat=0.8 val=0.8 speed=1.0]Jim Jar:[/rainbow][/b] [i]I don't blame them.[/i]"])
 metadata/_custom_type_script = "uid://bk61eruksbbok"
+
+[node name="Cubicle" parent="EnvironmentObjects/Cubicles" unique_id=1841916930 instance=ExtResource("13_758yn")]
+position = Vector2(729, 598.00006)
+
+[node name="Cubicle4" parent="EnvironmentObjects/Cubicles" unique_id=1118268132 instance=ExtResource("13_758yn")]
+position = Vector2(435.99997, 918.99994)
+
+[node name="Cubicle5" parent="EnvironmentObjects/Cubicles" unique_id=1533286228 instance=ExtResource("13_758yn")]
+position = Vector2(430.00003, 599)
 
 [node name="WoodTable" parent="EnvironmentObjects" unique_id=1638292962 instance=ExtResource("19_jdpki")]
 position = Vector2(1026, 1085)
@@ -494,8 +525,8 @@ speak_comp = NodePath("SpeakComponent")
 var_speak_comp = NodePath("VarSpeakComponent")
 
 [node name="Sprite2D" type="Sprite2D" parent="EnvironmentObjects/WeirdosFood" unique_id=893667062]
-scale = Vector2(0.24233854, 0.2461867)
-texture = ExtResource("31_4ayp5")
+scale = Vector2(0.7796118, 0.7919915)
+texture = ExtResource("33_ker88")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EnvironmentObjects/WeirdosFood" unique_id=736200294]
 scale = Vector2(1.817407, 1.7612067)
@@ -505,7 +536,6 @@ shape = SubResource("CircleShape2D_4ayp5")
 parent = NodePath("..")
 
 [node name="InteractIcon" parent="EnvironmentObjects/WeirdosFood/InteractableComponent" index="0" unique_id=1434794891]
-visible = true
 position = Vector2(0.99999994, -22)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EnvironmentObjects/WeirdosFood/InteractableComponent" unique_id=1909771374]
@@ -531,16 +561,25 @@ y_sort_enabled = true
 position = Vector2(36, 949)
 
 [node name="LunchPersonNPC" parent="NPCs" unique_id=2034760231 instance=ExtResource("28_4u44s")]
-position = Vector2(1744, 542)
+position = Vector2(1748, 562)
 
-[node name="InteractableComponent" parent="NPCs/LunchPersonNPC" index="1" unique_id=436105360]
+[node name="BodySprite2D" parent="NPCs/LunchPersonNPC" index="0" unique_id=1492086816]
+texture = ExtResource("36_0coyi")
+
+[node name="HeadSprite2D" parent="NPCs/LunchPersonNPC" index="1" unique_id=1375784835]
+texture = ExtResource("37_dus5t")
+
+[node name="InteractableComponent" parent="NPCs/LunchPersonNPC" index="2" unique_id=436105360]
 position = Vector2(0, -13)
+
+[node name="InteractIcon" parent="NPCs/LunchPersonNPC/InteractableComponent" index="0" unique_id=1434794891]
+position = Vector2(3.9999995, -74)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/LunchPersonNPC/InteractableComponent" index="1" unique_id=1875983635]
 position = Vector2(-47.5, 55.5)
 shape = SubResource("RectangleShape2D_bjh1v")
 
-[node name="SpeakComponent" parent="NPCs/LunchPersonNPC" index="2" unique_id=1744893008]
+[node name="SpeakComponent" parent="NPCs/LunchPersonNPC" index="3" unique_id=1744893008]
 dialogue = Array[String](["[b]Nutrition Staff:[/b] Got your food? Good, that’ll be 30 dabloons.", "[b][rainbow freq=1.0 sat=0.8 val=0.8 speed=1.0]Jim Jar:[/rainbow][/b] But I don't have any money…", "[b]Nutrition Staff:[/b] ( ͠° ͟ʖ ͡°)﻿", "[b][rainbow freq=1.0 sat=0.8 val=0.8 speed=1.0]Jim Jar:[/rainbow][/b] Don’t I work for you? Can’t you take it out of my paycheck?", "[b]Nutrition Staff:[/b] No. Don’t be an [b][shake rate=20.0 level=8 connected=1]IDIOT[/shake][/b]."])
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/LunchPersonNPC" unique_id=1616631335]
@@ -548,20 +587,29 @@ position = Vector2(0, 12)
 shape = SubResource("RectangleShape2D_q2s8t")
 
 [node name="WeirdoNPC" parent="NPCs" unique_id=750320364 node_paths=PackedStringArray("food", "variant_speak_comp") instance=ExtResource("28_4u44s")]
-position = Vector2(1731, 1114)
+position = Vector2(1717, 1119)
 script = ExtResource("34_hasut")
 food = NodePath("../../EnvironmentObjects/WeirdosFood")
 variant_speak_comp = NodePath("VariantSpeakComponent")
 
+[node name="BodySprite2D" parent="NPCs/WeirdoNPC" index="0" unique_id=1492086816]
+texture = ExtResource("39_he2d1")
+
+[node name="HeadSprite2D" parent="NPCs/WeirdoNPC" index="1" unique_id=1375784835]
+texture = ExtResource("40_qmnrj")
+
+[node name="InteractIcon" parent="NPCs/WeirdoNPC/InteractableComponent" parent_id_path=PackedInt32Array(750320364, 436105360) index="0" unique_id=1434794891]
+position = Vector2(13.999999, -84)
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/WeirdoNPC/InteractableComponent" parent_id_path=PackedInt32Array(750320364, 436105360) index="1" unique_id=282530081]
-position = Vector2(0, -13)
+position = Vector2(15, -25.5)
 shape = SubResource("RectangleShape2D_ti61l")
 
-[node name="SpeakComponent" parent="NPCs/WeirdoNPC" index="2" unique_id=1744893008]
+[node name="SpeakComponent" parent="NPCs/WeirdoNPC" index="3" unique_id=1744893008]
 dialogue = Array[String](["[b]Employee?:[/b] Ever notice how there aren't any bathrooms at this office. I've just been using the janitors mop bucket (‾ ⌣ ‾)", "[b][rainbow freq=1.0 sat=0.8 val=0.8 speed=1.0]Jim Jar:[/rainbow][/b] [i]Okay, this planet is weird, but this guy is f**ked, even by human standards...[/i]", "[b]Employee?:[/b] I'm so excited for my meeting with Big Boss! I'm going to get so much praise for all my hard work!", "[b][rainbow freq=1.0 sat=0.8 val=0.8 speed=1.0]Jim Jar:[/rainbow][/b] [i]Oh, no, he's just a little dumb. Poor thing.[/i]"])
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/WeirdoNPC" unique_id=1574602700]
-position = Vector2(0, 7.5)
+position = Vector2(12, 4)
 shape = SubResource("RectangleShape2D_5h45y")
 
 [node name="VariantSpeakComponent" type="Node" parent="NPCs/WeirdoNPC" unique_id=416026589]
@@ -574,15 +622,22 @@ metadata/_custom_type_script = "uid://bk61eruksbbok"
 [node name="LeftWatercoolerNPC" parent="NPCs" unique_id=1285043288 instance=ExtResource("28_4u44s")]
 position = Vector2(809, 335)
 
+[node name="BodySprite2D" parent="NPCs/LeftWatercoolerNPC" index="0" unique_id=1492086816]
+texture = ExtResource("41_ethsb")
+
+[node name="HeadSprite2D" parent="NPCs/LeftWatercoolerNPC" index="1" unique_id=1375784835]
+texture = ExtResource("42_7et8m")
+
 [node name="InteractIcon" parent="NPCs/LeftWatercoolerNPC/InteractableComponent" parent_id_path=PackedInt32Array(1285043288, 436105360) index="0" unique_id=1434794891]
-position = Vector2(66.99999, -58)
+visible = true
+position = Vector2(64.99999, -92)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/LeftWatercoolerNPC/InteractableComponent" parent_id_path=PackedInt32Array(1285043288, 436105360) index="1" unique_id=902123521]
 position = Vector2(61, -12.5)
 shape = SubResource("RectangleShape2D_prssa")
 
-[node name="SpeakComponent" parent="NPCs/LeftWatercoolerNPC" index="2" unique_id=1744893008]
-dialogue = Array[String](["[b]Mike:[/b] Hey have you seen the projections for Q2?", "[b]Janice:[/b] Yes! Golly jee, they're off the charts!", "[b]Mike:[/b] Right?! Gosh, we're so productive!", "[b]Janice:[/b] [wave amp=50.0 freq=5.0 connected=1][i]sips fluids[/i][/wave] My stars, that's good.", "[b]Mike:[/b] I know! This water really sustains me."])
+[node name="SpeakComponent" parent="NPCs/LeftWatercoolerNPC" index="3" unique_id=1744893008]
+dialogue = Array[String](["[b]Marco:[/b] Hey have you seen the projections for Q2?", "[b]Janice:[/b] Yes! Golly jee, they're off the charts!", "[b]Marco:[/b] Right?! Gosh, we're so productive!", "[b]Janice:[/b] [wave amp=50.0 freq=5.0 connected=1][i]sips fluids[/i][/wave] My stars, that's good.", "[b]Marco:[/b] I know! This water really [i]sustains[/i] me.", "[b]Marco:[/b] 👀"])
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/LeftWatercoolerNPC" unique_id=872584139]
 position = Vector2(0.5, 12)
@@ -591,32 +646,59 @@ shape = SubResource("RectangleShape2D_hasut")
 [node name="RightWatercoolerNPC" parent="NPCs" unique_id=36242656 instance=ExtResource("28_4u44s")]
 position = Vector2(933, 335)
 
+[node name="BodySprite2D" parent="NPCs/RightWatercoolerNPC" index="0" unique_id=1492086816]
+texture = ExtResource("43_0un3i")
+
+[node name="HeadSprite2D" parent="NPCs/RightWatercoolerNPC" index="1" unique_id=1375784835]
+texture = ExtResource("44_1txvq")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/RightWatercoolerNPC" unique_id=260518062]
 position = Vector2(-0.5, 11)
 shape = SubResource("RectangleShape2D_heubb")
 
 [node name="SeniorEngineerNPC" parent="NPCs" unique_id=275424481 instance=ExtResource("28_4u44s")]
-position = Vector2(457, 702)
+position = Vector2(665, 591)
+
+[node name="BodySprite2D" parent="NPCs/SeniorEngineerNPC" index="0" unique_id=1492086816]
+texture = ExtResource("45_j3aji")
+flip_h = true
+
+[node name="HeadSprite2D" parent="NPCs/SeniorEngineerNPC" index="1" unique_id=1375784835]
+texture = ExtResource("46_rd7m1")
+flip_h = true
+
+[node name="InteractIcon" parent="NPCs/SeniorEngineerNPC/InteractableComponent" parent_id_path=PackedInt32Array(275424481, 436105360) index="0" unique_id=1434794891]
+position = Vector2(-10, -86)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/SeniorEngineerNPC/InteractableComponent" parent_id_path=PackedInt32Array(275424481, 436105360) index="1" unique_id=480401776]
 position = Vector2(1.5, -16)
 shape = SubResource("RectangleShape2D_e3k61")
 
-[node name="SpeakComponent" parent="NPCs/SeniorEngineerNPC" index="2" unique_id=1744893008]
+[node name="SpeakComponent" parent="NPCs/SeniorEngineerNPC" index="3" unique_id=1744893008]
 dialogue = Array[String](["[b]Senior Engineer:[/b] I swear to [shake rate=20.0 level=5 connected=1]f**kin [b]GOD[/b][/shake] this whole place would collapse without me.", "[b]Senior Engineer:[/b] Not a joke! Our servers, the network, all of our microservices, the [b]DATABASE[/b]...", "[b]Senior Engineer:[/b] [shake rate=20.0 level=5 connected=1][b]ALL OF IT![/b][/shake] Poof, without me.", "[b]Senior Engineer:[/b] [shake rate=20.0 level=5 connected=1](╯°□°）╯︵ ┻━┻[/shake]"])
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/SeniorEngineerNPC" unique_id=1863192537]
-position = Vector2(-0.5, 17.5)
+position = Vector2(4, 10)
 shape = SubResource("RectangleShape2D_7yg5m")
 
 [node name="BossNPC" parent="NPCs" unique_id=98222057 instance=ExtResource("28_4u44s")]
-position = Vector2(2059, 206)
+position = Vector2(2040, 242)
+scale = Vector2(1.3423271, 1.3423271)
+
+[node name="BodySprite2D" parent="NPCs/BossNPC" index="0" unique_id=1492086816]
+texture = ExtResource("47_58knn")
+
+[node name="HeadSprite2D" parent="NPCs/BossNPC" index="1" unique_id=1375784835]
+texture = ExtResource("48_p8vlu")
+
+[node name="InteractIcon" parent="NPCs/BossNPC/InteractableComponent" parent_id_path=PackedInt32Array(98222057, 436105360) index="0" unique_id=1434794891]
+position = Vector2(-21.604269, -96.84675)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/BossNPC/InteractableComponent" parent_id_path=PackedInt32Array(98222057, 436105360) index="1" unique_id=1525698343]
-position = Vector2(-36, -5.5)
+position = Vector2(-38.738728, -42.46357)
 shape = SubResource("RectangleShape2D_0coyi")
 
-[node name="SpeakComponent" parent="NPCs/BossNPC" index="2" unique_id=1744893008]
+[node name="SpeakComponent" parent="NPCs/BossNPC" index="3" unique_id=1744893008]
 dialogue = Array[String](["[b]Big Boss:[/b] We’re very focused on modernizing our legacy systems, focused on data, we have to reduce friction in day to day AI utilization.", "[b]Big Boss:[/b] With data, comes [tornado radius=10.0 freq=1.0 connected=1]AI![/tornado] So many use cases.", "[b]Big Boss:[/b] We need to leverage what’s been done and innovate our strategies to get ahead of the game.", "[b]Big Boss:[/b] Friends? Family? What are you talking about?? [shake rate=20.0 level=5 connected=1]There's no time![/shake] You have the PTO hours for that??", "[b]Big Boss:[/b] Our customers expect speed and the analogy is you need to go fast but you need controls in the car. Literally, we’re demystifying…", "[b][rainbow freq=1.0 sat=0.8 val=0.8 speed=1.0]Jim Jar:[/rainbow][/b] [i]...what is this one talking about?[/i]"])
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/BossNPC" unique_id=529254716]
@@ -624,13 +706,19 @@ position = Vector2(0.5, 8.5)
 shape = SubResource("RectangleShape2D_bq5pn")
 
 [node name="StandingDeskNPC" parent="NPCs" unique_id=2000310075 instance=ExtResource("28_4u44s")]
-position = Vector2(481, 1116)
+position = Vector2(395, 944)
+
+[node name="BodySprite2D" parent="NPCs/StandingDeskNPC" index="0" unique_id=1492086816]
+texture = ExtResource("49_x2lpg")
+
+[node name="HeadSprite2D" parent="NPCs/StandingDeskNPC" index="1" unique_id=1375784835]
+texture = ExtResource("50_bhw81")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/StandingDeskNPC/InteractableComponent" parent_id_path=PackedInt32Array(2000310075, 436105360) index="1" unique_id=1306290519]
 position = Vector2(0, -12.5)
 shape = SubResource("RectangleShape2D_he2d1")
 
-[node name="SpeakComponent" parent="NPCs/StandingDeskNPC" index="2" unique_id=1744893008]
+[node name="SpeakComponent" parent="NPCs/StandingDeskNPC" index="3" unique_id=1744893008]
 dialogue = Array[String](["[b]Employee:[/b] Can I stop pretending like I’m not here just to make a living?", "[b]Employee:[/b] If it weren't for these standing desks, [font_size=12]and manditory in-person days[/font_size]  I wouldn't even be in the office.", "[b]Employee:[/b] All of our meetings are online anyways..."])
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/StandingDeskNPC" unique_id=1299338409]
@@ -638,16 +726,22 @@ position = Vector2(0, 12)
 shape = SubResource("RectangleShape2D_dus5t")
 
 [node name="JoshNPC" parent="NPCs" unique_id=134645456 node_paths=PackedStringArray("weirdo", "variant_speak_comp") instance=ExtResource("28_4u44s")]
-position = Vector2(605, 352)
+position = Vector2(486, 258)
 script = ExtResource("36_heubb")
 weirdo = NodePath("../WeirdoNPC")
 variant_speak_comp = NodePath("VariantSpeakComponent")
+
+[node name="BodySprite2D" parent="NPCs/JoshNPC" index="0" unique_id=1492086816]
+texture = ExtResource("48_ts3jf")
+
+[node name="HeadSprite2D" parent="NPCs/JoshNPC" index="1" unique_id=1375784835]
+texture = ExtResource("49_mvkf6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/JoshNPC/InteractableComponent" parent_id_path=PackedInt32Array(134645456, 436105360) index="1" unique_id=782476151]
 position = Vector2(1.5, -13)
 shape = SubResource("RectangleShape2D_ethsb")
 
-[node name="SpeakComponent" parent="NPCs/JoshNPC" index="2" unique_id=1744893008]
+[node name="SpeakComponent" parent="NPCs/JoshNPC" index="3" unique_id=1744893008]
 dialogue = Array[String](["[i]I don't know why, but I like how this guy sits.[/i]", "[b]Josh:[/b] Hey! You must be new. Have you met the boss yet?", "[b]Josh:[/b] Oh shoot, looks like his calander is triple booked for weeks. Oh well."])
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/JoshNPC" unique_id=580921494]
@@ -662,11 +756,20 @@ metadata/_custom_type_script = "uid://bk61eruksbbok"
 [node name="LuisNPC" parent="NPCs" unique_id=1651208751 instance=ExtResource("28_4u44s")]
 position = Vector2(1866, 868)
 
+[node name="BodySprite2D" parent="NPCs/LuisNPC" index="0" unique_id=1492086816]
+texture = ExtResource("54_ker88")
+
+[node name="HeadSprite2D" parent="NPCs/LuisNPC" index="1" unique_id=1375784835]
+texture = ExtResource("55_dcqtw")
+
+[node name="InteractIcon" parent="NPCs/LuisNPC/InteractableComponent" parent_id_path=PackedInt32Array(1651208751, 436105360) index="0" unique_id=1434794891]
+position = Vector2(-2.9999995, -77)
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/LuisNPC/InteractableComponent" parent_id_path=PackedInt32Array(1651208751, 436105360) index="1" unique_id=1803222945]
 position = Vector2(0, -13)
 shape = SubResource("RectangleShape2D_0un3i")
 
-[node name="SpeakComponent" parent="NPCs/LuisNPC" index="2" unique_id=1744893008]
+[node name="SpeakComponent" parent="NPCs/LuisNPC" index="3" unique_id=1744893008]
 dialogue = Array[String](["[b]Luis:[/b] Sup, new guy, welcome to the team.", "[b]Luis:[/b] If you need a Build Master or some recipe recs, let me know, I've got your back.", "[b]Luis:[/b] Also, talk to Josh if you haven't. He's really good at billards."])
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/LuisNPC" unique_id=1966541432]
@@ -677,40 +780,15 @@ shape = SubResource("RectangleShape2D_7et8m")
 y_sort_enabled = true
 curve = SubResource("Curve2D_ti61l")
 
-[node name="PathFollow2D" type="PathFollow2D" parent="NPCs/Path2D" unique_id=1042630585]
-position = Vector2(1006, 132)
+[node name="PathFollow2D" type="PathFollow2D" parent="NPCs/Path2D" unique_id=1042630585 node_paths=PackedStringArray("npc_sprite")]
+position = Vector2(1008, 142)
 rotation = 1.4317003
 rotates = false
 script = ExtResource("32_ti61l")
+npc_sprite = NodePath("JanitorNPC/AnimatedSprite2D")
 
-[node name="JanitorNPC" parent="NPCs/Path2D/PathFollow2D" unique_id=911634199 instance=ExtResource("28_4u44s")]
-position = Vector2(-1.6712036, -3.5850372)
-rotation = -1.4398966
-script = ExtResource("38_e3k61")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/Path2D/PathFollow2D/JanitorNPC/InteractableComponent" parent_id_path=PackedInt32Array(911634199, 436105360) index="1" unique_id=829555127]
-position = Vector2(0.53582764, -12.852966)
-scale = Vector2(1.0000004, 1.0000004)
-shape = SubResource("RectangleShape2D_mvkf6")
-
-[node name="SpeakComponent" parent="NPCs/Path2D/PathFollow2D/JanitorNPC" index="2" unique_id=1744893008]
-dialogue = Array[String](["[b]Janitor:[/b] Sorry, a bit busy, maybe later."])
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/Path2D/PathFollow2D/JanitorNPC" unique_id=1252575541]
-position = Vector2(0, 13.5)
-shape = SubResource("RectangleShape2D_ts3jf")
-
-[node name="InteractComponent" type="Area2D" parent="NPCs/Path2D/PathFollow2D/JanitorNPC" unique_id=697138499 node_paths=PackedStringArray("parent")]
-collision_layer = 32
-collision_mask = 16
-script = ExtResource("38_7yg5m")
-parent = NodePath("..")
-metadata/_custom_type_script = "uid://b81ijvesetdsh"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/Path2D/PathFollow2D/JanitorNPC/InteractComponent" unique_id=1205267913]
-position = Vector2(-1.2050171, -13.8582)
-scale = Vector2(1.0000002, 1.0000002)
-shape = SubResource("RectangleShape2D_bhw81")
+[node name="JanitorNPC" parent="NPCs/Path2D/PathFollow2D" unique_id=1319086192 instance=ExtResource("39_e3k61")]
+rotation = -1.445553
 
 [node name="PhotoAreas" type="Node" parent="." unique_id=301180790]
 
@@ -736,7 +814,7 @@ position = Vector2(871.5, 322)
 shape = SubResource("RectangleShape2D_j3aji")
 
 [node name="SeniorEnigneerPhotoArea" parent="PhotoAreas" unique_id=305021495 instance=ExtResource("26_ef7n6")]
-position = Vector2(457, 705)
+position = Vector2(660, 580)
 description = "Meets Expectations."
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PhotoAreas/SeniorEnigneerPhotoArea" unique_id=363153461]
@@ -747,12 +825,25 @@ shape = SubResource("RectangleShape2D_rd7m1")
 position = Vector2(707, 1367)
 rotation = 3.1415927
 
-[node name="PlayerSpawn2" type="Marker2D" parent="." unique_id=236866117]
-position = Vector2(707, 1367)
-rotation = 3.1415927
+[node name="LevelExit" parent="." unique_id=1541003558 instance=ExtResource("42_bq5pn")]
+position = Vector2(1991, 1459)
 
-[connection signal="area_entered" from="NPCs/Path2D/PathFollow2D/JanitorNPC/InteractComponent" to="NPCs/Path2D/PathFollow2D/JanitorNPC" method="_on_interact_component_area_entered"]
-[connection signal="area_exited" from="NPCs/Path2D/PathFollow2D/JanitorNPC/InteractComponent" to="NPCs/Path2D/PathFollow2D/JanitorNPC" method="_on_interact_component_area_exited"]
+[node name="InteractIcon" parent="LevelExit/InteractableComponent" parent_id_path=PackedInt32Array(1541003558, 436105360) index="0" unique_id=1434794891]
+visible = true
+position = Vector2(88.99999, 0)
+scale = Vector2(0.1, 0.1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelExit/InteractableComponent" parent_id_path=PackedInt32Array(1541003558, 436105360) index="1" unique_id=478554643]
+position = Vector2(81.5, 1.5)
+shape = SubResource("RectangleShape2D_dcqtw")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2062519516]
+stream = ExtResource("60_dcqtw")
+volume_db = -10.0
+autoplay = true
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=618269421]
+position = Vector2(2160, 1616)
 
 [editable path="Doors/FrontDoor"]
 [editable path="Doors/FrontDoor/InteractableComponent"]
@@ -768,6 +859,7 @@ rotation = 3.1415927
 [editable path="Doors/JanitorDoor/InteractableComponent"]
 [editable path="Doors/OfficeDoor"]
 [editable path="Doors/OfficeDoor/InteractableComponent"]
+[editable path="EnvironmentObjects/OfficeChair1"]
 [editable path="EnvironmentObjects/Cubicles/Cubicle1"]
 [editable path="EnvironmentObjects/Cubicles/Cubicle1/InteractableComponent"]
 [editable path="EnvironmentObjects/Cubicles/Cubicle3"]
@@ -794,3 +886,5 @@ rotation = 3.1415927
 [editable path="NPCs/LuisNPC/InteractableComponent"]
 [editable path="NPCs/Path2D/PathFollow2D/JanitorNPC"]
 [editable path="NPCs/Path2D/PathFollow2D/JanitorNPC/InteractableComponent"]
+[editable path="LevelExit"]
+[editable path="LevelExit/InteractableComponent"]

@@ -1,5 +1,7 @@
 class_name Player extends CharacterBody2D
 
+@export var camera: Camera2D
+
 # Components
 @export var interactComp: InteractComponent
 @export var cameraAreaComp: CameraAreaComponent
@@ -76,3 +78,7 @@ func interact():
 func take_picture():
 	if Input.is_action_just_pressed("take_picture"):
 		cameraAreaComp.take_picture()
+
+func set_camera_bounds(marker: Marker2D):
+	camera.limit_right = marker.global_position.x
+	camera.limit_bottom = marker.global_position.y

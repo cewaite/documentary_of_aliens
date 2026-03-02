@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://xwp3qjlpty2v"]
+
+[ext_resource type="PackedScene" uid="uid://d1cyctv0r5n7p" path="res://prefabs/npc/npc.tscn" id="1_f1q3s"]
+[ext_resource type="Script" uid="uid://cinivuqham1hr" path="res://entities/npcs/janitor/janitor_npc.gd" id="2_fuwnl"]
+[ext_resource type="Texture2D" uid="uid://depvngx68hjnw" path="res://assets/levels/office/art/janitor/Janitor-1.png" id="2_oylpv"]
+[ext_resource type="Texture2D" uid="uid://c5gfwnwb6xist" path="res://assets/levels/office/art/janitor/Janitor-2.png" id="3_fuwnl"]
+[ext_resource type="Texture2D" uid="uid://be72r10efkwcx" path="res://assets/levels/office/art/janitor/Janitor-3.png" id="4_5xtqk"]
+[ext_resource type="Script" uid="uid://b81ijvesetdsh" path="res://prefabs/components/interact_component/interact_component.gd" id="6_5xtqk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2ssa0"]
+size = Vector2(73, 101)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f1q3s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_oylpv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_fuwnl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_5xtqk")
+}],
+"loop": true,
+"name": &"walking",
+"speed": 2.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c8jic"]
+size = Vector2(72, 28)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5xtqk"]
+size = Vector2(120.99997, 143.99995)
+
+[node name="JanitorNPC" unique_id=1319086192 instance=ExtResource("1_f1q3s")]
+script = ExtResource("2_fuwnl")
+
+[node name="BodySprite2D" parent="." index="0" unique_id=1492086816]
+visible = false
+
+[node name="HeadSprite2D" parent="." index="1" unique_id=1375784835]
+visible = false
+
+[node name="InteractIcon" parent="InteractableComponent" parent_id_path=PackedInt32Array(436105360) index="0" unique_id=1434794891]
+visible = true
+position = Vector2(3.0000007, -82)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableComponent" parent_id_path=PackedInt32Array(436105360) index="1" unique_id=409563751]
+position = Vector2(0.5, -24.5)
+shape = SubResource("RectangleShape2D_2ssa0")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="5" unique_id=1588685593]
+scale = Vector2(0.05, 0.05)
+sprite_frames = SubResource("SpriteFrames_f1q3s")
+animation = &"walking"
+autoplay = "walking"
+frame_progress = 0.29097465
+offset = Vector2(0, -550)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="6" unique_id=887378587]
+position = Vector2(3, 13)
+shape = SubResource("RectangleShape2D_c8jic")
+
+[node name="InteractComponent" type="Area2D" parent="." index="7" unique_id=761426538]
+collision_layer = 32
+collision_mask = 16
+script = ExtResource("6_5xtqk")
+metadata/_custom_type_script = "uid://b81ijvesetdsh"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractComponent" index="0" unique_id=1835479681]
+position = Vector2(0.50000095, -16)
+scale = Vector2(1.0000002, 1.0000002)
+shape = SubResource("RectangleShape2D_5xtqk")
+
+[connection signal="area_entered" from="InteractComponent" to="." method="_on_interact_component_area_entered"]
+[connection signal="area_exited" from="InteractComponent" to="." method="_on_interact_component_area_exited"]
+
+[editable path="InteractableComponent"]

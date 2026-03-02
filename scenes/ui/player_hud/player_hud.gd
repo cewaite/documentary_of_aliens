@@ -12,3 +12,7 @@ func strikethrough_photo_description(description: String):
 	for label in photo_list_array:
 		if label.text == description:
 			label.text = "[s]" + description + "[/s]"
+
+func clear_photo_descriptions():
+	for label in photo_list_array:
+		label.text = ""

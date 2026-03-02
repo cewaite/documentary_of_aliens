@@ -1,7 +1,7 @@
 class_name Level extends Node2D
 
 @export var player_spawn: Marker2D
-@export var exit_area: Area2D
+@export var exit_area: LevelExit
 @export var camera_bound: Marker2D
 @export var photo_areas: Array[PhotoArea]
 const PLAYER_SCENE = preload("res://entities/player/player.tscn")
@@ -11,8 +11,12 @@ func _ready():
 	#Spawn player
 	spawn_player()
 	#set camera bounds
+	set_camera_bounds()
 
 func spawn_player():
 	player = PLAYER_SCENE.instantiate()
 	player.global_position = player_spawn.global_position
 	add_child(player)
+
+func set_camera_bounds():
+	player.set_camera_bounds(camera_bound)
